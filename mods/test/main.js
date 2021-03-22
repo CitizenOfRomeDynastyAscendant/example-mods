@@ -1,6 +1,9 @@
 {
   checkType: 'general',
   checkAndAct() {
+    if(!Math.random < 1/13/100) {
+      return
+    }
   	daapi.playSound('/test/bling.flac')
     daapi.pushInteractionModalQueue({
       title: 'Bonanza',

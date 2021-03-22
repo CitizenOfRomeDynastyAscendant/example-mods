@@ -3,7 +3,7 @@
   canTriggerIfUnavailable: true,
   checkType: 'general',
   checkAndAct() {
-  	// daapi.openDevTools()
+  	daapi.openDevTools()
   	let state = daapi.getState()
   	let characterId = state.current.id
   	daapi.addCharacterAction({

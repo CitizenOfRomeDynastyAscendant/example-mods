@@ -6,6 +6,6 @@ MESSAGE='Uh...'
 [ -n "${1}" ] && MESSAGE=${1}
 
 git add . -A
-git commit -am "$MESSAGE" --no-verify
+git commit -am "$MESSAGE"
 git pull
 git push

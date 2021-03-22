@@ -23,7 +23,7 @@
 	    		characterId,
 	    		key: 'noMoreKids',
 	    		action: {
-		        title: 'No More Kids!',
+		        title: 'Tap for: No More Kids!',
 		        icon: daapi.requireImage('/no_more_kids/allo.svg'),
 		        isAvailable: true,
 		        hideWhenBusy: false,
@@ -42,7 +42,7 @@
 	    		characterId,
 	    		key: 'yesMoreKids',
 	    		action: {
-		        title: 'Please More Kids!',
+		        title: 'Tap for: Please More Kids!',
 		        icon: daapi.requireImage('/no_more_kids/ace.svg'),
 		        isAvailable: true,
 		        hideWhenBusy: false,

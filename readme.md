@@ -2,7 +2,7 @@ See: https://rome.rangergo.net/modding-support/
 
 ## Install instructions
 
-Extract and place the whole folder intact for each mod you want in your mods directory
+Extract and place the whole folder intact for each individual mod you want in your mods directory
 
 On Desktop versions of the game, it loads mods from your `~/documents/CitizenOfRomeDynastyAscendant/mods` directory, creating the same if it does not exist upon game start
 
@@ -12,4 +12,4 @@ On Android, if external storage is available, it uses the `/CitizenOfRomeDynasty
 
 It displays the exact path for mods in the Settings screen after you enable mods once
 
-Requires v1.4.0+
+Requires v1.4.1+

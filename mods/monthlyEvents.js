@@ -513,39 +513,39 @@
                                     }, {
                                         type: "vinyard",
                                         max: 5,
-                                        normalCost: 360
+                                        normalCost: 250
                                     },{
                                         type: "orchard",
                                         max: 5,
-                                        normalCost: 420
+                                        normalCost: 250
                                     },{
                                         type: "primeFarmland",
                                         max: 3,
-                                        normalCost: 2700
+                                        normalCost: 250
                                     },{
                                         type: "primeVinyard",
                                         max: 3,
-                                        normalCost: 3300
+                                        normalCost: 250
                                     },{
                                         type: "primeOrchard",
                                         max: 3,
-                                        normalCost: 3900
+                                        normalCost: 250
                                     },{
                                         type: "latifundiumFood",
                                         max: 1,
-                                        normalCost: 11000
+                                        normalCost: 250
                                     },{
                                         type: "latifundiumAnimal",
                                         max: 1,
-                                        normalCost: 14000
+                                        normalCost: 250
                                     },{
                                         type: "latifundiumFish",
                                         max: 1,
-                                        normalCost: 17000
+                                        normalCost: 250
                                     },{
                                         type: "latifundiumOil",
                                         max: 1,
-                                        normalCost: 21000
+                                        normalCost: 250
                                     }
                                 ];
                                 const propertyDefinition = E.randomFromArray(properties);

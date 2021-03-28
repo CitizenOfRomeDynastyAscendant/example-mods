@@ -2,7 +2,7 @@
     canTriggerIfUnavailable: true,
     checkType: 'general',
     checkAndAct: () => {
-        daapi.openDevTools();
+        // daapi.openDevTools();
         
         const characterId = daapi.getState().current.id;
         const loanData = daapi.getGlobalFlag({flag: 'bank_of_rome'}) || {

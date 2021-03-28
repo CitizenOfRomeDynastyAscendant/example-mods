@@ -972,7 +972,7 @@
     },
 
     checkAndAct: () => {
-        daapi.openDevTools();
+        // daapi.openDevTools();
         console.log("START");
 
         const moduleName = '/household_slaves/events/monthlyEvents';

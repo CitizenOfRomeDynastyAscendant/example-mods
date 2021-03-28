@@ -119,7 +119,7 @@
                     };    
                 } else {
                     factor = E.generateRandomIntegerBetween(1,3) * (Math.max(1, slave.level / 5));
-                    slave.skills.stewardship = factor.toFixed(2);                    
+                    slave.skills.stewardship = factor.toFixed(2);
                 }
                 break;
             case 'warrior':
@@ -213,7 +213,7 @@
         const skillsValues = daapi.getCharacter({characterId}).skills;
 
         console.log('current skills', skillsValues);
-        skillsValues[skill] = skillsValues[skill] + value;
+        skillsValues[skill] = Number.parseFloat(skillsValues[skill]) + parseFloat(value);
 
         console.log('updated skills', skillsValues);
         daapi.updateCharacter({
@@ -975,11 +975,11 @@
     },
 
     checkAndAct: () => {
-        // daapi.openDevTools();
+        daapi.openDevTools();
         console.log("START");
 
         const moduleName = '/household_slaves/events/monthlyEvents';
-        const E = daapi.modData.events[moduleName].setupMethod(moduleName);
+        const E = daapi.modData.events[moduleName].setupMethod(moduleName, true);
         
         E.refreshCommandIcons();
         E.checkForSlaveBonuses();

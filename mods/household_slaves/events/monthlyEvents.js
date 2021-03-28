@@ -897,8 +897,11 @@
                         method: "doAddSlave",
                         context: slave
                     }
-                })
+                });
             }
+            slaveOptions.push({
+                text: "No thanks."
+            });
             E.pushInteractionModalQueue({
                 title: "A Slave Market Has Arrived!",
                 message: "A slave merchant has arrived at market with a batch of unusually skilled enslaved nobles from Germania. The prices are high, but the merchant stands by them claiming that these slaves will pay for themselves quickly to those that recognize and properly use their talents. Will you purchase a slave today?",

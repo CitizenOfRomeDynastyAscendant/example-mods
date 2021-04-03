@@ -10,23 +10,15 @@
   },
   methods: {
     toggleFlag() {
-      let state = daapi.getState()
-      let characterId = state.current.id
       if (
         !daapi.getGlobalFlag({ flag: 'noMoreKids' })
       ) {
-        daapi.deleteCharacterAction({
-          characterId,
-          key: 'yesMoreKids'
-        })
-        daapi.addCharacterAction({
-          characterId,
+        daapi.addGlobalAction({
           key: 'noMoreKids',
           action: {
             title: 'Tap for: No More Kids!',
             icon: daapi.requireImage('/no_more_kids/allo.svg'),
             isAvailable: true,
-            hideWhenBusy: false,
             process: {
               event: '/no_more_kids/main',
               method: 'noMoreKids'
@@ -34,18 +26,12 @@
           }
         })
       } else {
-        daapi.deleteCharacterAction({
-          characterId,
-          key: 'noMoreKids'
-        })
-        daapi.addCharacterAction({
-          characterId,
-          key: 'yesMoreKids',
+        daapi.addGlobalAction({
+          key: 'noMoreKids',
           action: {
-            title: 'Tap for: Please More Kids!',
+            title: 'Tap for: More Kids!',
             icon: daapi.requireImage('/no_more_kids/ace.svg'),
             isAvailable: true,
-            hideWhenBusy: false,
             process: {
               event: '/no_more_kids/main',
               method: 'yesMoreKids'

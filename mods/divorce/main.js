@@ -46,7 +46,7 @@
             text: 'Yes!!!',
             tooltip: 'This action cannot be undone',
             statChanges: {
-              cash: -50,
+              cash: -500,
               prestige: -25,
               influence: -300,
               scaleByRevenue: ['cash']

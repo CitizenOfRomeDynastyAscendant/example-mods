@@ -1,24 +1,24 @@
-#Example snippets
+# Example snippets
 
-##Add/Remove Trait:
+## Add/Remove Trait:
 `daapi.addTrait({characterId:daapi.getState().current.id, trait: 'strong'})`
 `daapi.removeTrait({characterId:daapi.getState().current.id, trait: 'strong'})`
-###x10
+### x10
 `(function() { for(var i = 0; i < 10; i++) { daapi.addTrait({characterId:daapi.getState().current.id, trait: 'strong'}); } })()`
-###Wife & kids
+### Wife & kids
 `daapi.addTrait({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).spouseId, trait:'strong' })`
 `daapi.addTrait({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).childrenIds[0], trait: 'genius' })`
 Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on
 
-##Set age as 20
+## Set age as 20
 `daapi.updateCharacter({ characterId: daapi.getState().current.id, character: { birthYear: daapi.getState().year - 20 }})`
 
-##Impregnate
+## Impregnate
 `daapi.impregnate({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).spouseId })`
 
 
-##Revive Char
+## Revive Char
 `daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ isDead:false }})`
-###Revive and play as previous char (usually)
+### Revive and play as previous char (usually)
 `daapi.updateCharacter({characterId:daapi.getCharacter({ characterId: daapi.getState().current.id }).fatherId, character:{ isDead:false }})`
-``daapi.setCurrentCharacter({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).fatherId })`
+`daapi.setCurrentCharacter({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).fatherId })`

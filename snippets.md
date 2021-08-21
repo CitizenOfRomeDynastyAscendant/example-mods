@@ -8,6 +8,7 @@
 ### Wife & kids
 `daapi.addTrait({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).spouseId, trait:'strong' })`
 `daapi.addTrait({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).childrenIds[0], trait: 'genius' })`
+
 Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on
 
 ## Set age as 20

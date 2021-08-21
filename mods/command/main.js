@@ -39,6 +39,7 @@
           {
             variant: 'info',
             text: 'Run this',
+            icon: daapi.requireImage('/command/command.svg'),
             action:{
               event: '/command/main',
               method: 'run'
@@ -57,7 +58,7 @@
       try {
         new Function('return (' + (daapi.getGlobalFlag({ flag: 'command' })) + ')')()
       } catch(err) {
-        command.warn(err)
+        console.warn(err)
       }
     }
   }

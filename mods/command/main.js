@@ -60,17 +60,29 @@
             title: 'Command Console',
             message: 'Output: ' + JSON.stringify(result),
             image: daapi.requireImage('/command/command.svg'),
-          inputs: [
-            {
-              type: 'text',
-              title: 'Output',
-              value: JSON.stringify(result)
-            }
-          ]
+            inputs: [
+              {
+                type: 'text',
+                title: 'Output',
+                value: JSON.stringify(result)
+              }
+            ]
           })
         }
       } catch(err) {
         console.warn(err)
+        daapi.pushInteractionModalQueue({
+          title: 'Command Console',
+          message: 'Error: ' + err.name + ': ' + err.message,
+          image: daapi.requireImage('/command/command.svg'),
+          inputs: [
+            {
+              type: 'text',
+              title: 'Error',
+              value: err.name + ': ' + err.message
+            }
+          ]
+        })
       }
     }
   }

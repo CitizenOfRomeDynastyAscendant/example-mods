@@ -59,7 +59,14 @@
           daapi.pushInteractionModalQueue({
             title: 'Command Console',
             message: 'Output: ' + JSON.stringify(result),
-            image: daapi.requireImage('/command/command.svg')
+            image: daapi.requireImage('/command/command.svg'),
+          inputs: [
+            {
+              type: 'text',
+              title: 'Output',
+              value: JSON.stringify(result)
+            }
+          ]
           })
         }
       } catch(err) {

@@ -3,8 +3,6 @@
   canTriggerIfUnavailable: true,
   checkType: 'general',
   checkAndAct() {
-    // daapi.openDevTools()
-    console.log('here')
     daapi.addGlobalAction({
       key: 'command',
       action: {

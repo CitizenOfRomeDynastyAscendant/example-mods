@@ -54,7 +54,14 @@
     },
     run() {
       try {
-        new Function('return (' + (daapi.getGlobalFlag({ flag: 'command' })) + ')')()
+        let result = new Function('return (' + (daapi.getGlobalFlag({ flag: 'command' })) + ')')()
+        if(result) {
+          daapi.pushInteractionModalQueue({
+            title: 'Command Console',
+            message: 'Output: ' + JSON.stringify(result),
+            image: daapi.requireImage('/command/command.svg')
+          })
+        }
       } catch(err) {
         console.warn(err)
       }

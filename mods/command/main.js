@@ -22,12 +22,12 @@
     process() {
       daapi.pushInteractionModalQueue({
         title: 'Command Console',
-        message: 'Type in the text box and then select the Yes option below that to run. Eg: `daapi.addTrait({characterId:daapi.getState().current.id, trait: \'strong\'})`. Please reach out via the official Discord for help',
+        message: 'Type commands in the text box bellow and then tap the run button. Eg: `daapi.addTrait({characterId:daapi.getState().current.id, trait: \'strong\'})`. Please reach out via the official Discord for help',
         image: daapi.requireImage('/command/command.svg'),
         inputs: [
           {
             type: 'text',
-            title: 'Type here',
+            title: 'Command here',
             value: daapi.getGlobalFlag({ flag: 'command' }) || 'daapi.addTrait({characterId:daapi.getState().current.id, trait: \'strong\'})',
             onChange: {
               event: '/command/main',

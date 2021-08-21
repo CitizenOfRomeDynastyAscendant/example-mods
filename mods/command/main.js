@@ -20,7 +20,7 @@
     process() {
       daapi.pushInteractionModalQueue({
         title: 'Command Console',
-        message: 'Type commands in the text box bellow and then tap the run button. Eg: `daapi.addTrait({characterId:daapi.getState().current.id, trait: \'strong\'})`. Please reach out via the official Discord for help',
+        message: 'Type a daapi command in the text box below and then tap the run button. Please reach out via the official Discord for help',
         image: daapi.requireImage('/command/command.svg'),
         inputs: [
           {

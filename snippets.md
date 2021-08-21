@@ -1,4 +1,4 @@
-# Example snippets
+# Example console commands / daapi snippets
 
 ## Add/Remove Trait:
 `daapi.addTrait({characterId:daapi.getState().current.id, trait: 'strong'})`
@@ -23,3 +23,6 @@ Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on
 `daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ isDead:false }})`
 ### Revive and play as previous char (usually)
 `daapi.updateCharacter({characterId:daapi.getCharacter({ characterId: daapi.getState().current.id }).fatherId, character:{ isDead:false }}); daapi.setCurrentCharacter({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).fatherId })`
+
+## Change Job
+`daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ job:'wetNurse', jobLevel: 25 }})`

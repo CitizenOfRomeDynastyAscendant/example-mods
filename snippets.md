@@ -5,7 +5,7 @@
 `daapi.removeTrait({characterId:daapi.getState().current.id, trait: 'strong'})`
 ### x10
 `(function() { for(var i = 0; i < 10; i++) { daapi.addTrait({characterId:daapi.getState().current.id, trait: 'strong'}); } })()`
-### Wife
+### Spouse
 `daapi.addTrait({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).spouseId, trait:'strong' })`
 ### Children
 `daapi.addTrait({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).childrenIds[0], trait: 'genius' })`

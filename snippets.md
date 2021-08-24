@@ -18,6 +18,8 @@ Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on
 ## Impregnate
 `daapi.impregnate({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).spouseId })`
 
+## Get Character Info
+`daapi.getCharacter({ characterId: daapi.getState().current.id })`
 
 ## Revive Char
 `daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ isDead:false }})`

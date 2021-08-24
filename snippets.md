@@ -1,6 +1,6 @@
 # Example console commands / daapi snippets
 
-## Get Character Info
+## Get Character Info/Data
 `daapi.getCharacter({ characterId: daapi.getState().current.id })`
 
 ## Add/Remove Trait:
@@ -18,16 +18,17 @@ Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on
 ## Impregnate
 `daapi.impregnate({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).spouseId })`
 
-## Set age as 20
+## Update Character Data
+### Set age as 20
 `daapi.updateCharacter({ characterId: daapi.getState().current.id, character: { birthYear: daapi.getState().year - 20 }})`
 
-## Revive Char
+### Revive Char
 `daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ isDead:false }})`
-### Revive and play as previous char (usually)
+#### Revive and play as previous char (usually)
 `daapi.updateCharacter({characterId:daapi.getCharacter({ characterId: daapi.getState().current.id }).fatherId, character:{ isDead:false }}); daapi.setCurrentCharacter({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).fatherId })`
 
-## Change Job
+### Change Job
 `daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ job:'wetNurse', jobLevel: 25 }})`
 
-## Change Gender
+### Change Gender
 `daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ isMale:false }})`

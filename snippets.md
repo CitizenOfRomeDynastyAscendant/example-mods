@@ -28,3 +28,6 @@ Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on
 
 ## Change Job
 `daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ job:'wetNurse', jobLevel: 25 }})`
+
+## Change Gender
+`daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ isMale:false }})`

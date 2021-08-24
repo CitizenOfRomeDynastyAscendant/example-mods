@@ -1,5 +1,16 @@
 # Example console commands / daapi snippets
 
+## Get Character ID
+### Current Character
+`daapi.getState().current.id`
+### Spouse of Current Character
+`daapi.getCharacter({ characterId: daapi.getState().current.id }).spouseId`
+### Children of Current Character
+`daapi.getCharacter({ characterId: daapi.getState().current.id }).childrenIds[0]`
+
+Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on, like: 
+`daapi.getCharacter({ characterId: daapi.getState().current.id }).childrenIds[1]`
+
 ## Get Character Info/Data
 `daapi.getCharacter({ characterId: daapi.getState().current.id })`
 
@@ -12,8 +23,6 @@
 `daapi.addTrait({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).spouseId, trait:'strong' })`
 ### Children
 `daapi.addTrait({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).childrenIds[0], trait: 'genius' })`
-
-Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on
 
 ## Impregnate
 `daapi.impregnate({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).spouseId })`

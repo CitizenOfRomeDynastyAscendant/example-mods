@@ -10,6 +10,8 @@
 
 Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on, like: 
 `daapi.getCharacter({ characterId: daapi.getState().current.id }).childrenIds[1]`
+### Spouse of a specific Character ID
+`daapi.getCharacter({ characterId: 'd9d2b5ae_e429_4956_bc58_02e4c38caea8' }).spouseId`
 
 ## Get Character Info/Data
 `daapi.getCharacter({ characterId: daapi.getState().current.id })`

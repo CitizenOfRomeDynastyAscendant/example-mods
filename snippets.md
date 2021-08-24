@@ -1,5 +1,8 @@
 # Example console commands / daapi snippets
 
+## Get Character Info
+`daapi.getCharacter({ characterId: daapi.getState().current.id })`
+
 ## Add/Remove Trait:
 `daapi.addTrait({characterId:daapi.getState().current.id, trait: 'strong'})`
 `daapi.removeTrait({characterId:daapi.getState().current.id, trait: 'strong'})`
@@ -12,14 +15,11 @@
 
 Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on
 
-## Set age as 20
-`daapi.updateCharacter({ characterId: daapi.getState().current.id, character: { birthYear: daapi.getState().year - 20 }})`
-
 ## Impregnate
 `daapi.impregnate({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).spouseId })`
 
-## Get Character Info
-`daapi.getCharacter({ characterId: daapi.getState().current.id })`
+## Set age as 20
+`daapi.updateCharacter({ characterId: daapi.getState().current.id, character: { birthYear: daapi.getState().year - 20 }})`
 
 ## Revive Char
 `daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ isDead:false }})`

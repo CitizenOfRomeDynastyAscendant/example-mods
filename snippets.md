@@ -14,6 +14,9 @@ Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on, like:
 ## Get Character Info/Data
 `daapi.getCharacter({ characterId: daapi.getState().current.id })`
 
+### With a specific Character ID
+`daapi.getCharacter({ characterId: 'd9d2b5ae_e429_4956_bc58_02e4c38caea8' })`
+
 ## Add/Remove Trait:
 `daapi.addTrait({characterId:daapi.getState().current.id, trait: 'strong'})`
 `daapi.removeTrait({characterId:daapi.getState().current.id, trait: 'strong'})`

@@ -57,4 +57,4 @@ Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on, like:
 ##### Remove the same
 `daapi.removeModifier({ key: 'household_health', id: 'cancel_easy_mode' })`
 #### Increase Health for 13 months
-`daapi.addModifier({ key: 'household_health', id: 'increast_13', factor: 1000, durationInMonths: 13 })`
+`daapi.addModifier({ key: 'household_health', id: 'increase_for_13', factor: 1000, durationInMonths: 13 })`

@@ -51,7 +51,10 @@ Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on, like:
 `daapi.updateCharacter({ characterId: daapi.getState().current.id, character: { skills: { intelligence: 32 } } })`
 
 ## Modifiers
-### Lower Health to x0.1
+### household_health
+#### Lower Health to x0.1
 `daapi.addModifier({ key: 'household_health', id: 'cancel_easy_mode', factor: 0.1 })`
-#### Remove the same
+##### Remove the same
 `daapi.removeModifier({ key: 'household_health', id: 'cancel_easy_mode' })`
+#### Increase Health for 13 months
+`daapi.addModifier({ key: 'household_health', id: 'increast_13', factor: 1000, durationInMonths: 13 })`

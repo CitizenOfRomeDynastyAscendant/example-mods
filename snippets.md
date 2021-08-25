@@ -60,5 +60,5 @@ Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on, like:
 Note: You can skip the `id` parameter if you don't intend to `removeModifier` manuall in the future
 #### Increase Health for 13 months
 `daapi.addModifier({ key: 'household_health', id: 'increase_for_13', factor: 1000, durationInMonths: 13 })`
-#### Increase Current Character's Health
+### Increase Current Character's Health
 `daapi.addModifier({ key: 'character_health_' + daapi.getState().current.id, factor: 300 })`

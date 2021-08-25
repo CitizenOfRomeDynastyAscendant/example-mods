@@ -46,3 +46,6 @@ Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on, like:
 
 ### Change Gender
 `daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ isMale:false }})`
+
+### Set Skills/Stats
+`daapi.updateCharacter({ characterId: daapi.getState().current.id, character: { skills: { intelligence: 32 } } })`

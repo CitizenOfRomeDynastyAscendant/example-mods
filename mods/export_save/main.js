@@ -19,6 +19,8 @@
   },
   methods: {
     process() {
+      let stateString = JSON.stringify(daapi.getState())
+      console.log(stateString)
       daapi.pushInteractionModalQueue({
         title: 'Export/Import Save',
         message: 'Copy the Save State below and paste it via the same mod on any other device (after editing it if you\'d like). Please note that this is a risky and unsupported hack to export/import saves, it can corrupt your game save irrevocably and will very likely stop working with future releases',
@@ -27,7 +29,7 @@
           {
             type: 'text',
             title: 'Save State',
-            value: JSON.stringify(daapi.getState()),
+            value: stateString,
             onChange: {
               event: '/export_save/main',
               method: 'noteSave'

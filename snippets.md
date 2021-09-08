@@ -50,6 +50,20 @@ Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on, like:
 ### Set Skills/Stats
 `daapi.updateCharacter({ characterId: daapi.getState().current.id, character: { skills: { intelligence: 32 } } })`
 
+### Start Education
+Note: These will enroll them in the appropriate education but wont charge you for it or display any indication of being educated
+#### Ludus
+`daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ flagAttendingLudus: 'private', flagIsBusy: true, actions: {beginLudusEducation:{}, endLudusEducation:{}} }})`
+#### Grammaticus
+`daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ flagAttendingGrammaticus: 'renowned', flagIsBusy: true, actions: {beginGrammaticusEducation:{}, endGrammaticusEducation:{}} }})`
+#### Rhetor
+`daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ flagAttendingRhetor: 'judicial', flagIsBusy: true, actions: {beginRhetorEducation:{}, endRhetorEducation:{}} }})`
+
+Or similarly `flagAttendingRhetor: 'deliberative'`
+#### Philosophy
+`daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ flagAttendingPhilosophy: 'renowned', flagIsBusy: true, flagIsAway: true, actions: {beginPhilosophyEducation:{}, endPhilosophyEducation:{}} }})`
+
+
 ## Modifiers
 ### household_health
 #### Lower Health to x0.1

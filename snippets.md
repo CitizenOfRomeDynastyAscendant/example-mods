@@ -51,7 +51,7 @@ Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on, like:
 `daapi.updateCharacter({ characterId: daapi.getState().current.id, character: { skills: { intelligence: 32 } } })`
 
 ### Start Education
-Note: These will enroll them in the appropriate education but wont charge you for it or display any indication of being educated. You will have to manually add/remove revenue modifiers and status indicators additionally if so desired
+Note: These will enroll them in the appropriate education but won't charge you for it or display any indication of being educated. You will have to manually add/remove revenue modifiers and status indicators additionally if so desired
 #### Ludus
 `daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ flagAttendingLudus: 'private', flagIsBusy: true, actions: {beginLudusEducation:{}, endLudusEducation:{}} }})`
 #### Grammaticus

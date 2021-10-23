@@ -64,6 +64,9 @@ Or similarly `flagAttendingRhetor: 'deliberative'`
 `daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ flagAttendingPhilosophy: 'renowned', flagIsBusy: true, flagIsAway: true, actions: {beginPhilosophyEducation:{}, endPhilosophyEducation:{}} }})`
 
 
+## Add cash
+`daapi.displayInteractionModal({ title:'Money!', message: 'Here you go:', options: [{ text: 'Thanks!', statChanges: { cash: 500 }}]})`
+
 ## Modifiers
 ### household_health
 #### Lower Health to x0.1
@@ -77,3 +80,8 @@ Note: You can skip the `id` parameter if you don't intend to `removeModifier` ma
 
 ### Increase Current Character's Health
 `daapi.addModifier({ key: 'character_health_' + daapi.getState().current.id, factor: 300 })`
+### Revenue
+#### Multiplier
+`daapi.addModifier({ key: 'revenue', factor: 10 })`
+#### Add Monthly
+`daapi.addAdditiveModifier({ key: 'revenue', durationInMonths: 6, amount: 1000 })`

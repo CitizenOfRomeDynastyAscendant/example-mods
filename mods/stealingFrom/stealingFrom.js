@@ -1,5 +1,5 @@
 // StealingFrom initiator
-;(function() {
+(function() {
   const path = '/stealingFrom/stealingFrom'
   let img, img2, img3
   setTimeout(() => {

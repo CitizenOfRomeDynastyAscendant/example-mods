@@ -22,7 +22,7 @@
       let stateString = JSON.stringify(daapi.getState())
       console.log(stateString)
       daapi.pushInteractionModalQueue({
-        title: 'Export/Import Save',
+        title: 'Export Save',
         message: 'Copy the Save State below and paste it via the same mod on any other device (after editing it if you\'d like). Please note that this is a risky and unsupported hack to export/import saves, it can corrupt your game save irrevocably and will very likely stop working with future releases',
         image: daapi.requireImage('/export_save/export.svg'),
         inputs: [
@@ -37,7 +37,7 @@
           }
         ],
         options: [
-          {
+          /* {
             variant: 'danger',
             text: 'Apply changes to Save State',
             icon: daapi.requireImage('/export_save/export.svg'),
@@ -46,7 +46,7 @@
               method: 'run'
             },
             tooltip: 'DANGER: Any errors here could irrevocable destroy your saved game and require you to clear all game data and start over'
-          },
+          }, */
           {
             text: 'Okay'
           }
@@ -58,8 +58,8 @@
     },
     run() {
       try {
-        window.localStorage.mainStore = daapi.getGlobalFlag({ flag: 'export_save' })
-        window.location.reload()
+        // window.localStorage.mainStore = daapi.getGlobalFlag({ flag: 'export_save' })
+        // window.location.reload()
       } catch(err) {
         console.warn(err)
         daapi.pushInteractionModalQueue({

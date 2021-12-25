@@ -7,7 +7,7 @@
     daapi.addGlobalAction({
       key: 'export_save',
       action: {
-        title: 'Export or Import a Saved Game',
+        title: 'Export/View your Saved Game Data',
         icon: daapi.requireImage('/export_save/export.svg'),
         isAvailable: true,
         process: {
@@ -22,8 +22,8 @@
       let stateString = JSON.stringify(daapi.getState())
       console.log(stateString)
       daapi.pushInteractionModalQueue({
-        title: 'Export Save',
-        message: 'Copy the Save State below and paste it via the same mod on any other device (after editing it if you\'d like). Please note that this is a risky and unsupported hack to export/import saves, it can corrupt your game save irrevocably and will very likely stop working with future releases',
+        title: 'Export Save Data',
+        message: 'Here\'s your save data:',
         image: daapi.requireImage('/export_save/export.svg'),
         inputs: [
           {
@@ -63,7 +63,7 @@
       } catch(err) {
         console.warn(err)
         daapi.pushInteractionModalQueue({
-          title: 'Export/Import Save',
+          title: 'Export Save Data',
           message: 'Error: ' + err.name + ': ' + err.message,
           image: daapi.requireImage('/export_save/export.svg'),
           inputs: [

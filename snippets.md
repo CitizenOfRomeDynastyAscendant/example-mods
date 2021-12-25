@@ -85,3 +85,10 @@ Note: You can skip the `id` parameter if you don't intend to `removeModifier` ma
 `daapi.addModifier({ key: 'revenue', factor: 10 })`
 #### Add Monthly
 `daapi.addAdditiveModifier({ key: 'revenue', durationInMonths: 6, amount: 1000 })`
+
+## Clear Global and Character Action icons
+### Clear Global Actions
+`(function() { let actions = Object.keys(daapi.getState().current.actions || {}); for(var i = 0; i < actions.length; i++) { daapi.deleteGlobalAction({key:actions[i]}); } })()`
+### Clear Character Actions
+`(function() { let householdCharacterIds = daapi.getState().current.householdCharacterIds; for(var i = 0; i < householdCharacterIds.length; i++) { daapi.updateCharacter({characterId:householdCharacterIds[i], character: {actions: false} }); } })()`
+

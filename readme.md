@@ -4,9 +4,9 @@ Extract and place the whole folder intact for each individual mod you want in yo
 
 On Desktop versions of the game, it loads mods from your `~/documents/CitizenOfRomeDynastyAscendant/mods` directory, creating the same if it does not exist upon game start
 
-On iOS, it's the app's `Documents/CitizenOfRomeDynastyAscendant/mods` directory to which you can upload via iTunes
+On iOS, it's the app's `Documents/CitizenOfRomeDynastyAscendant/mods` directory to which you can upload via the Files app or iTunes
 
-On Android, if external storage is available, it uses the `/CitizenOfRomeDynastyAscendant/mods` directory there, else it uses the same location in the app's internal storage
+On Android, it uses the `/CitizenOfRomeDynastyAscendant/mods` directory in the app's storage, which would usually be located at `Interal Storage/Android/net.rangergo.rome/`
 
 It displays the exact path for mods in the Settings screen after you enable mods once
 

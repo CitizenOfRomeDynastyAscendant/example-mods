@@ -56,7 +56,7 @@
     run() {
       try {
         let result = new Function('return (' + (daapi.getGlobalFlag({ flag: 'command_console' })) + ')')()
-        if(result) {
+        if(result !== undefined) {
           daapi.pushInteractionModalQueue({
             title: 'Command Console',
             message: 'Output: ' + JSON.stringify(result),

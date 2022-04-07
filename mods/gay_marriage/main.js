@@ -37,12 +37,14 @@
   },
   methods: {
     process({ characterId }) {
+      let state = daapi.getState()
       let character = daapi.getCharacter({ characterId })
       let options = []
       for (let i = 0; i < 5; i++) {
         let potentialSpouseId = daapi.generateCharacter({ 
           characterFeatures: {
-            isMale: character.isMale
+            isMale: character.isMale,
+            birthYear: state.year - Math.floor(18 + Math.random() * 35)
           },
           dynastyFeatures : {} 
         })

@@ -15,7 +15,7 @@
         characterId,
         key: 'gay_marriage',
         action: {
-          title: 'Find gay spouses',
+          title: 'Find ' + (character.isMale ? 'achillean' : 'sapphic') + ' spouses',
           icon: daapi.requireImage('/gay_marriage/' + (character.isMale ? 'achillean' : 'sapphic') + '.svg'),
           isAvailable: true,
           hideWhenBusy: false,

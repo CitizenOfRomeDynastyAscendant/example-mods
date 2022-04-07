@@ -65,7 +65,7 @@
         })
       }
       daapi.pushInteractionModalQueue({
-        title: 'Gay marriage',
+        title: (character.isMale ? 'Achillean' : 'Sapphic') + ' marriage',
         message: 'Here are some potential sposes for ' + `[c|${characterId}|${character.praenomen}]`+'. Should they marry one of them?',
         image: daapi.requireImage('/gay_marriage/' + (character.isMale ? 'achillean' : 'sapphic') + '.svg'),
         options: [

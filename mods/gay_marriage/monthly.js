@@ -1,1 +1,1 @@
-['/gay_marriage/main', '/gay_marriage/adopt']
+['/gay_marriage/main', '/gay_marriage/adopt', '/gay_marriage/pregnancy']

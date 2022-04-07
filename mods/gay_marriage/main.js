@@ -81,8 +81,12 @@
       daapi.performMarriage({ characterId, spouseId: potentialSpouseId, isMatrilineal: !character.isMale })
       daapi.setCharacterFlag({ characterId, flag: 'isGayMarried', data: true })
       daapi.setCharacterFlag({ characterId: potentialSpouseId, flag: 'isGayMarried', data: true })
+      if (Math.random() < 1 / 100) {
+        daapi.setCharacterFlag({ characterId: potentialSpouseId, flag: 'isTrans', data: true })
+      }
       daapi.addTrait({ characterId, trait: (character.isMale ? 'achillean' : 'sapphic') })
       daapi.addTrait({ characterId: potentialSpouseId, trait: (character.isMale ? 'achillean' : 'sapphic') })
+      daapi.addModifier({ key: 'character_fertility_' + potentialSpouseId, id: 'gay_marriage', factor: 0})
       daapi.deleteCharacterAction({
         characterId,
         key: 'gay_marriage'

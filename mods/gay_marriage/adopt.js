@@ -15,7 +15,7 @@
     if (
       characterSpouse &&
       !characterSpouse.isDead &&
-      Math.random() < 1 / 13 / 10 / (character.childrenIds.length || 1)
+      Math.random() < 1 / 13 / 15 / (character.childrenIds.length || 1)
     ) {
       let babyId = daapi.generateCharacter({ 
         characterFeatures: {

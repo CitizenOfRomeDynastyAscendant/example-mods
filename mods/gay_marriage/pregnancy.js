@@ -1,6 +1,6 @@
 {
   canTriggerIfUnavailable: false,
-  checkType: 'allCharacters',
+  checkType: 'householdCharacters',
   checkAndAct(characterId) {
     let character = daapi.getCharacter({ characterId })
     if(

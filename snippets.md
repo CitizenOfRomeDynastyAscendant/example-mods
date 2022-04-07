@@ -1,5 +1,5 @@
 # Example console commands / daapi snippets
-You can run these either via the command console mod or in game dev tools (opened via the openDevTools mod). Or by placing them in a `.js` file in your `mods` directory
+You can run these either via the command console mod or in game dev tools (opened via the openDevTools mod), or by placing them in a `.js` file in your `mods` directory
 
 ## Get Character ID
 ### Current Character

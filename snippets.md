@@ -63,6 +63,9 @@ Or similarly `flagAttendingRhetor: 'deliberative'`
 #### Philosophy
 `daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ flagAttendingPhilosophy: 'renowned', flagIsBusy: true, flagIsAway: true, actions: {beginPhilosophyEducation:{}, endPhilosophyEducation:{}} }})`
 
+### Change spouse family nomen & cognomen
+`(function() {  let nomen = 'New_Nomen'; let cognomen = 'New_Cognomen'; let state = daapi.getState(); let spouse = state.characters[state.characters[state.current.id].spouseId]; let genCharId = daapi.generateCharacter({ characterFeatures: {}, dynastyFeatures: { ...state.dynasties[spouse.dynastyId], nomen, cognomen } }); let newDynId = daapi.getCharacter({ characterId: genCharId }).dynastyId; daapi.updateCharacter({ characterId: spouse.id, character: {dynastyId: newDynId} }); daapi.kill({ characterId: genCharId }); })()`
+Replace `New_Nomen` & `New_Cognomen` in the first line with whichever new nomen & cognomen you desire
 
 ## Add cash
 `daapi.displayInteractionModal({ title:'Money!', message: 'Here you go:', options: [{ text: 'Thanks!', statChanges: { cash: 500 }}]})`

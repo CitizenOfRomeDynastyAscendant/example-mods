@@ -57,7 +57,7 @@
           'roman_freedman': 'Freedman'
         }
         options.push({
-          text: `[c|${potentialSpouseId}|${potentialSpouse.praenomen}]`,
+          text: `[c|${potentialSpouseId}|${(potentialSpouse.praenomen + `, ` + potentialSpouseDynasty.nomen + ` ` + potentialSpouseDynasty.cognomen)}]`,
           tooltip: `[c|${potentialSpouseId}|${(potentialSpouse.praenomen + `, ` + potentialSpouseDynasty.nomen + ` ` + potentialSpouseDynasty.cognomen)}]` + ', of a ' + (heritages[potentialSpouseDynasty.heritage] || potentialSpouseDynasty.heritage) + ' family with ' + Math.round(potentialSpouseDynasty.prestige || 0) + ' prestige',
           action:{
             event: '/gay_marriage/main',

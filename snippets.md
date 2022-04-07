@@ -66,6 +66,7 @@ Or similarly `flagAttendingRhetor: 'deliberative'`
 
 ### Change spouse family nomen & cognomen
 `(function() {  let nomen = 'New_Nomen'; let cognomen = 'New_Cognomen'; let state = daapi.getState(); let spouse = state.characters[state.characters[state.current.id].spouseId]; let genCharId = daapi.generateCharacter({ characterFeatures: {}, dynastyFeatures: { ...state.dynasties[spouse.dynastyId], nomen, cognomen } }); let newDynId = daapi.getCharacter({ characterId: genCharId }).dynastyId; daapi.updateCharacter({ characterId: spouse.id, character: {dynastyId: newDynId} }); daapi.kill({ characterId: genCharId }); })()`
+
 Replace `New_Nomen` & `New_Cognomen` in the first line with whichever new nomen & cognomen you desire
 
 ## Add cash

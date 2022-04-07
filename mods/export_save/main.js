@@ -1,5 +1,4 @@
-// A risky and unsupported hack of a mod to export/import saves
-// Will very likely stop working with future releases
+// A way to export game save's raw data
 {
   canTriggerIfUnavailable: true,
   checkType: 'general',

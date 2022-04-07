@@ -25,9 +25,9 @@
       })
       let baby = daapi.getCharacter({ characterId: babyId })
       let messageFlavors = [
-        `[c|${character.spouseId}|${characterSpouse.praenomen}]` + ' found an abandoned child, they\'ve named ' + `[c|${babyId}|${baby.praenomen}]` + '. '+ `[c|${characterId}|${character.praenomen}]` +' can adopt & raise them as their own',
-        'A desititute family is looking to give away their baby, ' + `[c|${babyId}|${baby.praenomen}]` + '. They approach ' + `[c|${characterId}|${character.praenomen}]` + ' begging you to adopt & raise the child',
-        'A close relative of ' + `[c|${character.spouseId}|${characterSpouse.praenomen}]` + ' recently passed away leaving their child ' + `[c|${babyId}|${baby.praenomen}]` + ' a denariiless orphan. They\'d like to adopt the child & raise them as their own'
+        `[c|${character.spouseId}|${characterSpouse.praenomen}]` + ' found an abandoned child, they\'ve named ' + `[c|${babyId}|${baby.praenomen}]` + '. Together with '+ `[c|${characterId}|${character.praenomen}]` +', they can adopt & raise the child as their own',
+        'A destitute family is looking to give away their baby, ' + `[c|${babyId}|${baby.praenomen}]` + '. They approach ' + `[c|${characterId}|${character.praenomen}]` + ' begging you to adopt & raise the child',
+        'A close relative of ' + `[c|${character.spouseId}|${characterSpouse.praenomen}]` + ' recently passed away leaving their child ' + `[c|${babyId}|${baby.praenomen}]` + ' a denarii-less orphan. They\'d like to adopt the child & raise them as their own'
       ]
       daapi.pushInteractionModalQueue({
         title: 'A child?',

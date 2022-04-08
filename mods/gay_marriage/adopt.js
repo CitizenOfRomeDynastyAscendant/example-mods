@@ -26,7 +26,7 @@
       let baby = daapi.getCharacter({ characterId: babyId })
       let messageFlavors = [
         `[c|${character.spouseId}|${characterSpouse.praenomen}]` + ' found an abandoned child, they\'ve named ' + `[c|${babyId}|${baby.praenomen}]` + '. Together with '+ `[c|${characterId}|${character.praenomen}]` +', they can adopt & raise the child as their own',
-        'A destitute family is looking to give away their baby, ' + `[c|${babyId}|${baby.praenomen}]` + '. They approach ' + `[c|${characterId}|${character.praenomen}]` + ' begging you to adopt & raise the child',
+        'A destitute family is looking to give away their baby, ' + `[c|${babyId}|${baby.praenomen}]` + '. They approach ' + `[c|${characterId}|${character.praenomen}]` + ' begging them to adopt & raise the child',
         'A close relative of ' + `[c|${character.spouseId}|${characterSpouse.praenomen}]` + ' recently passed away leaving their child ' + `[c|${babyId}|${baby.praenomen}]` + ' a denarii-less orphan. They\'d like to adopt the child & raise them as their own'
       ]
       daapi.pushInteractionModalQueue({
@@ -43,7 +43,7 @@
             }
           },
           {
-            text: 'We cannot afford to take care of this child. Let\'s find them another home'
+            text: 'We cannot take care of this child. Let\'s find them another home'
           }
         ]
       })

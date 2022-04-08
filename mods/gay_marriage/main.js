@@ -58,7 +58,7 @@
         }
         options.push({
           text: `[c|${potentialSpouseId}|${(potentialSpouse.praenomen + `, ` + potentialSpouseDynasty.nomen + ` ` + potentialSpouseDynasty.cognomen)}]`,
-          tooltip: `[c|${potentialSpouseId}|${(potentialSpouse.praenomen + `, ` + potentialSpouseDynasty.nomen + ` ` + potentialSpouseDynasty.cognomen)}]` + ', of a ' + (heritages[potentialSpouseDynasty.heritage] || potentialSpouseDynasty.heritage) + ' family with ' + Math.round(potentialSpouseDynasty.prestige || 0) + ' prestige',
+          tooltip: `[c|${potentialSpouseId}|${potentialSpouse.praenomen}]` + ', of a ' + (heritages[potentialSpouseDynasty.heritage] || potentialSpouseDynasty.heritage) + ' family with ' + Math.round(potentialSpouseDynasty.prestige || 0) + ' prestige',
           action:{
             event: '/gay_marriage/main',
             method: 'doMarry',

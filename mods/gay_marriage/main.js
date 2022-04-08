@@ -73,7 +73,7 @@
         options: [
           ...options,
           {
-            text: 'None of them are a fit'
+            text: 'None of them are a match'
           }
         ]
       })

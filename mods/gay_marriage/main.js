@@ -3,12 +3,15 @@
   canTriggerIfUnavailable: true,
   checkType: 'householdCharacters',
   checkAndAct(characterId) {
-    let character = daapi.getCharacter({ characterId })
+    let state = daapi.getState()
+    let character = state.characters[characterId]
     let age = daapi.calculateAge({ month: character.birthMonth, year: character.birthYear })
     if (
       character &&
       !character.isDead &&
-      !character.spouseId &&
+      (character.spouseId === null ||
+      !state.characters[character.spouseId] ||
+      state.characters[character.spouseId].isDead) &&
       age >= 16
     ) {
       daapi.addCharacterAction({

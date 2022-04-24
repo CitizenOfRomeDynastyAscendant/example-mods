@@ -35,7 +35,7 @@
         image: daapi.requireImage('/gay_marriage/heir.svg'),
         options: [
           {
-            text: `[c|${characterId}|${character.praenomen}]` + ' and ' + `[c|${character.spouseId}|${characterSpouse.praenomen}]` + ' are your parents now, ' + `[c|${babyId}|${baby.praenomen}]`,
+            text: `[c|${characterId}|${character.praenomen}]` + ' and ' + `[c|${character.spouseId}|${characterSpouse.praenomen}]` + ' will be your parents now, ' + `[c|${babyId}|${baby.praenomen}]`,
             action:{
               event: '/gay_marriage/adopt',
               method: 'doAdopt',

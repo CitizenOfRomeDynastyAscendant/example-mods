@@ -35,6 +35,7 @@
   			}
   			options.push({
           text: scenarioData.title,
+          tooltip: scenarioData.info,
           statChanges: {
             cash: ((parseFloat(scenarioData.cash) || 0) - (parseFloat(state.current.cash) || 0)) / scaleByClassFactor,
             influence: ((parseFloat(scenarioData.influence) || 0) - (parseFloat(state.current.influence) || 0)) / scaleByClassFactor,

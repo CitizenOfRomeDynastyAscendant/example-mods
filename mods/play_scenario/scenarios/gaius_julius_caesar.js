@@ -1,5 +1,6 @@
 {
 	title: 'Gaius Julius Caesar, Quintilis, 652 A.U.C',
+  info: 'Start as the father of the (in)famous Julius Caesar (~8 years old on this date)',
   characterId: 'Gaius_Julius_Caesar_Father',
 	date: {
 		day: 14,

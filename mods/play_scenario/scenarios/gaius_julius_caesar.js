@@ -74,7 +74,7 @@
       fatherId: null,
       motherId: null,
       childrenIds: ['Julia_Major', 'Julia_Minor', 'Gaius_Julius_Caesar'],
-      traits: [],
+      traits: ['educated'],
       skills: {
         intelligence: Math.round(Math.random() * 10) + 10,
         stewardship: Math.round(Math.random() * 10) + 10,
@@ -113,7 +113,18 @@
         group: 'roman',
         type: 'black'
       },
-      inheritance: 0
+      inheritance: 0,
+      flagIsBusy: true,
+      flagAttendingLudus: 'private',
+      actions: {
+        beginLudusEducation: {
+          isAvailable: false
+        },
+        endLudusEducation: {
+          isAvailable: false
+        }
+      },
+      statuses: {}
 		},
 		'Julia_Minor': {
       id: 'Julia_Minor',
@@ -141,7 +152,18 @@
         group: 'roman',
         type: 'brown'
       },
-      inheritance: 0
+      inheritance: 0,
+      flagIsBusy: true,
+      flagAttendingLudus: 'private',
+      actions: {
+        beginLudusEducation: {
+          isAvailable: false
+        },
+        endLudusEducation: {
+          isAvailable: false
+        }
+      },
+      statuses: {}
 		},
 		'Gaius_Julius_Caesar': {
       id: 'Gaius_Julius_Caesar',
@@ -158,7 +180,7 @@
       fatherId: 'Gaius_Julius_Caesar_Father',
       motherId: 'Aurelia_Mother',
       childrenIds: [],
-      traits: ['literate'],
+      traits: ['achillean'],
       skills: {
         intelligence: Math.round(Math.random() * 10) + 10,
         stewardship: Math.round(Math.random() * 10) + 10,
@@ -169,7 +191,18 @@
         group: 'roman',
         type: 'black'
       },
-      inheritance: 0
+      inheritance: 0,
+      flagIsBusy: true,
+      flagAttendingLudus: 'private',
+      actions: {
+        beginLudusEducation: {
+          isAvailable: false
+        },
+        endLudusEducation: {
+          isAvailable: false
+        }
+      },
+      statuses: {}
 		}
 	}
 }

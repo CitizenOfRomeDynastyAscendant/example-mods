@@ -78,6 +78,9 @@
   			genCharIdMapping[tmpCharacterId] = genCharId
   		}
   		for(let tmpCharacterId in genCharIdMapping) {
+  			if(!genCharIdMapping.hasOwnProperty(tmpCharacterId)) {
+  				continue
+  			}
   			let character = scenarioData.characters[tmpCharacterId]
   			character.id = genCharIdMapping[tmpCharacterId]
   			character.fatherId = genCharIdMapping[character.fatherId]

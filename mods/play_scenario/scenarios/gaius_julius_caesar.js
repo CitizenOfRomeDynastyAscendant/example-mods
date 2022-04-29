@@ -57,6 +57,8 @@
         group: 'roman',
         type: 'black'
       },
+      flagServedQuaestor: true,
+      flagServedPraetor: true,
       inheritance: 0
 		},
 		'Aurelia_Mother': {
@@ -180,7 +182,7 @@
       fatherId: 'Gaius_Julius_Caesar_Father',
       motherId: 'Aurelia_Mother',
       childrenIds: [],
-      traits: ['achillean'],
+      traits: ['ambitious', 'authoritative', 'achillean'],
       skills: {
         intelligence: Math.round(Math.random() * 10) + 10,
         stewardship: Math.round(Math.random() * 10) + 10,
@@ -194,6 +196,7 @@
       inheritance: 0,
       flagIsBusy: true,
       flagAttendingLudus: 'private',
+      flagAssignedPersonalityTrait: true,
       actions: {
         beginLudusEducation: {
           isAvailable: false

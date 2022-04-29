@@ -32,6 +32,9 @@
   					continue
   				}
   				property[prop] = (parseInt(scenarioData.property[prop], 10) || 0) - (parseInt(state.current.propertyDetails[prop], 10) || 0)
+  				if(!property[prop]) {
+  					delete property[prop]
+  				}
   			}
   			options.push({
           text: scenarioData.title,
@@ -63,7 +66,7 @@
       })
   	},
   	playScenario({ scenario }) {
-  		let scenarioData = daapi.modData.events[scenario]
+  		let scenarioData = {...daapi.modData.events[scenario]}
   		daapi.setDate(scenarioData.date)
   		let genCharIdMapping = {}
   		// load characters & linked dynasties
@@ -81,15 +84,17 @@
   			if(!genCharIdMapping.hasOwnProperty(tmpCharacterId)) {
   				continue
   			}
-  			let character = scenarioData.characters[tmpCharacterId]
+  			let character = {...scenarioData.characters[tmpCharacterId]}
   			character.id = genCharIdMapping[tmpCharacterId]
-  			character.fatherId = genCharIdMapping[character.fatherId]
-  			character.motherId = genCharIdMapping[character.motherId]
-  			character.spouseId = genCharIdMapping[character.spouseId]
+  			character.fatherId = genCharIdMapping[character.fatherId] || false
+  			character.motherId = genCharIdMapping[character.motherId] || false
+  			character.spouseId = genCharIdMapping[character.spouseId] || false
   			let newChildrenIds = []
   			character.childrenIds = character.childrenIds || []
   			character.childrenIds.forEach((childId) => {
-  				newChildrenIds.push(genCharIdMapping[childId])
+  				if(genCharIdMapping[childId]) {
+	  				newChildrenIds.push(genCharIdMapping[childId])
+	  			}
   			})
   			character.childrenIds = newChildrenIds
   			daapi.updateCharacter({

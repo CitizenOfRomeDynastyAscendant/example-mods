@@ -104,6 +104,7 @@
       }
       // play as
       daapi.setCurrentCharacter({ characterId: genCharIdMapping[scenarioData.characterId] })
+      daapi.setGlobalFlag({ flag: 'playingScenario', data: scenario })
     }
   }
 }

@@ -1,12 +1,12 @@
 {
-	title: 'Gaius Julius Caesar, Quintilis, 661 A.U.C',
+  title: 'Gaius Julius Caesar, Quintilis, 661 A.U.C',
   info: 'Start as the father of the (in)famous Julius Caesar (~8 years old on this date)',
   characterId: 'Gaius_Julius_Caesar_Father',
-	date: {
-		day: 14,
-		month: 6,
-		year: 661
-	},
+  date: {
+    day: 14,
+    month: 6,
+    year: 661
+  },
   cash: 250000,
   influence: 30000,
   property: {
@@ -14,24 +14,24 @@
     vinyard: 20,
     latifundiumAnimal: 2
   },
-	dynasties: {
-		Julius_Caesar: {
+  dynasties: {
+    Julius_Caesar: {
       id: 'Julius_Caesar',
       nomen: 'Julius',
       cognomen: 'Caesar',
       prestige: 150000,
       heritage: 'roman_patrician'
-		},
-		Aurelius_Cotta: {
+    },
+    Aurelius_Cotta: {
       id: 'Aurelius_Cotta',
       nomen: 'Aurelius',
       cognomen: 'Cotta',
       prestige: 100000,
       heritage: 'roman_novus_homo'
-		}
-	},
-	characters: {
-		'Gaius_Julius_Caesar_Father': {
+    }
+  },
+  characters: {
+    'Gaius_Julius_Caesar_Father': {
       id: 'Gaius_Julius_Caesar_Father',
       dynastyId: 'Julius_Caesar',
       isAlive: true,
@@ -60,8 +60,8 @@
       flagServedQuaestor: true,
       flagServedPraetor: true,
       inheritance: 0
-		},
-		'Aurelia_Mother': {
+    },
+    'Aurelia_Mother': {
       id: 'Aurelia_Mother',
       dynastyId: 'Aurelius_Cotta',
       isAlive: true,
@@ -88,8 +88,8 @@
         type: 'brown'
       },
       inheritance: 50000
-		},
-		'Julia_Major': {
+    },
+    'Julia_Major': {
       id: 'Julia_Major',
       dynastyId: 'Julius_Caesar',
       isAlive: true,
@@ -127,8 +127,8 @@
         }
       },
       statuses: {}
-		},
-		'Julia_Minor': {
+    },
+    'Julia_Minor': {
       id: 'Julia_Minor',
       dynastyId: 'Julius_Caesar',
       isAlive: true,
@@ -166,8 +166,8 @@
         }
       },
       statuses: {}
-		},
-		'Gaius_Julius_Caesar': {
+    },
+    'Gaius_Julius_Caesar': {
       id: 'Gaius_Julius_Caesar',
       dynastyId: 'Julius_Caesar',
       isAlive: true,
@@ -206,6 +206,6 @@
         }
       },
       statuses: {}
-		}
-	}
+    }
+  }
 }

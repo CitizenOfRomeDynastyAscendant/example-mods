@@ -14,10 +14,10 @@
     tradeships: 2
   },
 	dynasties: {
-		Vipsanius: {
-      id: 'Vipsanius',
+		Vipsanius__: {
+      id: 'Vipsanius__',
       nomen: 'Vipsanius',
-      cognomen: '',
+      cognomen: '_',
       prestige: 15000,
       heritage: 'roman_plebian'
 		},
@@ -32,7 +32,7 @@
 	characters: {
     'Marcus_Vipsanius_Agrippa_Father': {
       id: 'Marcus_Vipsanius_Agrippa_Father',
-      dynastyId: 'Vipsanius',
+      dynastyId: 'Vipsanius__',
       isAlive: true,
       isMale: true,
       praenomen: 'Lucius',
@@ -84,7 +84,7 @@
 		},
 		'Marcus_Vipsanius_Agrippa': {
       id: 'Marcus_Vipsanius_Agrippa',
-      dynastyId: 'Vipsanius',
+      dynastyId: 'Vipsanius__',
       isAlive: true,
       isMale: true,
       praenomen: 'Marcus',

@@ -1,1 +1,0 @@
-['/new_dynasty/main']

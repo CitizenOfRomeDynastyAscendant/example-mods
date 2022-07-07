@@ -1,34 +1,34 @@
 {
-  title: 'Marcus Vipsanius Agrippa, Quintilis, 690 A.U.C',
+	title: 'Marcus Vipsanius Agrippa, Quintilis, 690 A.U.C',
   info: 'Start as the father of Marcus, a Roman general, statesman, and architect who was a close friend, son-in-law, and lieutenant to the first Roman emperor Augustus',
   characterId: 'Marcus_Vipsanius_Agrippa_Father',
-  date: {
-    day: 14,
-    month: 6,
-    year: 696
-  },
+	date: {
+		day: 14,
+		month: 6,
+		year: 696
+	},
   cash: 3000,
   influence: 10000,
   property: {
     insulae: 4
   },
-  dynasties: {
-    Vipsanius_Agrippa: {
+	dynasties: {
+		Vipsanius_Agrippa: {
       id: 'Vipsanius_Agrippa',
       nomen: 'Vipsanius',
       cognomen: 'Agrippa',
       prestige: 150000,
       heritage: 'roman_plebian'
-    },
-    Aurelius_Cotta: {
+		},
+		Aurelius_Cotta: {
       id: 'Aurelius_Cotta',
       nomen: 'Aurelius',
       cognomen: 'Cotta',
       prestige: 100000,
       heritage: 'roman_novus_homo'
-    }
-  },
-  characters: {
+		}
+	},
+	characters: {
     'Marcus_Vipsanius_Agrippa_Father':{
       id: 'Marcus_Vipsanius_Agrippa_Father',
       dynastyId: 'Vipsanius_Agrippa',
@@ -53,7 +53,7 @@
       },
       flagAssignedPersonalityTrait: true
     },
-    'Aurelia_Mother': {
+		'Aurelia_Mother': {
       id: 'Aurelia_Mother',
       dynastyId: 'Aurelius_Cotta',
       isAlive: true,
@@ -80,8 +80,8 @@
         type: 'brown'
       },
       inheritance: 50000
-    },
-    'Marcus_Vipsanius_Agrippa': {
+		},
+		'Marcus_Vipsanius_Agrippa': {
       id: 'Marcus_Vipsanius_Agrippa',
       dynastyId: 'Vipsanius_Agrippa',
       isAlive: true,
@@ -119,6 +119,6 @@
         }
       },
       statuses: {}
-    }
+		}
   }
 }

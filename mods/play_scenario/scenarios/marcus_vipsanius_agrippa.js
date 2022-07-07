@@ -7,17 +7,18 @@
 		month: 6,
 		year: 696
 	},
-  cash: 3000,
+  cash: 4500,
   influence: 10000,
   property: {
-    insulae: 4
+    insulae: 5,
+    tradeships: 2
   },
 	dynasties: {
-		Vipsanius_Agrippa: {
-      id: 'Vipsanius_Agrippa',
+		Vipsanius: {
+      id: 'Vipsanius',
       nomen: 'Vipsanius',
-      cognomen: 'Agrippa',
-      prestige: 150000,
+      cognomen: '',
+      prestige: 15000,
       heritage: 'roman_plebian'
 		},
 		Aurelius_Cotta: {
@@ -29,12 +30,12 @@
 		}
 	},
 	characters: {
-    'Marcus_Vipsanius_Agrippa_Father':{
+    'Marcus_Vipsanius_Agrippa_Father': {
       id: 'Marcus_Vipsanius_Agrippa_Father',
-      dynastyId: 'Vipsanius_Agrippa',
+      dynastyId: 'Vipsanius',
       isAlive: true,
       isMale: true,
-      praenomen: 'Gothicus',
+      praenomen: 'Lucius',
       agnomen: '',
       birthMonth: 6,
       birthYear: 664,
@@ -83,7 +84,7 @@
 		},
 		'Marcus_Vipsanius_Agrippa': {
       id: 'Marcus_Vipsanius_Agrippa',
-      dynastyId: 'Vipsanius_Agrippa',
+      dynastyId: 'Vipsanius',
       isAlive: true,
       isMale: true,
       praenomen: 'Marcus',
@@ -95,12 +96,12 @@
       fatherId: 'Marcus_Vipsanius_Agrippa_Father',
       motherId: 'Aurelia_Mother',
       childrenIds: [],
-      traits: ['strong', 'genius', 'honorable', 'erudite'],
+      traits: ['genius', 'honorable', 'erudite'],
       skills: {
-        intelligence: Math.round(Math.random() * 10) + 20,
-        stewardship: Math.round(Math.random() * 10) + 20,
-        eloquence: Math.round(Math.random() * 10) + 20,
-        combat: Math.round(Math.random() * 10) + 20
+        intelligence: Math.round(Math.random() * 10) + 10,
+        stewardship: Math.round(Math.random() * 10) + 10,
+        eloquence: Math.round(Math.random() * 10) + 10,
+        combat: Math.round(Math.random() * 10) + 5
       },
       look: {
         group: 'roman',

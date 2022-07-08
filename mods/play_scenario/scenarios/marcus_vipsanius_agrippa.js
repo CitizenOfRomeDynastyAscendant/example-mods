@@ -11,14 +11,14 @@
   influence: 10000,
   property: {
     horse: 1,
-    insulae: 5,
+    insulae: 4,
     tradeships: 2
   },
 	dynasties: {
-		Vipsanius__: {
-      id: 'Vipsanius__',
+		'Vipsanius_ ': {
+      id: 'Vipsanius_ ',
       nomen: 'Vipsanius',
-      cognomen: '_',
+      cognomen: ' ',
       prestige: 1500,
       heritage: 'roman_plebian'
 		},
@@ -33,7 +33,7 @@
 	characters: {
     'Marcus_Vipsanius_Agrippa_Father': {
       id: 'Marcus_Vipsanius_Agrippa_Father',
-      dynastyId: 'Vipsanius__',
+      dynastyId: 'Vipsanius_ ',
       isAlive: true,
       isMale: true,
       praenomen: 'Lucius',
@@ -85,7 +85,7 @@
 		},
 		'Marcus_Vipsanius_Agrippa': {
       id: 'Marcus_Vipsanius_Agrippa',
-      dynastyId: 'Vipsanius__',
+      dynastyId: 'Vipsanius_ ',
       isAlive: true,
       isMale: true,
       praenomen: 'Marcus',

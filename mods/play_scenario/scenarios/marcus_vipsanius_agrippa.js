@@ -1,12 +1,12 @@
 {
-	title: 'Marcus Vipsanius Agrippa, Quintilis, 690 A.U.C',
+  title: 'Marcus Vipsanius Agrippa, Quintilis, 690 A.U.C',
   info: 'Start as Marcus, a Roman general, statesman, and architect who was a close friend, son-in-law, and lieutenant to the first Roman emperor Augustus',
   characterId: 'Marcus_Vipsanius_Agrippa',
-	date: {
-		day: 1,
-		month: 4,
-		year: 706
-	},
+  date: {
+    day: 1,
+    month: 4,
+    year: 706
+  },
   cash: 10000,
   influence: 10000,
   property: {
@@ -21,23 +21,23 @@
     cattle: 25,
     chicken: 25
   },
-	dynasties: {
-		'Vipsanius_Agrippa': {
+  dynasties: {
+    'Vipsanius_Agrippa': {
       id: 'Vipsanius_Agrippa',
       nomen: 'Vipsanius',
       cognomen: 'Agrippa',
       prestige: 1500,
       heritage: 'roman_plebian'
-		},
-		Aurelius_Mysticus: {
+    },
+    Aurelius_Mysticus: {
       id: 'Aurelius_Mysticus',
       nomen: 'Aurelius',
       cognomen: 'Mysticus',
       prestige: 10000,
       heritage: 'roman_freedman'
-		}
-	},
-	characters: {
+    }
+  },
+  characters: {
     'Marcus_Vipsanius_Agrippa_Father': {
       id: 'Marcus_Vipsanius_Agrippa_Father',
       dynastyId: 'Vipsanius_Agrippa',
@@ -64,7 +64,7 @@
       },
       flagAssignedPersonalityTrait: true
     },
-		'Aurelia_Mother': {
+    'Aurelia_Mother': {
       id: 'Aurelia_Mother',
       dynastyId: 'Aurelius_Mysticus',
       isDead: false,
@@ -92,8 +92,8 @@
       },
       inheritance: 5000,
       flagAssignedPersonalityTrait: true
-		},
-		'Marcus_Vipsanius_Agrippa': {
+    },
+    'Marcus_Vipsanius_Agrippa': {
       id: 'Marcus_Vipsanius_Agrippa',
       dynastyId: 'Vipsanius_Agrippa',
       isDead: false,
@@ -120,6 +120,6 @@
         type: 'black'
       },
       flagAssignedPersonalityTrait: true
-		}
+    }
   }
 }

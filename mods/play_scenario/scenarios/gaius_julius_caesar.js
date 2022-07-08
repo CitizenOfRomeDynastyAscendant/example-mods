@@ -34,7 +34,7 @@
     'Gaius_Julius_Caesar_Father': {
       id: 'Gaius_Julius_Caesar_Father',
       dynastyId: 'Julius_Caesar',
-      isAlive: true,
+      isDead: false,
       isMale: true,
       praenomen: 'Gaius',
       agnomen: '',
@@ -64,7 +64,7 @@
     'Aurelia_Mother': {
       id: 'Aurelia_Mother',
       dynastyId: 'Aurelius_Cotta',
-      isAlive: true,
+      isDead: false,
       isMale: false,
       praenomen: 'Aurelia',
       agnomen: '',
@@ -92,7 +92,7 @@
     'Julia_Major': {
       id: 'Julia_Major',
       dynastyId: 'Julius_Caesar',
-      isAlive: true,
+      isDead: false,
       isMale: false,
       praenomen: 'Julia',
       agnomen: 'Major',
@@ -131,7 +131,7 @@
     'Julia_Minor': {
       id: 'Julia_Minor',
       dynastyId: 'Julius_Caesar',
-      isAlive: true,
+      isDead: false,
       isMale: false,
       praenomen: 'Julia',
       agnomen: 'Minor',
@@ -170,7 +170,7 @@
     'Gaius_Julius_Caesar': {
       id: 'Gaius_Julius_Caesar',
       dynastyId: 'Julius_Caesar',
-      isAlive: true,
+      isDead: false,
       isMale: true,
       praenomen: 'Gaius',
       agnomen: '',
@@ -194,9 +194,9 @@
         type: 'black'
       },
       inheritance: 0,
+      flagAssignedPersonalityTrait: true,
       flagIsBusy: true,
       flagAttendingLudus: 'private',
-      flagAssignedPersonalityTrait: true,
       actions: {
         beginLudusEducation: {
           isAvailable: false

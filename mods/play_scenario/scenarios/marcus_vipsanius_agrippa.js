@@ -44,7 +44,7 @@
       isDead: true,
       isMale: true,
       praenomen: 'Lucius',
-      agnomen: 'Major',
+      agnomen: '',
       birthMonth: 11,
       birthYear: 664,
       deathMonth: 3,
@@ -62,6 +62,7 @@
         eloquence: Math.round(Math.random() * 10),
         combat: Math.round(Math.random() * 10) + 7
       },
+      inheritance: 0,
       flagAssignedPersonalityTrait: true
     },
     'Aurelia_Mother': {
@@ -90,7 +91,7 @@
         group: 'roman',
         type: 'brown'
       },
-      inheritance: 5000,
+      inheritance: 0,
       flagAssignedPersonalityTrait: true
     },
     'Marcus_Vipsanius_Agrippa': {

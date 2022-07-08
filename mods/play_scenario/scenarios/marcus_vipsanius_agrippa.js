@@ -120,7 +120,8 @@
         group: 'roman',
         type: 'black'
       },
-      flagAssignedPersonalityTrait: true
+      flagAssignedPersonalityTrait: true,
+      flagPlayScenarioModIsMarcusAgrippa: true
     },
     'Vipsania_Polla': {
       id: 'Vipsania_Polla',

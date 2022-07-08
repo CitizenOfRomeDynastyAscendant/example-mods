@@ -140,10 +140,10 @@
       childrenIds: [],
       traits: ['oratorDeliberative', 'honorable'],
       skills: {
-        intelligence: Math.round(Math.random() * 10) + 20,
-        stewardship: Math.round(Math.random() * 10) + 10,
-        eloquence: Math.round(Math.random() * 10) + 15,
-        combat: Math.round(Math.random() * 10) + 10
+        intelligence: Math.round(Math.random() * 10) + 10,
+        stewardship: Math.round(Math.random() * 10) + 5,
+        eloquence: Math.round(Math.random() * 10) + 10,
+        combat: Math.round(Math.random() * 10) + 5
       },
       look: {
         group: 'roman',
@@ -167,9 +167,9 @@
       childrenIds: [],
       traits: ['oratorJudicial'],
       skills: {
-        intelligence: Math.round(Math.random() * 10) + 20,
-        stewardship: Math.round(Math.random() * 10) + 10,
-        eloquence: Math.round(Math.random() * 10) + 15,
+        intelligence: Math.round(Math.random() * 10) + 10,
+        stewardship: Math.round(Math.random() * 10),
+        eloquence: Math.round(Math.random() * 10),
         combat: Math.round(Math.random() * 10) + 10
       },
       look: {

@@ -7,9 +7,10 @@
 		month: 6,
 		year: 696
 	},
-  cash: 4500,
+  cash: 3000,
   influence: 10000,
   property: {
+    horse: 1,
     insulae: 5,
     tradeships: 2
   },
@@ -18,14 +19,14 @@
       id: 'Vipsanius__',
       nomen: 'Vipsanius',
       cognomen: '_',
-      prestige: 15000,
+      prestige: 1500,
       heritage: 'roman_plebian'
 		},
-		Aurelius_Cotta: {
-      id: 'Aurelius_Cotta',
+		Aurelius_Mysticus: {
+      id: 'Aurelius_Mysticus',
       nomen: 'Aurelius',
-      cognomen: 'Cotta',
-      prestige: 100000,
+      cognomen: 'Mysticus',
+      prestige: 10000,
       heritage: 'roman_novus_homo'
 		}
 	},
@@ -36,7 +37,7 @@
       isAlive: true,
       isMale: true,
       praenomen: 'Lucius',
-      agnomen: '',
+      agnomen: 'Major',
       birthMonth: 6,
       birthYear: 664,
       job: 'trader',
@@ -56,7 +57,7 @@
     },
 		'Aurelia_Mother': {
       id: 'Aurelia_Mother',
-      dynastyId: 'Aurelius_Cotta',
+      dynastyId: 'Aurelius_Mysticus',
       isAlive: true,
       isMale: false,
       praenomen: 'Aurelia',
@@ -69,7 +70,7 @@
       fatherId: null,
       motherId: null,
       childrenIds: ['Marcus_Vipsanius_Agrippa'],
-      traits: ['educated'],
+      traits: ['educated', 'illness', 'mystic'],
       skills: {
         intelligence: Math.round(Math.random() * 10) + 10,
         stewardship: Math.round(Math.random() * 10) + 10,
@@ -89,6 +90,7 @@
       isMale: true,
       praenomen: 'Marcus',
       agnomen: '',
+      cognomen: 'Agrippa',
       birthMonth: 3,
       birthYear: 690,
       job: null,

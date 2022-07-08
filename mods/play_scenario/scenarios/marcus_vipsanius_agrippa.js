@@ -54,7 +54,7 @@
       spouseId: 'Aurelia_Mother',
       fatherId: null,
       motherId: null,
-      childrenIds: ['Marcus_Vipsanius_Agrippa'],
+      childrenIds: ['Lucius_Vipsanius', 'Vipsania_Polla', 'Marcus_Vipsanius_Agrippa'],
       traits: ['veteran', 'oratorDeliberative'],
       skills: {
         intelligence: Math.round(Math.random() * 10) + 10,
@@ -79,7 +79,7 @@
       spouseId: 'Marcus_Vipsanius_Agrippa_Father',
       fatherId: null,
       motherId: null,
-      childrenIds: ['Marcus_Vipsanius_Agrippa'],
+      childrenIds: ['Lucius_Vipsanius', 'Vipsania_Polla', 'Marcus_Vipsanius_Agrippa'],
       traits: ['educated', 'illness', 'mystic'],
       skills: {
         intelligence: Math.round(Math.random() * 10) + 10,
@@ -121,6 +121,62 @@
         type: 'black'
       },
       flagAssignedPersonalityTrait: true
+    },
+    'Vipsania_Polla': {
+      id: 'Vipsania_Polla',
+      dynastyId: 'Vipsanius_Agrippa',
+      isDead: false,
+      isMale: false,
+      praenomen: 'Vipsania Polla',
+      nomen: ' ',
+      agnomen: '',
+      cognomen: ' ',
+      birthMonth: 3,
+      birthYear: 685,
+      job: null,
+      jobLevel: 0,
+      fatherId: 'Marcus_Vipsanius_Agrippa_Father',
+      motherId: 'Aurelia_Mother',
+      childrenIds: [],
+      traits: ['oratorDeliberative', 'honorable'],
+      skills: {
+        intelligence: Math.round(Math.random() * 10) + 20,
+        stewardship: Math.round(Math.random() * 10) + 10,
+        eloquence: Math.round(Math.random() * 10) + 15,
+        combat: Math.round(Math.random() * 10) + 10
+      },
+      look: {
+        group: 'roman',
+        type: 'black'
+      },
+      flagAssignedPersonalityTrait: true
+    },
+    'Lucius_Vipsanius': {
+      id: 'Lucius_Vipsanius',
+      dynastyId: 'Vipsanius_Agrippa',
+      isDead: false,
+      isMale: true,
+      praenomen: 'Lucius',
+      agnomen: '',
+      birthMonth: 3,
+      birthYear: 685,
+      job: null,
+      jobLevel: 0,
+      fatherId: 'Marcus_Vipsanius_Agrippa_Father',
+      motherId: 'Aurelia_Mother',
+      childrenIds: [],
+      traits: ['oratorJudicial'],
+      skills: {
+        intelligence: Math.round(Math.random() * 10) + 20,
+        stewardship: Math.round(Math.random() * 10) + 10,
+        eloquence: Math.round(Math.random() * 10) + 15,
+        combat: Math.round(Math.random() * 10) + 10
+      },
+      look: {
+        group: 'roman',
+        type: 'black'
+      },
+      flagAssignedPersonalityTrait: false
     }
   }
 }

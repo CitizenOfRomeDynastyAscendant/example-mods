@@ -1,24 +1,31 @@
 {
 	title: 'Marcus Vipsanius Agrippa, Quintilis, 690 A.U.C',
-  info: 'Start as the father of Marcus, a Roman general, statesman, and architect who was a close friend, son-in-law, and lieutenant to the first Roman emperor Augustus',
-  characterId: 'Marcus_Vipsanius_Agrippa_Father',
+  info: 'Start as Marcus, a Roman general, statesman, and architect who was a close friend, son-in-law, and lieutenant to the first Roman emperor Augustus',
+  characterId: 'Marcus_Vipsanius_Agrippa',
 	date: {
-		day: 14,
-		month: 6,
-		year: 696
+		day: 1,
+		month: 4,
+		year: 706
 	},
-  cash: 3000,
+  cash: 10000,
   influence: 10000,
   property: {
     horse: 1,
-    insulae: 4,
-    tradeships: 2
+    farmland: 2,
+    vinyard: 3,
+    insulae: 5,
+    tradeships: 5,
+    fishingBoat: 20,
+    donkey: 30,
+    pig: 30,
+    cattle: 25,
+    chicken: 25
   },
 	dynasties: {
-		'Vipsanius_ ': {
-      id: 'Vipsanius_ ',
+		'Vipsanius_Agrippa': {
+      id: 'Vipsanius_Agrippa',
       nomen: 'Vipsanius',
-      cognomen: ' ',
+      cognomen: 'Agrippa',
       prestige: 1500,
       heritage: 'roman_plebian'
 		},
@@ -27,26 +34,28 @@
       nomen: 'Aurelius',
       cognomen: 'Mysticus',
       prestige: 10000,
-      heritage: 'roman_novus_homo'
+      heritage: 'roman_freedman'
 		}
 	},
 	characters: {
     'Marcus_Vipsanius_Agrippa_Father': {
       id: 'Marcus_Vipsanius_Agrippa_Father',
-      dynastyId: 'Vipsanius_ ',
-      isAlive: true,
+      dynastyId: 'Vipsanius_Agrippa',
+      isDead: true,
       isMale: true,
       praenomen: 'Lucius',
       agnomen: 'Major',
-      birthMonth: 6,
+      birthMonth: 11,
       birthYear: 664,
-      job: 'trader',
-      jobLevel: 7,
+      deathMonth: 3,
+      deathYear: 705,
+      job: null,
+      jobLevel: 0,
       spouseId: 'Aurelia_Mother',
       fatherId: null,
       motherId: null,
       childrenIds: ['Marcus_Vipsanius_Agrippa'],
-      traits: ['literate', 'veteran', 'gladiator', 'content', 'ace'],
+      traits: ['veteran', 'oratorDeliberative'],
       skills: {
         intelligence: Math.round(Math.random() * 10) + 10,
         stewardship: Math.round(Math.random() * 10),
@@ -58,14 +67,14 @@
 		'Aurelia_Mother': {
       id: 'Aurelia_Mother',
       dynastyId: 'Aurelius_Mysticus',
-      isAlive: true,
+      isDead: false,
       isMale: false,
       praenomen: 'Aurelia',
       agnomen: '',
       birthMonth: 9,
       birthYear: 669,
       job: 'physician',
-      jobLevel: 1,
+      jobLevel: 6,
       spouseId: 'Marcus_Vipsanius_Agrippa_Father',
       fatherId: null,
       motherId: null,
@@ -81,12 +90,13 @@
         group: 'roman',
         type: 'brown'
       },
-      inheritance: 50000
+      inheritance: 5000,
+      flagAssignedPersonalityTrait: true
 		},
 		'Marcus_Vipsanius_Agrippa': {
       id: 'Marcus_Vipsanius_Agrippa',
-      dynastyId: 'Vipsanius_ ',
-      isAlive: true,
+      dynastyId: 'Vipsanius_Agrippa',
+      isDead: false,
       isMale: true,
       praenomen: 'Marcus',
       agnomen: '',
@@ -98,30 +108,18 @@
       fatherId: 'Marcus_Vipsanius_Agrippa_Father',
       motherId: 'Aurelia_Mother',
       childrenIds: [],
-      traits: ['genius', 'honorable', 'erudite'],
+      traits: ['genius', 'erudite', 'oratorJudicial', 'honorable'],
       skills: {
-        intelligence: Math.round(Math.random() * 10) + 10,
+        intelligence: Math.round(Math.random() * 10) + 20,
         stewardship: Math.round(Math.random() * 10) + 10,
-        eloquence: Math.round(Math.random() * 10) + 10,
-        combat: Math.round(Math.random() * 10) + 5
+        eloquence: Math.round(Math.random() * 10) + 15,
+        combat: Math.round(Math.random() * 10) + 10
       },
       look: {
         group: 'roman',
         type: 'black'
       },
-      inheritance: 0,
-      flagIsBusy: true,
-      flagAttendingLudus: 'private',
-      flagAssignedPersonalityTrait: true,
-      actions: {
-        beginLudusEducation: {
-          isAvailable: false
-        },
-        endLudusEducation: {
-          isAvailable: false
-        }
-      },
-      statuses: {}
+      flagAssignedPersonalityTrait: true
 		}
   }
 }

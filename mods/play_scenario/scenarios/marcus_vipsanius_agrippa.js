@@ -33,7 +33,7 @@
       id: 'Aurelius_Mysticus',
       nomen: 'Aurelius',
       cognomen: 'Mysticus',
-      prestige: 10000,
+      prestige: 100,
       heritage: 'roman_freedman'
     }
   },
@@ -89,7 +89,7 @@
       },
       look: {
         group: 'roman',
-        type: 'brown'
+        type: 'auburn'
       },
       inheritance: 0,
       flagAssignedPersonalityTrait: true

@@ -194,9 +194,9 @@
         type: 'black'
       },
       inheritance: 0,
+      flagAssignedPersonalityTrait: true,
       flagIsBusy: true,
       flagAttendingLudus: 'private',
-      flagAssignedPersonalityTrait: true,
       actions: {
         beginLudusEducation: {
           isAvailable: false

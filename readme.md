@@ -199,10 +199,11 @@ generateCharacter({
   Generates a new character and returns the character ID.
   All fields are optional and can be skipped for the game to use default/random values
 
-marryRandom({ characterId })
+marryRandom({ characterId, isMatrilineal })
   Generates a new character, marries them to the given characterId and returns the ID of the newly generated spouse character
 
 performMarriage({ characterId, spouseId, isMatrilineal })
+  Performs a marriage between the characters with the given IDs
 
 impregnate({ characterId, fatherId })
 

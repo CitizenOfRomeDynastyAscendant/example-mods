@@ -12,7 +12,6 @@ It displays the exact path for mods in the Settings screen after you enable mods
 
 Requires v1.4.1+
 
-
 Modding Support
 ===============
 
@@ -40,11 +39,11 @@ We showcase mods on our Discord, but here's a handy list:
 [github.com/CitizenOfRomeDynastyAscendant/example-mods](https://github.com/CitizenOfRomeDynastyAscendant/example-mods) -- Contains a set of example mods\
 Download the zip file from the [Releases section](https://github.com/CitizenOfRomeDynastyAscendant/example-mods/releases) for any mod you'd like to use and extract it as is in your mods directory
 
--   Give For Adoption -- Allows you to give children up for adoption
--   No More Kids -- Prevents the whole household from having more children via a toggleable button
--   New Dynasty? -- Allows you to branch off your current household with a new nomen, cognomen and heritage
--   Divorce -- Force any pair of characters in household to Divorce
--   Play As -- Play as an other character (women included)
+- Give For Adoption -- Allows you to give children up for adoption
+- No More Kids -- Prevents the whole household from having more children via a toggleable button
+- New Dynasty? -- Allows you to branch off your current household with a new nomen, cognomen and heritage
+- Divorce -- Force any pair of characters in household to Divorce
+- Play As -- Play as an other character (women included)
 
 [Bank of Rome and Household Slaves by peritiSumus](https://github.com/peritiSumus/CoR-Mods)
 
@@ -354,7 +353,8 @@ updateCharacter({
 forceUpdateCharacterDisplay({ characterId })
   Force the character display to be updated
 
-setCurrentCharacter({ characterId })  Switch player character
+setCurrentCharacter({ characterId })
+  Switch player character
 
 addCharacterLook({
    group: String,

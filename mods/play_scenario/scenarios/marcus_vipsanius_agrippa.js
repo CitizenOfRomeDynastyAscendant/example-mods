@@ -5,7 +5,7 @@
   date: {
     day: 1,
     month: 4,
-    year: 706
+    year: 716
   },
   cash: 10000,
   influence: 10000,
@@ -110,7 +110,7 @@
       fatherId: 'Marcus_Vipsanius_Agrippa_Father',
       motherId: 'Aurelia_Mother',
       childrenIds: [],
-      traits: ['genius', 'erudite', 'oratorJudicial', 'honorable'],
+      traits: ['genius', 'erudite', 'philosopher', 'honorable'],
       skills: {
         intelligence: Math.round(Math.random() * 10) + 20,
         stewardship: Math.round(Math.random() * 10) + 10,

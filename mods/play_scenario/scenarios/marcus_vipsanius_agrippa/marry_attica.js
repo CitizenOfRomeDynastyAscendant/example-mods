@@ -70,9 +70,9 @@
                 text: 'Marry your Fiance',
                 tooltip: 'Do it!',
                 statChanges: {
-                  cash: -25000 / scalingFactor,
-                  prestige: +5000 / scalingFactor,
-                  influence: +10000 / scalingFactor,
+                  cash: -5000 / scalingFactor,
+                  prestige: +2000 / scalingFactor,
+                  influence: +4000 / scalingFactor,
                   property: {
                     insulae: +1
                   }
@@ -88,8 +88,8 @@
                 text: 'I won\'t marry her.',
                 tooltip: 'Who cares about an agreement?',
                 statChanges: {
-                  prestige: -1000 / scalingFactor,
-                  influence: -20000 / scalingFactor
+                  prestige: -500 / scalingFactor,
+                  influence: -2000 / scalingFactor
                 }
               }
             ]

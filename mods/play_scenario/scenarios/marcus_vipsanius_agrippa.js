@@ -1,5 +1,5 @@
 {
-  title: 'Marcus Vipsanius Agrippa, Quintilis, 690 A.U.C',
+  title: 'Marcus Vipsanius Agrippa, 690 A.U.C',
   info: 'Start as Marcus, a Roman general, statesman, and architect who was a close friend, son-in-law, and lieutenant to the first Roman emperor Augustus',
   characterId: 'Marcus_Vipsanius_Agrippa',
   date: {

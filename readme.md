@@ -12,7 +12,6 @@ It displays the exact path for mods in the Settings screen after you enable mods
 
 Requires v1.4.1+
 
-
 Modding Support
 ===============
 
@@ -40,11 +39,11 @@ We showcase mods on our Discord, but here's a handy list:
 [github.com/CitizenOfRomeDynastyAscendant/example-mods](https://github.com/CitizenOfRomeDynastyAscendant/example-mods) -- Contains a set of example mods\
 Download the zip file from the [Releases section](https://github.com/CitizenOfRomeDynastyAscendant/example-mods/releases) for any mod you'd like to use and extract it as is in your mods directory
 
--   Give For Adoption -- Allows you to give children up for adoption
--   No More Kids -- Prevents the whole household from having more children via a toggleable button
--   New Dynasty? -- Allows you to branch off your current household with a new nomen, cognomen and heritage
--   Divorce -- Force any pair of characters in household to Divorce
--   Play As -- Play as an other character (women included)
+- Give For Adoption -- Allows you to give children up for adoption
+- No More Kids -- Prevents the whole household from having more children via a toggleable button
+- New Dynasty? -- Allows you to branch off your current household with a new nomen, cognomen and heritage
+- Divorce -- Force any pair of characters in household to Divorce
+- Play As -- Play as an other character (women included)
 
 [Bank of Rome and Household Slaves by peritiSumus](https://github.com/peritiSumus/CoR-Mods)
 
@@ -128,6 +127,7 @@ calculateAdditiveModifier({ key })
   Calculates the current cumulative modifier in effect for `key`
 
 calculateAge({ month, year, toMonth, toYear, day, toDay })
+  If the `to` parameters are not passed, it calculates the age of the character at the current game date
 
 calculateBaseSkill({ characterId, skillName })
   Returns a Floating point integer with the character's base skill
@@ -138,10 +138,27 @@ calculateCurrentProperty()
 
 calculateCurrentRevenue()
 
+calculateEffectiveHouseholdStewardhsip()
+
 calculateEffectiveMaxCashHolding()
+
+calculateCurrentClass()
 
 calculateScaleByClassFactor()
   Returns the automatic cost scaling factor. Divide your cash, influence and prestige `statChanges` to not apply this scaling factor
+
+calculateCharacterJobRevenue({
+      characterId,
+      job,
+      jobLevel,
+      excludeTemporaryGlobals
+    })
+
+calculateCharacterJobModifierFactor({
+      characterId,
+      job,
+      excludeTemporaryGlobals
+    })
 
 getState()
   Returns an object containing the entire game state data
@@ -182,15 +199,20 @@ generateCharacter({
   Generates a new character and returns the character ID.
   All fields are optional and can be skipped for the game to use default/random values
 
-marryRandom({ characterId })
+marryRandom({ characterId, isMatrilineal })
   Generates a new character, marries them to the given characterId and returns the ID of the newly generated spouse character
+
+performMarriage({ characterId, spouseId, isMatrilineal })
+  Performs a marriage between the characters with the given IDs
+
+impregnate({ characterId, fatherId })
 
 invokeMethod({ event, method, context })
   Executes a `method` listed in the `methods` object of the selected `event`.
   `event` is the full path to your event like '/modName/events/event1Name'
   `context` is passed down as the sole argument for your method, usually you would like to pass down things like the characterId and any other relevant context like so `context: {characterId: characterId}`
 
-pushInteractionModalQueue | pushInteractionModalButtonQueue | displayInteractionModal ({
+pushInteractionModalQueue | pushInteractionModalButtonQueue | displayInteractionModal | updateInteractionModal ({
   title,
   message,
   image: Base64 Image String,
@@ -245,6 +267,8 @@ pushInteractionModalQueue | pushInteractionModalButtonQueue | displayInteraction
   `modifiers` follow the same structure as their methods above
   `disabled` - hides the option if true is passed here (use a condition)
   `showDisabledWithTooltip` if this is set to `true` and `disabled` is also true, it shows the option button with the `tooltip` but it remains disabled/un-tappable
+
+processInteractionModalQueue()
 
 playSound(sound)
   Plays the sound located in your mod at `sound`
@@ -354,7 +378,8 @@ updateCharacter({
 forceUpdateCharacterDisplay({ characterId })
   Force the character display to be updated
 
-setCurrentCharacter({ characterId })  Switch player character
+setCurrentCharacter({ characterId })
+  Switch player character
 
 addCharacterLook({
    group: String,
@@ -372,13 +397,30 @@ addCharacterLook({
 })
     Define a new character look | Use with  isDAAPI: true in updateCharacter - look
 
+getCharacterIcon({ group, gender, type, ageStage })
+
 startWar()
 endWar()
 joinWar({ characterId })
 leaveWar({ characterId })
 
+setDate({ day, month, year })
+
+addCash({ cash })
+  Increases the current character's money by `cash` amount
+
+addInfluence({ influence })
+  Adds `influence` amount to the current character's personal influence
+
+addPrestige({ prestige })
+  Adds `prestige` to the current character's dynasty prestige
+
 openDevTools()
   Opens Dev Tools Console (Desktop editions only)
+
+closeDevTools()
+  Closes Dev Tools Console (Desktop editions only)
+
 ```
 
 Useful Keywords

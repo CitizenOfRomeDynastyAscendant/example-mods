@@ -35,13 +35,6 @@
       cognomen: 'Mysticus',
       prestige: 100,
       heritage: 'roman_freedman'
-    },
-    Pomponius_Atticus : {
-      id: 'Pomponius_Atticus',
-      nomen: 'Pomponius',
-      cognomen: 'Atticus',
-      prestige: 80000,
-      heritage: 'roman_novus_homo'
     }
   },
   characters: {
@@ -186,35 +179,6 @@
         type: 'black'
       },
       flagAssignedPersonalityTrait: false
-    },
-    'Attica': {
-      id: 'Attica',
-      dynastyId: 'Pomponius_Atticus',
-      isDead: false,
-      isMale: false,
-      praenomen: 'Attica',
-      agnomen: '',
-      birthMonth: 3,
-      birthYear: 695,
-      job: null,
-      jobLevel: 0,
-      spouseId: null,
-      fatherId: null,
-      motherId: null,
-      childrenIds: [],
-      traits: ['oratorDeliberative', 'weak'],
-      skills: {
-        intelligence: Math.round(Math.random() * 10) + 5,
-        stewardship: Math.round(Math.random() * 10) + 5,
-        eloquence: Math.round(Math.random() * 10) + 5,
-        combat: Math.round(Math.random() * 10)
-      },
-      look: {
-        group: 'roman',
-        type: 'blonde'
-      },
-      flagAssignedPersonalityTrait: false,
-      flagPlayScenarioModIsAttica: true
     }
   }
 }

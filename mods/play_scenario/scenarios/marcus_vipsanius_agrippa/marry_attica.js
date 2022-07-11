@@ -5,11 +5,16 @@
     let character = daapi.getCharacter({ characterId: characterId })
     let state = daapi.getState()
 
-    if (character.flagPlayScenarioModIsMarcusAgrippa && !character.spouseId) {
+    if (character.flagPlayScenarioModIsMarcusAgrippa && !daapi.getCharacterFlag({ characterId: characterId, flag: 'marcus_attica_engagement_over' })) {
+      // console.log(character) // debugging only
 
       let age = daapi.calculateAge({ month: character.birthMonth, year: character.birthYear })
       // console.log(age) // debugging only
-      if (age > 25.5 && age < 26.5) {
+      if (age > 25.5 && age < 26.5 &&
+          !character.isDead &&
+          (character.spouseId === null ||
+          !state.characters[character.spouseId] ||
+          state.characters[character.spouseId].isDead)) {
 
         let potentialSpouseID = daapi.generateCharacter({
           characterFeatures: {
@@ -47,20 +52,65 @@
           }
         })
         let potentialSpouse = daapi.getCharacter({ characterId: potentialSpouseID })
-        console.log(potentialSpouse); // debugging only
-        if (potentialSpouse &&
-            !character.isDead &&
-            (character.spouseId === null ||
-            !state.characters[character.spouseId] ||
-            state.characters[character.spouseId].isDead)) { //some checks, uncertain for now
+        // console.log(potentialSpouse); // debugging only
 
-          daapi.performMarriage({ characterId: characterId, spouseId: potentialSpouse.id, isMatrilineal: false })
+        if (potentialSpouse) {
+
+          let scalingFactor = daapi.calculateScaleByClassFactor()
+
+          daapi.pushInteractionModalQueue({
+            title: 'Marriage with Attica',
+            message: `[c|${characterId}|${"Marcus Vipsanius Agrippa"}]` + ', the wedding with your Fiance, '
+              + `[c|${potentialSpouse.id}|${"Attica"}]` + ' is neigh. '
+              + 'You may refuse, but it will leave a mark on you and your family\'s honour'
+              + '\n What will you do?',
+
+            options: [
+              {
+                text: 'Marry your Fiance',
+                tooltip: 'Do it!',
+                statChanges: {
+                  cash: -25000 / scalingFactor,
+                  prestige: +5000 / scalingFactor,
+                  influence: +10000 / scalingFactor,
+                  property: {
+                    insulae: +1
+                  }
+                },
+                disabled: false,
+                action: {
+                  event: '/play_scenario/scenarios/marcus_vipsanius_agrippa/marry_attica',
+                  method: 'wedding',
+                  context: { characterId: characterId, spouseId: potentialSpouse.id, isMatrilineal: false }
+                }
+              },
+              {
+                text: 'I won\'t marry her.',
+                tooltip: 'Who cares about an agreement?',
+                statChanges: {
+                  prestige: -1000 / scalingFactor,
+                  influence: -20000 / scalingFactor
+                }
+              }
+            ]
+          })
+
+          daapi.setCharacterFlag({ characterId: characterId, flag: 'marcus_attica_engagement_over', data: true })
+          // console.log(daapi.getCharacterFlag({ characterId: characterId, flag: 'marcus_attica_engagement_over' })) // debugging only
+
+          // daapi.performMarriage({ characterId: characterId, spouseId: potentialSpouse.id, isMatrilineal: false })
 
           // console.log(potentialSpouse); // debugging only
         }
 
         //console.log(characters)
       }
+    }
+  },
+
+  methods: {
+    wedding({ characterId, spouseId, isMatrilineal }) {
+      daapi.performMarriage({ characterId, spouseId, isMatrilineal })
     }
   }
 }

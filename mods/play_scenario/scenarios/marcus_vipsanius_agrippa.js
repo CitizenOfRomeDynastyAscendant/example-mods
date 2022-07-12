@@ -110,7 +110,7 @@
       fatherId: 'Marcus_Vipsanius_Agrippa_Father',
       motherId: 'Aurelia_Mother',
       childrenIds: [],
-      traits: ['genius', 'erudite', 'philosopher', 'honorable'],
+      traits: ['genius', 'erudite', 'oratorJudicial', 'philosopher', 'honorable', 'formerPlebianTribune', 'formerPraetor'],
       skills: {
         intelligence: Math.round(Math.random() * 10) + 20,
         stewardship: Math.round(Math.random() * 10) + 10,

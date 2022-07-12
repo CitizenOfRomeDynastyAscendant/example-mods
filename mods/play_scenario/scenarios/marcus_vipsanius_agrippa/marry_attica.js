@@ -47,7 +47,7 @@
             id: 'Pomponius_Atticus',
             nomen: 'Pomponius',
             cognomen: 'Atticus',
-            prestige: 80000,
+            prestige: 40000,
             heritage: 'roman_novus_homo'
           }
         })
@@ -60,21 +60,23 @@
 
           daapi.pushInteractionModalQueue({
             title: 'Marriage with Attica',
-            message: `[c|${characterId}|${"Marcus Vipsanius Agrippa"}]` + ', the wedding with your Fiance, '
-              + `[c|${potentialSpouse.id}|${"Attica"}]` + ' is neigh. '
+            image: daapi.requireImage("/play_scenario/scenarios/marcus_vipsanius_agrippa/ruby_ring_optimized.svg"),
+            message: `[c|${characterId}|${"Marcus Vipsanius Agrippa"}]` + ', the wedding with your fiance, '
+              + `[c|${potentialSpouse.id}|${"Attica"}]` + ', the daughter of Quintus Caecilius Pomponianus Atticus, from the Pomponia gens, is neigh. '
               + 'You may refuse, but it will leave a mark on you and your family\'s honour'
               + '\n What will you do?',
 
             options: [
               {
-                text: 'Marry your Fiance',
-                tooltip: 'Do it!',
+                text: 'I will honour my words.',
+                tooltip: 'This will be a feast to remember.',
                 statChanges: {
-                  cash: -5000 / scalingFactor,
+                  cash: -6000 / scalingFactor,
                   prestige: +2000 / scalingFactor,
                   influence: +4000 / scalingFactor,
                   property: {
-                    insulae: +1
+                    insulae: +1,
+                    horse: +1
                   }
                 },
                 disabled: false,

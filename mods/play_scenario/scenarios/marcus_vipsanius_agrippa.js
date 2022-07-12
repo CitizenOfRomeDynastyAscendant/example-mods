@@ -8,7 +8,7 @@
     year: 716
   },
   cash: 10000,
-  influence: 10000,
+  influence: 20000,
   property: {
     horse: 1,
     farmland: 2,

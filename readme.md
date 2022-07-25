@@ -97,7 +97,7 @@ In each events js file you should use the following structure
 
 Kindly download and look this [set of example mods](https://github.com/CitizenOfRomeDynastyAscendant/example-mods/tree/master/mods)
 
-daapi
+# daapi
 -----
 
 An API object containing various methods is exposed globally via the `window.daapi` object\
@@ -150,7 +150,7 @@ The following are the methods available:
 
 ## `calculateCharacterJobRevenue`
    ```
-({
+  ({
     characterId,
     job,
     jobLevel,
@@ -160,7 +160,7 @@ The following are the methods available:
 
 ## `calculateCharacterJobModifierFactor` 
   ```
-({
+  ({
     characterId,
     job,
     excludeTemporaryGlobals
@@ -181,7 +181,8 @@ The following are the methods available:
   ```
   ({
     characterFeatures: {
-      isMale: Boolean,
+      gender: String, // > v1.5.2
+      isMale: Boolean, // <= v1.5.2
       praenomen,
       agnomen,
       birthMonth: Number (0-12),
@@ -196,7 +197,11 @@ The following are the methods available:
         stewardship,
         eloquence,
         combat
-      }
+      },
+      flagIsImmortal: Boolean, // > v1.5.2
+      flagCanGetPregnant: Boolean, // > v1.5.2
+      flagCanImpregnate: Boolean, // > v1.5.2
+      flagCannotMarry Boolean // > v1.5.2
     },
     dynastyFeatures: {
       nomen,
@@ -450,10 +455,10 @@ The following are the methods available:
   Closes Dev Tools Console (Desktop editions only)
 
 
-Useful Keywords
+# Useful Keywords
 ---------------
 
-# Modifiers
+## Modifiers
 
 ```
 property_<property_name>
@@ -468,7 +473,7 @@ household_stewardship
 character_stewardship_<characterId>
 ```
 
-# Additive Modifiers
+## Additive Modifiers
 
 ```
 revenue
@@ -476,7 +481,7 @@ influence
 prestige
 ```
 
-# Traits
+## Traits
 
 ```
 [
@@ -584,7 +589,7 @@ prestige
 ]
 ```
 
-Properties
+## Properties
 
 ```
 [
@@ -613,7 +618,7 @@ Properties
 ]
 ```
 
-# Jobs
+## Jobs
 
 ```
 [

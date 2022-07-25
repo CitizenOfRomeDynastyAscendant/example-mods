@@ -103,74 +103,75 @@ daapi
 An API object containing various methods is exposed globally via the `window.daapi` object\
 The following are the methods available:
 
-```
-addTrait({ characterId, trait })
+
+## `addTrait({ characterId, trait })`
   Adds given trait to character. The `trait` is a string keyword like 'strong' or 'brilliant'
 
-removeTrait({ characterId, trait })
 
-addModifier({ key, id, durationInMonths, factor })
+## `removeTrait({ characterId, trait })`
+
+## `addModifier({ key, id, durationInMonths, factor })`
   Adds a multiplier of `factor` for given number of months.
   `key`: should contain a keyword like 'property_sheep' or 'household_fertility' or 'household_health'
   `id`: String. An id you can use to remove the modifier, etc
 
-addAdditiveModifier({ key, id, durationInMonths, amount, householdCharacterId })
+## `addAdditiveModifier({ key, id, durationInMonths, amount, householdCharacterId })`
   Adds an additive modifier, typically used with a `key` of 'revenue' for recurring monthly costs like education
 
-removeModifier({ key, id })
+## `removeModifier({ key, id })`
 
-removeAdditiveModifier({ key, id })
+## `removeAdditiveModifier({ key, id })`
 
-calculateModifier({ key })
+## `calculateModifier({ key })`
 
-calculateAdditiveModifier({ key })
+## `calculateAdditiveModifier({ key })`
   Calculates the current cumulative modifier in effect for `key`
 
-calculateAge({ month, year, toMonth, toYear, day, toDay })
+## `calculateAge({ month, year, toMonth, toYear, day, toDay })`
   If the `to` parameters are not passed, it calculates the age of the character at the current game date
 
-calculateBaseSkill({ characterId, skillName })
+## `calculateBaseSkill({ characterId, skillName })`
   Returns a Floating point integer with the character's base skill
   `skillName` is a string keyword which is one of 'intelligence' | 'stewardship' | 'eloquence' | 'combat'
 
-calculateCurrentProperty()
+## `calculateCurrentProperty()`
   Returns the total value of the currently held property - Float
 
-calculateCurrentRevenue()
+## `calculateCurrentRevenue()`
 
-calculateEffectiveHouseholdStewardhsip()
+## `calculateEffectiveHouseholdStewardhsip()`
 
-calculateEffectiveMaxCashHolding()
+## `calculateEffectiveMaxCashHolding()`
 
-calculateCurrentClass()
+## `calculateCurrentClass()`
 
-calculateScaleByClassFactor()
+## `calculateScaleByClassFactor()`
   Returns the automatic cost scaling factor. Divide your cash, influence and prestige `statChanges` to not apply this scaling factor
 
-calculateCharacterJobRevenue({
+## ```calculateCharacterJobRevenue({
       characterId,
       job,
       jobLevel,
       excludeTemporaryGlobals
-    })
+    })```
 
-calculateCharacterJobModifierFactor({
+## ```calculateCharacterJobModifierFactor({
       characterId,
       job,
       excludeTemporaryGlobals
-    })
+    })```
 
-getState()
+## `getState()`
   Returns an object containing the entire game state data
   See https://gist.github.com/CitizenOfRome/ce79290468e44afef17f9d53a2786853 for an example of what this looks like
 
-getCharacter({ characterId })
+## `getCharacter({ characterId })`
   Returns an object containing character data
 
-getJobsForCharacter({ characterId })
+## `getJobsForCharacter({ characterId })`
   Returns an array containing all valid/available jobs for a given character
 
-generateCharacter({
+## ```generateCharacter({
   characterFeatures: {
     isMale: Boolean,
     praenomen,
@@ -195,24 +196,24 @@ generateCharacter({
     prestige,
     heritage:'roman_plebian'|'roman_freedman'|'roman_patrician'|'roman_novus_homo'
   }
-})
+})```
   Generates a new character and returns the character ID.
   All fields are optional and can be skipped for the game to use default/random values
 
-marryRandom({ characterId, isMatrilineal })
+## `marryRandom({ characterId, isMatrilineal })`
   Generates a new character, marries them to the given characterId and returns the ID of the newly generated spouse character
 
-performMarriage({ characterId, spouseId, isMatrilineal })
+## `performMarriage({ characterId, spouseId, isMatrilineal })`
   Performs a marriage between the characters with the given IDs
 
-impregnate({ characterId, fatherId })
+## `impregnate({ characterId, fatherId })`
 
-invokeMethod({ event, method, context })
+## `invokeMethod({ event, method, context })`
   Executes a `method` listed in the `methods` object of the selected `event`.
   `event` is the full path to your event like '/modName/events/event1Name'
   `context` is passed down as the sole argument for your method, usually you would like to pass down things like the characterId and any other relevant context like so `context: {characterId: characterId}`
 
-pushInteractionModalQueue | pushInteractionModalButtonQueue | displayInteractionModal | updateInteractionModal ({
+## `pushInteractionModalQueue` | `pushInteractionModalButtonQueue` | `displayInteractionModal` | `updateInteractionModal` ```({
   title,
   message,
   image: Base64 Image String,
@@ -260,7 +261,7 @@ pushInteractionModalQueue | pushInteractionModalButtonQueue | displayInteraction
       action: { event, method, context }
     }
   ]
-})
+})```
   Adds a new popup/event modal to be displayed to the player
   This is the primary mode of interaction within the game
   `pushInteractionModalButtonQueue` adds a button like we have for festivals rather than displaying it directly
@@ -268,28 +269,28 @@ pushInteractionModalQueue | pushInteractionModalButtonQueue | displayInteraction
   `disabled` - hides the option if true is passed here (use a condition)
   `showDisabledWithTooltip` if this is set to `true` and `disabled` is also true, it shows the option button with the `tooltip` but it remains disabled/un-tappable
 
-processInteractionModalQueue()
+## `processInteractionModalQueue()`
 
-playSound(sound)
+## `playSound(sound)`
   Plays the sound located in your mod at `sound`
   Use the full path with extension like '/modName/assets/sound1.flac'
 
-requireImage(image)
+## `requireImage(image)`
   Returns a base64 string of an image located in your mod at `image`
   Use the full path with extension like '/modName/assets/icon1.svg'
   Use this method for the image and icons sections in interactionModal above
 
-setGlobalFlag({ flag, data })
+## `setGlobalFlag({ flag, data })`
   Set a global flag with the given data
 
-getGlobalFlag({ flag })
+## `getGlobalFlag({ flag })`
   Returns the value of the previously set global flag
 
-setCharacterFlag({ characterId, flag, data })
+## `setCharacterFlag({ characterId, flag, data })`
 
-getCharacterFlag({ characterId, flag })
+## `getCharacterFlag({ characterId, flag })`
 
-addCharacterAction({
+## ```addCharacterAction({
   characterId,
   key,
   action: {
@@ -299,17 +300,17 @@ addCharacterAction({
     hideWhenBusy: true,
     process: { event, method, context }
   }
-})
+})```
   Add a character action button like we have for education, marriage, etc
   `process` is run when the button is clicked/tapped
 
-setCharacterActionAvailability({ characterId, key, isAvailable })
+## `setCharacterActionAvailability({ characterId, key, isAvailable })`
   Set the `isAvailable` tag to true/false to show/hide the button respectively
 
-deleteCharacterAction({ characterId, key })
+## `deleteCharacterAction({ characterId, key })`
   Removes the character action
 
-addGlobalAction({
+## ```addGlobalAction({
   key,
   action: {
     title,
@@ -317,17 +318,17 @@ addGlobalAction({
     isAvailable: true,
     process: { event, method, context }
   }
-})
+})```
   Add a global action button
   `process` is run when the button is clicked/tapped
 
-setGlobalActionAvailability({ key, isAvailable })
+## `setGlobalActionAvailability({ key, isAvailable })`
   Set the `isAvailable` tag to true/false to show/hide the button respectively
 
-deleteGlobalAction({ key })
+## `deleteGlobalAction({ key })`
   Removes the action
 
-addCharacterStatus({
+## ```addCharacterStatus({
   characterId,
   key,
   status: {
@@ -335,19 +336,19 @@ addCharacterStatus({
     icon,
     active: true
   }
-})
+})```
   Add a character status icon like we show on the character's image when they're being educated, etc
 
-setCharacterStatusActive({ characterId, key, isActive })
+## `setCharacterStatusActive({ characterId, key, isActive })`
   Set the `active` tag to true/false to show/hide the status respectively
 
-deleteCharacterStatus({ characterId, key })
+## `deleteCharacterStatus({ characterId, key })`
   Removes the character status
 
-kill({ characterId, deathCause })
+## `kill({ characterId, deathCause })`
   Kills a character
 
-updateCharacter({
+## ```updateCharacter({
   characterId,
   character: {
     isMale: Boolean,
@@ -372,16 +373,16 @@ updateCharacter({
       type: 'auburn' | 'black' | 'blonde' | 'brown' | 'brown_curly'
     }
   }
-})
+})```
   Updates a character. Skip parts to retain previous values in character
 
-forceUpdateCharacterDisplay({ characterId })
+## `forceUpdateCharacterDisplay({ characterId })`
   Force the character display to be updated
 
-setCurrentCharacter({ characterId })
+## `setCurrentCharacter({ characterId })`
   Switch player character
 
-addCharacterLook({
+## ```addCharacterLook({
    group: String,
    types: {
       typeName1: {
@@ -394,34 +395,33 @@ addCharacterLook({
         female
       }
    }
-})
+})```
     Define a new character look | Use with  isDAAPI: true in updateCharacter - look
 
-getCharacterIcon({ group, gender, type, ageStage })
+## `getCharacterIcon({ group, gender, type, ageStage })`
 
-startWar()
-endWar()
-joinWar({ characterId })
-leaveWar({ characterId })
+## `startWar()`
+## `endWar()`
+## `joinWar({ characterId })`
+## `leaveWar({ characterId })`
 
-setDate({ day, month, year })
+## `setDate({ day, month, year })`
 
-addCash({ cash })
+## `addCash({ cash })`
   Increases the current character's money by `cash` amount
 
-addInfluence({ influence })
+## `addInfluence({ influence })`
   Adds `influence` amount to the current character's personal influence
 
-addPrestige({ prestige })
+## `addPrestige({ prestige })`
   Adds `prestige` to the current character's dynasty prestige
 
-openDevTools()
+## `openDevTools()`
   Opens Dev Tools Console (Desktop editions only)
 
-closeDevTools()
+## `closeDevTools()`
   Closes Dev Tools Console (Desktop editions only)
 
-```
 
 Useful Keywords
 ---------------

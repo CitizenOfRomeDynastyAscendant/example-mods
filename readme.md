@@ -384,7 +384,7 @@ openDevTools()
 Useful Keywords
 ---------------
 
-Modifiers
+# Modifiers
 
 ```
 property_<property_name>
@@ -399,7 +399,7 @@ household_stewardship
 character_stewardship_<characterId>
 ```
 
-Additive Modifiers
+# Additive Modifiers
 
 ```
 revenue
@@ -407,7 +407,7 @@ influence
 prestige
 ```
 
-Traits
+# Traits
 
 ```
 [
@@ -526,7 +526,7 @@ Properties
 ]
 ```
 
-Jobs
+# Jobs
 
 ```
 [

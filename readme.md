@@ -51,7 +51,7 @@ Mod file structure
 ------------------
 
 The game uses JavaScript (VueJS + VueX + custom stuff) that is run in a browser-like environment internally, and so mods are written with JavaScript and in the format detailed below
-
+```
 ~/documents/CitizenOfRomeDynastyAscendant/mods/
   modName/
     assets/
@@ -63,7 +63,7 @@ The game uses JavaScript (VueJS + VueX + custom stuff) that is run in a browser-
       ...
     monthly.js
     yearly.js
-
+```
 Note that while this is a recommended structure, the game's modding API is permissive and works with other structures as well. The only keyword file names are that of `monthly.js` and `yearly.js`. Both files are themselves optional, as is `style.css` and any other assets
 
 `monthly.js` and `yearly.js` should contain a single JavaScript array each containing a list of events to be executed every month and every year respectively, and the events should be listed with their full path and without the `.js` extension like so:
@@ -148,18 +148,22 @@ The following are the methods available:
 ## `calculateScaleByClassFactor()`
   Returns the automatic cost scaling factor. Divide your cash, influence and prestige `statChanges` to not apply this scaling factor
 
-## `calculateCharacterJobRevenue` ```({
-      characterId,
-      job,
-      jobLevel,
-      excludeTemporaryGlobals
-    })```
+## `calculateCharacterJobRevenue`
+   ```({
+    characterId,
+    job,
+    jobLevel,
+    excludeTemporaryGlobals
+  })
+  ```
 
-## `calculateCharacterJobModifierFactor` ```({
-      characterId,
-      job,
-      excludeTemporaryGlobals
-    })```
+## `calculateCharacterJobModifierFactor` 
+  ```({
+    characterId,
+    job,
+    excludeTemporaryGlobals
+  })
+  ```
 
 ## `getState()`
   Returns an object containing the entire game state data
@@ -171,32 +175,34 @@ The following are the methods available:
 ## `getJobsForCharacter({ characterId })`
   Returns an array containing all valid/available jobs for a given character
 
-## `generateCharacter` ```({
-  characterFeatures: {
-    isMale: Boolean,
-    praenomen,
-    agnomen,
-    birthMonth: Number (0-12),
-    birthYear,
-    spouseId,
-    childrenIds: Array,
-    traits: Array,
-    jobLevel: Number,
-    job,
-    skills: {
-      intelligence,
-      stewardship,
-      eloquence,
-      combat
+## `generateCharacter` 
+  ```({
+    characterFeatures: {
+      isMale: Boolean,
+      praenomen,
+      agnomen,
+      birthMonth: Number (0-12),
+      birthYear,
+      spouseId,
+      childrenIds: Array,
+      traits: Array,
+      jobLevel: Number,
+      job,
+      skills: {
+        intelligence,
+        stewardship,
+        eloquence,
+        combat
+      }
+    },
+    dynastyFeatures: {
+      nomen,
+      cognomen,
+      prestige,
+      heritage:'roman_plebian'|'roman_freedman'|'roman_patrician'|'roman_novus_homo'
     }
-  },
-  dynastyFeatures: {
-    nomen,
-    cognomen,
-    prestige,
-    heritage:'roman_plebian'|'roman_freedman'|'roman_patrician'|'roman_novus_homo'
-  }
-})```
+  })
+  ```
   Generates a new character and returns the character ID.
   All fields are optional and can be skipped for the game to use default/random values
 
@@ -213,7 +219,8 @@ The following are the methods available:
   `event` is the full path to your event like '/modName/events/event1Name'
   `context` is passed down as the sole argument for your method, usually you would like to pass down things like the characterId and any other relevant context like so `context: {characterId: characterId}`
 
-## `pushInteractionModalQueue` | `pushInteractionModalButtonQueue` | `displayInteractionModal` | `updateInteractionModal` ```({
+## `pushInteractionModalQueue` | `pushInteractionModalButtonQueue` | `displayInteractionModal` | `updateInteractionModal` 
+```({
   title,
   message,
   image: Base64 Image String,
@@ -261,7 +268,8 @@ The following are the methods available:
       action: { event, method, context }
     }
   ]
-})```
+})
+```
   Adds a new popup/event modal to be displayed to the player
   This is the primary mode of interaction within the game
   `pushInteractionModalButtonQueue` adds a button like we have for festivals rather than displaying it directly
@@ -290,7 +298,8 @@ The following are the methods available:
 
 ## `getCharacterFlag({ characterId, flag })`
 
-## `addCharacterAction` ```({
+## `addCharacterAction` 
+```({
   characterId,
   key,
   action: {
@@ -300,7 +309,8 @@ The following are the methods available:
     hideWhenBusy: true,
     process: { event, method, context }
   }
-})```
+})
+```
   Add a character action button like we have for education, marriage, etc
   `process` is run when the button is clicked/tapped
 
@@ -310,7 +320,8 @@ The following are the methods available:
 ## `deleteCharacterAction({ characterId, key })`
   Removes the character action
 
-## `addGlobalAction` ```({
+## `addGlobalAction` 
+```({
   key,
   action: {
     title,
@@ -318,7 +329,8 @@ The following are the methods available:
     isAvailable: true,
     process: { event, method, context }
   }
-})```
+})
+```
   Add a global action button
   `process` is run when the button is clicked/tapped
 
@@ -328,7 +340,8 @@ The following are the methods available:
 ## `deleteGlobalAction({ key })`
   Removes the action
 
-## `addCharacterStatus` ```({
+## `addCharacterStatus` 
+```({
   characterId,
   key,
   status: {
@@ -336,7 +349,8 @@ The following are the methods available:
     icon,
     active: true
   }
-})```
+})
+```
   Add a character status icon like we show on the character's image when they're being educated, etc
 
 ## `setCharacterStatusActive({ characterId, key, isActive })`
@@ -348,7 +362,8 @@ The following are the methods available:
 ## `kill({ characterId, deathCause })`
   Kills a character
 
-## `updateCharacter` ```({
+## `updateCharacter` 
+```({
   characterId,
   character: {
     isMale: Boolean,
@@ -373,7 +388,8 @@ The following are the methods available:
       type: 'auburn' | 'black' | 'blonde' | 'brown' | 'brown_curly'
     }
   }
-})```
+})
+```
   Updates a character. Skip parts to retain previous values in character
 
 ## `forceUpdateCharacterDisplay({ characterId })`
@@ -382,7 +398,8 @@ The following are the methods available:
 ## `setCurrentCharacter({ characterId })`
   Switch player character
 
-## `addCharacterLook` ```({
+## `addCharacterLook` 
+```({
    group: String,
    types: {
       typeName1: {
@@ -395,7 +412,8 @@ The following are the methods available:
         female
       }
    }
-})```
+})
+```
     Define a new character look | Use with  isDAAPI: true in updateCharacter - look
 
 ## `getCharacterIcon({ group, gender, type, ageStage })`

@@ -149,7 +149,8 @@ The following are the methods available:
   Returns the automatic cost scaling factor. Divide your cash, influence and prestige `statChanges` to not apply this scaling factor
 
 ## `calculateCharacterJobRevenue`
-   ```({
+   ```
+({
     characterId,
     job,
     jobLevel,
@@ -158,7 +159,8 @@ The following are the methods available:
   ```
 
 ## `calculateCharacterJobModifierFactor` 
-  ```({
+  ```
+({
     characterId,
     job,
     excludeTemporaryGlobals
@@ -176,7 +178,8 @@ The following are the methods available:
   Returns an array containing all valid/available jobs for a given character
 
 ## `generateCharacter` 
-  ```({
+  ```
+  ({
     characterFeatures: {
       isMale: Boolean,
       praenomen,
@@ -220,56 +223,57 @@ The following are the methods available:
   `context` is passed down as the sole argument for your method, usually you would like to pass down things like the characterId and any other relevant context like so `context: {characterId: characterId}`
 
 ## `pushInteractionModalQueue` | `pushInteractionModalButtonQueue` | `displayInteractionModal` | `updateInteractionModal` 
-```({
-  title,
-  message,
-  image: Base64 Image String,
-  onHidden: { event, method, context },
-  inputs: [
-    {
-      type: HTML Input type,
-      title,
-      value,
-      onChange: { event, method, context } or Function - called on change,
-      onRandomize: { event, method, context } or Function - Called when the randomize button is pressed
-    }
-  ],
-  dropdowns: [
-    {
-      title,
-      description,
-      selected: Index of the default option,
-      options: [{
-        icon,
-        label
-      }],
-      onChange: { event, method, context } or Function - called on change
-    }
-  ],
-  options: [
-    {
-      text,
-      tooltip,
-      icons: Array of Base64 Image Strings,
-      statChanges: {
-        cash,
-        prestige,
-        influence,
-        property: {
-          propertyName: +/- Integer
+  ```
+  ({
+    title,
+    message,
+    image: Base64 Image String,
+    onHidden: { event, method, context },
+    inputs: [
+      {
+        type: HTML Input type,
+        title,
+        value,
+        onChange: { event, method, context } or Function - called on change,
+        onRandomize: { event, method, context } or Function - Called when the randomize button is pressed
+      }
+    ],
+    dropdowns: [
+      {
+        title,
+        description,
+        selected: Index of the default option,
+        options: [{
+          icon,
+          label
+        }],
+        onChange: { event, method, context } or Function - called on change
+      }
+    ],
+    options: [
+      {
+        text,
+        tooltip,
+        icons: Array of Base64 Image Strings,
+        statChanges: {
+          cash,
+          prestige,
+          influence,
+          property: {
+            propertyName: +/- Integer
+          },
+          modifiers: [],
+          removeModifiers: [],
+          additiveModifiers: [],
+          removeAdditiveModifiers: []
         },
-        modifiers: [],
-        removeModifiers: [],
-        additiveModifiers: [],
-        removeAdditiveModifiers: []
-      },
-      disabled: Boolean,
-      showDisabledWithTooltip: Boolean,
-      action: { event, method, context }
-    }
-  ]
-})
-```
+        disabled: Boolean,
+        showDisabledWithTooltip: Boolean,
+        action: { event, method, context }
+      }
+    ]
+  })
+  ```
   Adds a new popup/event modal to be displayed to the player
   This is the primary mode of interaction within the game
   `pushInteractionModalButtonQueue` adds a button like we have for festivals rather than displaying it directly
@@ -299,18 +303,19 @@ The following are the methods available:
 ## `getCharacterFlag({ characterId, flag })`
 
 ## `addCharacterAction` 
-```({
-  characterId,
-  key,
-  action: {
-    title,
-    icon,
-    isAvailable: true,
-    hideWhenBusy: true,
-    process: { event, method, context }
-  }
-})
-```
+  ```
+  ({
+    characterId,
+    key,
+    action: {
+      title,
+      icon,
+      isAvailable: true,
+      hideWhenBusy: true,
+      process: { event, method, context }
+    }
+  })
+  ```
   Add a character action button like we have for education, marriage, etc
   `process` is run when the button is clicked/tapped
 
@@ -321,16 +326,17 @@ The following are the methods available:
   Removes the character action
 
 ## `addGlobalAction` 
-```({
-  key,
-  action: {
-    title,
-    icon,
-    isAvailable: true,
-    process: { event, method, context }
-  }
-})
-```
+  ```
+  ({
+    key,
+    action: {
+      title,
+      icon,
+      isAvailable: true,
+      process: { event, method, context }
+    }
+  })
+  ```
   Add a global action button
   `process` is run when the button is clicked/tapped
 
@@ -341,16 +347,17 @@ The following are the methods available:
   Removes the action
 
 ## `addCharacterStatus` 
-```({
-  characterId,
-  key,
-  status: {
-    title,
-    icon,
-    active: true
-  }
-})
-```
+  ```
+  ({
+    characterId,
+    key,
+    status: {
+      title,
+      icon,
+      active: true
+    }
+  })
+  ```
   Add a character status icon like we show on the character's image when they're being educated, etc
 
 ## `setCharacterStatusActive({ characterId, key, isActive })`
@@ -363,33 +370,34 @@ The following are the methods available:
   Kills a character
 
 ## `updateCharacter` 
-```({
-  characterId,
-  character: {
-    isMale: Boolean,
-    praenomen,
-    agnomen,
-    birthMonth: Number (0-12),
-    birthYear,
-    spouseId,
-    childrenIds: Array,
-    traits: Array,
-    jobLevel: Number,
-    job,
-    skills: {
-      intelligence,
-      stewardship,
-      eloquence,
-      combat
-    },
-    look: {
-      isDAAPI: true/false,
-      group: 'roman',
-      type: 'auburn' | 'black' | 'blonde' | 'brown' | 'brown_curly'
+  ```
+  ({
+    characterId,
+    character: {
+      isMale: Boolean,
+      praenomen,
+      agnomen,
+      birthMonth: Number (0-12),
+      birthYear,
+      spouseId,
+      childrenIds: Array,
+      traits: Array,
+      jobLevel: Number,
+      job,
+      skills: {
+        intelligence,
+        stewardship,
+        eloquence,
+        combat
+      },
+      look: {
+        isDAAPI: true/false,
+        group: 'roman',
+        type: 'auburn' | 'black' | 'blonde' | 'brown' | 'brown_curly'
+      }
     }
-  }
-})
-```
+  })
+  ```
   Updates a character. Skip parts to retain previous values in character
 
 ## `forceUpdateCharacterDisplay({ characterId })`
@@ -399,21 +407,22 @@ The following are the methods available:
   Switch player character
 
 ## `addCharacterLook` 
-```({
-   group: String,
-   types: {
-      typeName1: {
-         male: {
-           baby: daapi.requireImage(url),
-           teen,
-           adult,
-           old
-        },
-        female
-      }
-   }
-})
-```
+  ```
+  ({
+     group: String,
+     types: {
+        typeName1: {
+           male: {
+             baby: daapi.requireImage(url),
+             teen,
+             adult,
+             old
+          },
+          female
+        }
+     }
+  })
+  ```
     Define a new character look | Use with  isDAAPI: true in updateCharacter - look
 
 ## `getCharacterIcon({ group, gender, type, ageStage })`

@@ -148,14 +148,14 @@ The following are the methods available:
 ## `calculateScaleByClassFactor()`
   Returns the automatic cost scaling factor. Divide your cash, influence and prestige `statChanges` to not apply this scaling factor
 
-## ```calculateCharacterJobRevenue({
+## `calculateCharacterJobRevenue` ```({
       characterId,
       job,
       jobLevel,
       excludeTemporaryGlobals
     })```
 
-## ```calculateCharacterJobModifierFactor({
+## `calculateCharacterJobModifierFactor` ```({
       characterId,
       job,
       excludeTemporaryGlobals
@@ -171,7 +171,7 @@ The following are the methods available:
 ## `getJobsForCharacter({ characterId })`
   Returns an array containing all valid/available jobs for a given character
 
-## ```generateCharacter({
+## `generateCharacter` ```({
   characterFeatures: {
     isMale: Boolean,
     praenomen,
@@ -290,7 +290,7 @@ The following are the methods available:
 
 ## `getCharacterFlag({ characterId, flag })`
 
-## ```addCharacterAction({
+## `addCharacterAction` ```({
   characterId,
   key,
   action: {
@@ -310,7 +310,7 @@ The following are the methods available:
 ## `deleteCharacterAction({ characterId, key })`
   Removes the character action
 
-## ```addGlobalAction({
+## `addGlobalAction` ```({
   key,
   action: {
     title,
@@ -328,7 +328,7 @@ The following are the methods available:
 ## `deleteGlobalAction({ key })`
   Removes the action
 
-## ```addCharacterStatus({
+## `addCharacterStatus` ```({
   characterId,
   key,
   status: {
@@ -348,7 +348,7 @@ The following are the methods available:
 ## `kill({ characterId, deathCause })`
   Kills a character
 
-## ```updateCharacter({
+## `updateCharacter` ```({
   characterId,
   character: {
     isMale: Boolean,
@@ -382,7 +382,7 @@ The following are the methods available:
 ## `setCurrentCharacter({ characterId })`
   Switch player character
 
-## ```addCharacterLook({
+## `addCharacterLook` ```({
    group: String,
    types: {
       typeName1: {

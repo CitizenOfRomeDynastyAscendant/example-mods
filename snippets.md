@@ -97,3 +97,5 @@ Note: You can skip the `id` parameter if you don't intend to `removeModifier` ma
 ### Clear Character Actions
 `(function() { let householdCharacterIds = daapi.getState().current.householdCharacterIds; for(var i = 0; i < householdCharacterIds.length; i++) { daapi.updateCharacter({characterId:householdCharacterIds[i], character: {actions: false} }); } })()`
 
+## Change the date
+`daapi.setDate({ month: 5, year: 750 })`

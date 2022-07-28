@@ -72,6 +72,10 @@ Replace `New_Nomen` & `New_Cognomen` in the first line with whichever new nomen 
 ## Add cash
 `daapi.displayInteractionModal({ title:'Money!', message: 'Here you go:', options: [{ text: 'Thanks!', statChanges: { cash: 500 }}]})`
 
+or from v1.5.0+
+
+`daapi.addCash({ cash: 500 })`
+
 ## Modifiers
 ### household_health
 #### Lower Health to x0.1

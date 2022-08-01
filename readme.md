@@ -12,6 +12,10 @@ It displays the exact path for mods in the Settings screen after you enable mods
 
 Requires v1.4.1+
 
+**Note**: The paths and folder names need to be right for the mods to work. 
+A common gotcha is creating a new folder when unzipping mods, please ensure you extract them directly into your `mods` folder without creating a new folder/directory.
+For example, the path should look like `/CitizenOfRomeDynastyAscendant/mods/command_console/main.js` for the `command_console` mod.
+
 Modding Support
 ===============
 

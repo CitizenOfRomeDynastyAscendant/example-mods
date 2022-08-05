@@ -38,7 +38,7 @@ To disable a mod rename it's folder to include `.disabled` or simply delete it
 Mod Showcase
 ------------
 
-We showcase mods on our Discord, but here's a handy list:
+We showcase mods on our [Discord](https://discord.gg/ZVkxjC5), but here's an incomplete list:
 
 [github.com/CitizenOfRomeDynastyAscendant/example-mods](https://github.com/CitizenOfRomeDynastyAscendant/example-mods) -- Contains a set of example mods\
 Download the zip file from the [Releases section](https://github.com/CitizenOfRomeDynastyAscendant/example-mods/releases) for any mod you'd like to use and extract it as is in your mods directory
@@ -49,7 +49,7 @@ Download the zip file from the [Releases section](https://github.com/CitizenOfRo
 - Divorce -- Force any pair of characters in household to Divorce
 - Play As -- Play as an other character (women included)
 
-[Bank of Rome and Household Slaves by peritiSumus](https://github.com/peritiSumus/CoR-Mods)
+[Bank of Rome and other mods by peritiSumus](https://github.com/peritiSumus/CoR-Mods)
 
 Mod file structure
 ------------------

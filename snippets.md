@@ -34,6 +34,9 @@ Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on, like:
 `daapi.impregnate({ characterId: daapi.getCharacter({ characterId: daapi.getState().current.id }).spouseId })`
 
 ## Update Character Data
+### Change Name
+`daapi.updateCharacter({ characterId: daapi.getState().current.id, character: { praenomen: 'New Name' }})`
+
 ### Set age as 20
 `daapi.updateCharacter({ characterId: daapi.getState().current.id, character: { birthYear: daapi.getState().year - 20 }})`
 

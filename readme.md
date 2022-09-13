@@ -202,10 +202,11 @@ The following are the methods available:
         eloquence,
         combat
       },
-      flagIsImmortal: Boolean, // > v1.5.2
-      flagCanGetPregnant: Boolean, // > v1.5.2
-      flagCanImpregnate: Boolean, // > v1.5.2
-      flagCannotMarry Boolean // > v1.5.2
+      flagIsImmortal: Boolean, // >= v1.5.3 (can still die via events, etc)
+      flagCanGetPregnant: Boolean, // >= v1.5.3
+      flagCanImpregnate: Boolean, // >= v1.5.3
+      flagCannotMarry: Boolean, // >= v1.5.3
+      flagCanHoldImperium: Boolean // >= v1.5.3 (allows full ludi, war & election participation)
     },
     dynastyFeatures: {
       nomen,
@@ -535,6 +536,7 @@ prestige
   "noLeg",
   "disfigured",
   "oneEyed",
+  "faunnic",
   "sapphic",
   "achillean",
   "ace",

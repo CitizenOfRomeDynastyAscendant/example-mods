@@ -185,7 +185,7 @@ The following are the methods available:
   ```
   ({
     characterFeatures: {
-      gender: String, // > v1.5.2
+      gender: String, // >= v1.5.3 - supports any given string; defaults: 'male' & 'female'
       isMale: Boolean, // <= v1.5.2
       praenomen,
       agnomen,
@@ -384,6 +384,7 @@ The following are the methods available:
   ({
     characterId,
     character: {
+      gender: String, // >= v1.5.3 defaults: 'male' | 'female'
       isMale: Boolean,
       praenomen,
       agnomen,
@@ -403,7 +404,9 @@ The following are the methods available:
       look: {
         isDAAPI: true/false,
         group: 'roman',
-        type: 'auburn' | 'black' | 'blonde' | 'brown' | 'brown_curly'
+        type: 'auburn' | 'black' | 'blonde' | 'brown' | 'brown_curly',
+        ageStage: 'baby' | 'teen' | 'adult' | 'old',
+        gender: 'male' | 'female' | '<any other gender icons defined via addCharacterLook>'
       }
     }
   })
@@ -428,7 +431,8 @@ The following are the methods available:
              adult,
              old
           },
-          female
+          female,
+          <any other gender>
         }
      }
   })

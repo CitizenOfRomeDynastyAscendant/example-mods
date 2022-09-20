@@ -407,7 +407,12 @@ The following are the methods available:
         type: 'auburn' | 'black' | 'blonde' | 'brown' | 'brown_curly',
         ageStage: 'baby' | 'teen' | 'adult' | 'old',
         gender: 'male' | 'female' | '<any other gender icons defined via addCharacterLook>'
-      }
+      },      
+      flagIsImmortal: Boolean, // >= v1.5.3 (can still die via events, etc)
+      flagCanGetPregnant: Boolean, // >= v1.5.3
+      flagCanImpregnate: Boolean, // >= v1.5.3
+      flagCannotMarry: Boolean, // >= v1.5.3
+      flagCanHoldImperium: Boolean // >= v1.5.3 (allows full ludi, war & election participation)
     }
   })
   ```

@@ -43,13 +43,30 @@
       let state = daapi.getState()
       let character = daapi.getCharacter({ characterId })
       let options = []
+      let gender = Math.random() <= 0.2 ? 'genderfluid' : character.gender
       for (let i = 0; i < 5; i++) {
         let potentialSpouseId = daapi.generateCharacter({ 
           characterFeatures: {
-            isMale: character.isMale,
-            birthYear: state.year - Math.floor(18 + Math.random() * 35)
+            gender: character.gender,
+            birthYear: state.year - Math.floor(18 + Math.random() * 35),
+            ...(gender === 'genderfluid' || Math.random() <= 0.45 ? {
+              flagCanGetPregnant: Math.random() < 0.6 ? undefined : Math.random() < 0.5,
+              flagCanImpregnate: Math.random() < 0.6 ? undefined : Math.random() < 0.5
+            } : {}),
+            flagCanHoldImperium: Math.random() > 0.6
           },
           dynastyFeatures : {} 
+        })
+        let possibleSexualities = ['faunnic', 'ace']
+        if(character.gender === 'male' || (character.gender !== 'female' && Math.random() < 0.5)) {
+          possibleSexualities.push('achillean')
+        }
+        if(character.gender === 'female' || (character.gender !== 'male' && Math.random() < 0.5)) {
+          possibleSexualities.push('sapphic')
+        }
+        daapi.addTrait({ 
+          characterId: potentialSpouseId, 
+          trait: possibleSexualities[Math.floor(Math.random() * possibleSexualities.length)]
         })
         let potentialSpouse = daapi.getCharacter({ characterId: potentialSpouseId })
         let potentialSpouseDynasty = daapi.getState().dynasties[potentialSpouse.dynastyId] || {}
@@ -83,15 +100,22 @@
     },
     doMarry({ characterId, potentialSpouseId }) {
       let character = daapi.getCharacter({ characterId })
-      daapi.performMarriage({ characterId, spouseId: potentialSpouseId, isMatrilineal: !character.isMale })
+      let isMale = character.gender ? character.gender === 'male' : character.isMale
+      daapi.performMarriage({ characterId, spouseId: potentialSpouseId, isMatrilineal: !isMale })
       daapi.setCharacterFlag({ characterId, flag: 'isGayMarried', data: true })
       daapi.setCharacterFlag({ characterId: potentialSpouseId, flag: 'isGayMarried', data: true })
-      if (Math.random() < 1 / 20) {
-        daapi.setCharacterFlag({ characterId: potentialSpouseId, flag: 'isTrans', data: true })
+      let possibleSexualities = ['faunnic', 'ace']
+      if(character.gender === 'male' || (character.gender !== 'female' && Math.random() < 0.5)) {
+        possibleSexualities.push('achillean')
       }
-      daapi.addTrait({ characterId, trait: (character.isMale ? 'achillean' : 'sapphic') })
-      daapi.addTrait({ characterId: potentialSpouseId, trait: (character.isMale ? 'achillean' : 'sapphic') })
-      daapi.addModifier({ key: 'character_fertility_' + potentialSpouseId, id: 'gay_marriage', factor: 0})
+      if(character.gender === 'female' || (character.gender !== 'male' && Math.random() < 0.5)) {
+        possibleSexualities.push('sapphic')
+      }
+      daapi.addTrait({ 
+        characterId, 
+        trait: possibleSexualities[Math.floor(Math.random() * possibleSexualities.length)]
+      })
+      // daapi.addModifier({ key: 'character_fertility_' + potentialSpouseId, id: 'gay_marriage', factor: 0}) //@INFO: no need as of v1.5.3+
       daapi.deleteCharacterAction({
         characterId,
         key: 'gay_marriage'

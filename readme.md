@@ -10,7 +10,7 @@ On Android, it uses the `/CitizenOfRomeDynastyAscendant/mods` directory in the a
 
 It displays the exact path for mods in the Settings screen after you enable mods once
 
-Requires v1.4.1+
+Requires v1.4.0+
 
 **Note**: The paths and folder names need to be right for the mods to work. 
 A common gotcha is creating a new folder when unzipping mods, please ensure you extract them directly into your `mods` folder without creating a new folder/directory.
@@ -49,7 +49,7 @@ Download the zip file from the [Releases section](https://github.com/CitizenOfRo
 - Divorce -- Force any pair of characters in household to Divorce
 - Play As -- Play as an other character (women included)
 
-## Mods by others:
+### Mods by others:
 + [Bank of Rome and other mods by peritiSumus](https://github.com/peritiSumus/CoR-Mods)
 + [Sandbox Hard mode by @narvin](https://github.com/narvin42/CORmods)
 + [Only Living Descendants & other mods by @maydayp](https://github.com/kstruggles/CORmods)

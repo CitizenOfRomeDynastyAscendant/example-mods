@@ -49,7 +49,11 @@ Download the zip file from the [Releases section](https://github.com/CitizenOfRo
 - Divorce -- Force any pair of characters in household to Divorce
 - Play As -- Play as an other character (women included)
 
-[Bank of Rome and other mods by peritiSumus](https://github.com/peritiSumus/CoR-Mods)
+## Mods by others:
++ [Bank of Rome and other mods by peritiSumus](https://github.com/peritiSumus/CoR-Mods)
++ [Sandbox Hard mode by @narvin](https://github.com/narvin42/CORmods)
++ [Only Living Descendants & other mods by @maydayp](https://github.com/kstruggles/CORmods)
++ [Change Theme and other mods by @Prahlad](https://github.com/prahlad-swarnkar/CORmods/releases)
 
 Mod file structure
 ------------------

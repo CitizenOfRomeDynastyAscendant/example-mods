@@ -47,7 +47,10 @@ Download the zip file from the [Releases section](https://github.com/CitizenOfRo
 - No More Kids -- Prevents the whole household from having more children via a toggleable button
 - New Dynasty? -- Allows you to branch off your current household with a new nomen, cognomen and heritage
 - Divorce -- Force any pair of characters in household to Divorce
-- Play As -- Play as an other character (women included)
+- Play As -- Play as any other character
+- Play a Scenario -- Play pre-set scenarios including that of Julius Caesar among others
+- Gay marriage
+- Command Console - Run command snippets (see: https://github.com/CitizenOfRomeDynastyAscendant/example-mods/blob/master/snippets.md)
 
 ### Mods by others:
 + [Bank of Rome and other mods by peritiSumus](https://github.com/peritiSumus/CoR-Mods)

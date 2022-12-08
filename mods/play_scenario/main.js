@@ -19,7 +19,8 @@
     process() {
       let scenarios = [
         '/play_scenario/scenarios/gaius_julius_caesar',
-        '/play_scenario/scenarios/marcus_vipsanius_agrippa'
+        '/play_scenario/scenarios/marcus_vipsanius_agrippa',
+        '/play_scenario/scenarios/mark_antony',
       ]
       let state = daapi.getState()
       let scaleByClassFactor = daapi.calculateScaleByClassFactor()

@@ -1,6 +1,6 @@
 {
   title: 'Marcus Antonius, 683 A.U.C',
-  info: 'Start as Julia, the mother of the (in)famous Mark Antony (~12 years old on this date), right after her husband\'s death',
+  info: 'Start as Julia, the mother of the triumvir general Mark Antony, right after her husband\'s execution',
   characterId: 'Julia',
   date: {
     day: 14,
@@ -14,10 +14,10 @@
     vinyard: 10,
   },
   dynasties: {
-    Antonius_Creticus: {
-      id: 'Antonius_Creticus',
+    Antonius: {
+      id: 'Antonius',
       nomen: 'Antonius',
-      cognomen: 'Creticus',
+      cognomen: '',
       prestige: 1500,
       heritage: 'roman_plebian'
     },
@@ -25,17 +25,18 @@
   characters: {
     'Julia': {
       id: 'Julia',
-      dynastyId: 'Antonius_Creticus',
+      dynastyId: 'Antonius',
       isDead: false,
       gender: 'female',
       isMale: false,
       praenomen: 'Julia',
       agnomen: '',
+      cognomen: 'Caesar',
       birthMonth: 3,
       birthYear: 658,
       job: null,
       jobLevel: 0,
-      spouseId: 'Marcus_Antonius_Creticus',//todo
+      spouseId: 'Marcus_Antonius_Creticus',
       fatherId: null,
       motherId: null,
       childrenIds: ['Mark_Antony', 'Gaius', 'Lucius'],
@@ -55,7 +56,7 @@
     },
     'Marcus_Antonius_Creticus': {
       id: 'Marcus_Antonius_Creticus',
-      dynastyId: 'Antonius_Creticus',
+      dynastyId: 'Antonius',
       isDead: true,
       gender: 'male',
       isMale: true,
@@ -89,7 +90,7 @@
     },
     'Mark_Antony': {
       id: 'Mark_Antony',
-      dynastyId: 'Antonius_Creticus',
+      dynastyId: 'Antonius',
       isDead: false,
       gender: 'male',
       isMale: true,
@@ -131,7 +132,7 @@
     },
     'Gaius': {
       id: 'Gaius',
-      dynastyId: 'Antonius_Creticus',
+      dynastyId: 'Antonius',
       isDead: false,
       gender: 'male',
       isMale: true,
@@ -172,7 +173,7 @@
     },
     'Lucius': {
       id: 'Lucius',
-      dynastyId: 'Antonius_Creticus',
+      dynastyId: 'Antonius',
       isDead: false,
       gender: 'male',
       isMale: true,

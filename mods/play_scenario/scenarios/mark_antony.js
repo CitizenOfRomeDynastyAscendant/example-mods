@@ -33,13 +33,13 @@
       agnomen: '',
       cognomen: 'Caesar',
       birthMonth: 3,
-      birthYear: 658,
+      birthYear: 654,
       job: null,
       jobLevel: 0,
       spouseId: 'Marcus_Antonius_Creticus',
       fatherId: null,
       motherId: null,
-      childrenIds: ['Mark_Antony', 'Gaius', 'Lucius'],
+      childrenIds: ['Antonia', 'Mark_Antony', 'Gaius', 'Lucius'],
       traits: ['educated', 'stress'],
       skills: {
         intelligence: Math.round(Math.random() * 10) + 20,
@@ -63,7 +63,7 @@
       praenomen: 'Marcus',
       agnomen: 'Creticus',
       birthMonth: 5,
-      birthYear: 658,
+      birthYear: 654,
       deathday: 1,
       deathMonth: 5,
       deathYear: 683,
@@ -73,7 +73,7 @@
       spouseId: 'Julia',
       fatherId: null,
       motherId: null,
-      childrenIds: ['Mark_Antony', 'Gaius', 'Lucius'],
+      childrenIds: ['Antonia', 'Mark_Antony', 'Gaius', 'Lucius'],
       traits: ['educated'],
       skills: {
         intelligence: Math.round(Math.random() * 10) + 10,
@@ -87,6 +87,47 @@
       },
       inheritance: 50000,
       flagServedPraetor: true,
+    },
+    'Antonia': {
+      id: 'Antonia',
+      dynastyId: 'Antonius',
+      isDead: false,
+      gender: 'female',
+      isMale: false,
+      praenomen: 'Antonia',
+      agnomen: '',
+      birthDay: 14,
+      birthMonth: 1,
+      birthYear: 670,
+      job: null,
+      jobLevel: 0,
+      spouseId: null,
+      fatherId: 'Marcus_Antonius_Creticus',
+      motherId: 'Julia',
+      childrenIds: [],
+      traits: ['literate'],
+      skills: {
+        intelligence: Math.round(Math.random() * 10) + 10,
+        stewardship: Math.round(Math.random() * 10) + 10,
+        eloquence: Math.round(Math.random() * 10) + 10,
+        combat: Math.round(Math.random() * 10) + 10
+      },
+      look: {
+        group: 'roman',
+        type: 'auburn'
+      },
+      inheritance: 0,
+      flagIsBusy: true,
+      flagAttendingLudus: 'private',
+      actions: {
+        beginLudusEducation: {
+          isAvailable: false
+        },
+        endLudusEducation: {
+          isAvailable: false
+        }
+      },
+      statuses: {}
     },
     'Mark_Antony': {
       id: 'Mark_Antony',

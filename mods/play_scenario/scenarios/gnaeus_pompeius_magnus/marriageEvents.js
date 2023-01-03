@@ -34,13 +34,13 @@
                   + '\n What will you do?'
                 break;
               case 1:
-                marriageMessage = `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]` + ', Publius Antistius offers his daughter '
+                marriageMessage = `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]` + ', Sullus offers his step-daughter '
                   + `[c|${potentialSpouse.id}|${"Aemilia"}]` + '\'s  hand in marriage. '
                   + 'You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
                 break;
               case 2:
-                marriageMessage = `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]` + ', Publius Antistius offers his daughter '
+                marriageMessage = `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]` + ', offers his daughter '
                   + `[c|${potentialSpouse.id}|${"Mucia"}]` + '\'s  hand in marriage. '
                   + 'You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
@@ -52,7 +52,7 @@
                   + '\n What will you do?'
                 break;
               case 4:
-                marriageMessage = `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]` + ', Publius Antistius offers his daughter '
+                marriageMessage = `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]` + ', offers his daughter '
                   + `[c|${potentialSpouse.id}|${"Cornelia"}]` + '\'s  hand in marriage. '
                   + 'You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'

@@ -1,5 +1,5 @@
 {
-  title: 'Gnaeus Pompeius Magnus, 648 A.U.C',
+  title: 'Gnaeus Pompeius Magnus, 658 A.U.C',
   info: 'Start as Gnaeus Pompeius Strabo, a Roman general, politician and father of Pompey the Great.',
   characterId: 'Gnaeus_Pompeius_Magnus_Father',
   date: {
@@ -7,35 +7,27 @@
     month: 4,
     year: 658
   },
-  cash: 10000,
+  cash: 100000,
   influence: 20000,
   property: {
-    horse: 1,
-    farmland: 2,
-    vinyard: 3,
-    insulae: 5,
-    tradeships: 5,
-    fishingBoat: 20,
-    donkey: 30,
-    pig: 30,
-    cattle: 25,
-    chicken: 25
+    horse: 5,
+    farmland: 20,
+    vinyard: 30,
+    orchard: 25,
+    fishingBoat: 10,
+    donkey: 80,
+    sheep: 80,
+    goat: 80,
+    pig: 40,
+    cattle: 40,
+    chicken: 25,
   },
   dynasties: {
     'Pompeius_Strabo': {
       id: 'Pompeius_Strabo',
-      nomen: 'Pompeius',
-      cognomen: 'Strabo',
       prestige: 1500,
       heritage: 'roman_plebian'
     },
-    // 'Mother_Gen': {
-    //   id: 'Mother_Gen',
-    //   nomen: 'Mother',
-    //   cognomen: 'Gen',
-    //   prestige: 1500,
-    //   heritage: 'roman_plebian'
-    // }
   },
   characters: {
     'Gnaeus_Pompeius_Magnus_Father': {
@@ -45,6 +37,8 @@
       gender: 'male',
       isMale: true,
       praenomen: 'Gnaeus',
+      nomen: 'Pompeius',
+      cognomen: 'Strabo',
       agnomen: '',
       birthMonth: 11,
       birthYear: 619,
@@ -55,11 +49,11 @@
       spouseId: null,
       fatherId: null,
       motherId: null,
-      childrenIds: ['Gnaeus_Pompeius_Magnus'],
-      traits: ['veteran', 'oratorDeliberative'],
+      childrenIds: ['Gnaeus_Pompeius_Magnus','Pompeia'],
+      traits: ['veteran','sly', 'oratorDeliberative','formerMilitaryTribune',],
       skills: {
         intelligence: Math.round(Math.random() * 10) + 10,
-        stewardship: Math.round(Math.random() * 10),
+        stewardship: Math.round(Math.random() * 10)+ 15,
         eloquence: Math.round(Math.random() * 10),
         combat: Math.round(Math.random() * 10) + 7
       },
@@ -67,34 +61,40 @@
       flagPlayScenarioModIsPompey: true,
       flagAssignedPersonalityTrait: true
     },
-    // 'Gnaeus_Pompeius_Magnus_Mother': {
-    //   id: 'Gnaeus_Pompeius_Magnus_Mother',
-    //   dynastyId: 'Mother_Gen',
-    //   // isDead: true,
-    //   gender: 'female',
-    //   isMale: false,
-    //   praenomen: 'Mother',
-    //   agnomen: '',
-    //   birthMonth: 11,
-    //   birthYear: 619,
-    //   // deathMonth: 3,
-    //   // deathYear: 667,
-    //   job: null,
-    //   jobLevel: 0,
-    //   spouseId: 'Gnaeus_Pompeius_Magnus_Father',
-    //   fatherId: null,
-    //   motherId: null,
-    //   childrenIds: ['Gnaeus_Pompeius_Magnus'],
-    //   traits: ['veteran', 'oratorDeliberative'],
-    //   skills: {
-    //     intelligence: Math.round(Math.random() * 10) + 10,
-    //     stewardship: Math.round(Math.random() * 10),
-    //     eloquence: Math.round(Math.random() * 10),
-    //     combat: Math.round(Math.random() * 10) + 7
-    //   },
-    //   inheritance: 0,
-    //   flagAssignedPersonalityTrait: true
-    // },
+
+    "Pompeia":
+    {
+      id: 'Gnaeus_Pompeius_Magnus',
+      dynastyId: 'Pompeius_Strabo',
+      isDead: false,
+      gender: 'female',
+      isMale: false,
+      praenomen: 'Pompeia',
+      nomen:'',
+      agnomen: '',
+      cognomen: 'Strabonia',
+      birthMonth: 1,
+      birthYear: 641,//648
+      job: null,
+      jobLevel: 0,
+      spouseId: null,
+      fatherId: 'Gnaeus_Pompeius_Magnus_Father',
+      motherId: null,
+      childrenIds: [],
+      traits: ['genius', 'erudite'],
+      skills: {
+        intelligence: Math.round(Math.random() * 10) + 20,
+        stewardship: Math.round(Math.random() * 10) + 10,
+        eloquence: Math.round(Math.random() * 10) + 15,
+        combat: Math.round(Math.random() * 10) + 10
+      },
+      look: {
+        group: 'roman',
+        type: 'auburn'
+      },
+      flagAssignedPersonalityTrait: true,
+      flagPlayScenarioModIsPompey:true,
+    },
     'Gnaeus_Pompeius_Magnus': {
       id: 'Gnaeus_Pompeius_Magnus',
       dynastyId: 'Pompeius_Strabo',
@@ -102,17 +102,18 @@
       gender: 'male',
       isMale: true,
       praenomen: 'Gnaeus',
+      nomen: 'Pompeius',
       agnomen: '',
       cognomen: 'Magnus',
       birthMonth: 1,
-      birthYear: 638,//648
+      birthYear: 648,//648
       job: null,
       jobLevel: 0,
       spouseId: null,
       fatherId: 'Gnaeus_Pompeius_Magnus_Father',
       motherId: null,
       childrenIds: [],
-      traits: ['genius', 'erudite', 'oratorJudicial', 'philosopher', 'honorable', 'formerPlebianTribune', 'formerPraetor'],
+      traits:  ['trusting','ambitious','erudite',],
       skills: {
         intelligence: Math.round(Math.random() * 10) + 20,
         stewardship: Math.round(Math.random() * 10) + 10,
@@ -125,7 +126,6 @@
       },
       flagAssignedPersonalityTrait: true,
       flagPlayScenarioModIsPompey:true,
-      flagPompey:true,
       SpouseData: [
         {
           time:20,

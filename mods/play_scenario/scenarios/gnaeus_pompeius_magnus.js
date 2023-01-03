@@ -105,7 +105,7 @@
       agnomen: '',
       cognomen: 'Magnus',
       birthMonth: 1,
-      birthYear: 648,
+      birthYear: 638,
       job: null,
       jobLevel: 0,
       spouseId: null,
@@ -124,6 +124,7 @@
         type: 'black'
       },
       flagAssignedPersonalityTrait: true,
+      flagPlayScenarioModIsPompey:true,
     }
   }
 }

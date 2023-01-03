@@ -38,7 +38,6 @@
       gender: 'male',
       isMale: true,
       praenomen: 'Gnaeus',
-      nomen: 'Pompeius',
       cognomen: 'Strabo',
       agnomen: '',
       birthMonth: 11,
@@ -60,6 +59,7 @@
       },
       inheritance: 0,
       flagPlayScenarioModIsPompey: true,
+      flagFather:true,
       flagAssignedPersonalityTrait: true
     },
 
@@ -93,6 +93,7 @@
         type: 'auburn'
       },
       flagAssignedPersonalityTrait: true,
+      flagFather:false,
       flagPlayScenarioModIsPompey:true,
     },
     'Gnaeus_Pompeius_Magnus': {
@@ -125,6 +126,7 @@
         type: 'black'
       },
       flagAssignedPersonalityTrait: true,
+      flagFather:false,
       flagPlayScenarioModIsPompey:true,
       SpouseData: [
         {

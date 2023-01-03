@@ -29,32 +29,32 @@
             switch (spouseIndex) {
               case 0:
                 marriageMessage = `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]` + ', Publius Antistius offers his daughter '
-                  + `[c|${potentialSpouse.id}|${"Antistia"}]` + '\'s  hand in marriage. '
-                  + 'You may refuse, but it will leave a mark on you and your family\'s honour'
+                  + `[c|${potentialSpouse.id}|${"Antistia"}]` + '\'s  hand in marriage to '+`[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
+                  + ' You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
                 break;
               case 1:
-                marriageMessage = `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]` + ', Sullus offers his step-daughter '
-                  + `[c|${potentialSpouse.id}|${"Aemilia"}]` + '\'s  hand in marriage. '
-                  + 'You may refuse, but it will leave a mark on you and your family\'s honour'
+                marriageMessage =  ', Sullus offers his step-daughter '
+                  + `[c|${potentialSpouse.id}|${"Aemilia"}]` + '\'s  hand in marriage to '+`[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
+                  + ' You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
                 break;
               case 2:
-                marriageMessage = `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]` + ', offers his daughter '
-                  + `[c|${potentialSpouse.id}|${"Mucia"}]` + '\'s  hand in marriage. '
-                  + 'You may refuse, but it will leave a mark on you and your family\'s honour'
+                marriageMessage = 'Quintus Mucius Scaevola offers his daughter '
+                  + `[c|${potentialSpouse.id}|${"Mucia"}]` + '\'s  hand in marriage to  '+`[c|${characterId}|${"Gnaeus Pompeius Magnus"}]`
+                  + ' You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
                 break;
               case 3:
-                marriageMessage = `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]` + ', Good Friend Julisu Caesar offers his daughter, '
-                  + `[c|${potentialSpouse.id}|${"Julia"}]` + '\'s  hand in marriage. '
-                  + 'You may refuse, but it will leave a mark on you and your family\'s honour'
+                marriageMessage = 'Good Friend Julisu Caesar offers his daughter, '
+                  + `[c|${potentialSpouse.id}|${"Julia"}]` + '\'s  hand in marriage to '+`[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
+                  + ' You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
                 break;
               case 4:
-                marriageMessage = `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]` + ', offers his daughter '
-                  + `[c|${potentialSpouse.id}|${"Cornelia"}]` + '\'s  hand in marriage. '
-                  + 'You may refuse, but it will leave a mark on you and your family\'s honour'
+                marriageMessage =  ' Quintus Caecilius Metellus Pius Scipio Nasica offers his daughter '
+                  + `[c|${potentialSpouse.id}|${"Cornelia"}]` + '\'s  hand in marriage to '+`[c|${characterId}|${"Gnaeus Pompeius Magnus"}].` 
+                  + ' You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
                 break;
             }
@@ -109,7 +109,7 @@
 
               daapi.pushInteractionModalQueue({
                 title: 'Marriage with '+ `${potentialSpouse.praenomen}` ,
-                image: daapi.requireImage("/play_scenario/scenarios/marcus_vipsanius_agrippa/ruby_ring_optimized.svg"),
+                image: daapi.requireImage("/play_scenario/scenarios/gnaeus_pompeius_magnus/ruby_ring_optimized.svg"),
                 message: marriageMessage,
                 options: 
                 [

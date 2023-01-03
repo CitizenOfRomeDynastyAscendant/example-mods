@@ -26,6 +26,7 @@
     'Pompeius_Strabo': {
       id: 'Pompeius_Strabo',
       prestige: 1500,
+      nomen:'Pompeius',
       heritage: 'roman_plebian'
     },
   },
@@ -70,7 +71,6 @@
       gender: 'female',
       isMale: false,
       praenomen: 'Pompeia',
-      nomen:'',
       agnomen: '',
       cognomen: 'Strabonia',
       birthMonth: 1,

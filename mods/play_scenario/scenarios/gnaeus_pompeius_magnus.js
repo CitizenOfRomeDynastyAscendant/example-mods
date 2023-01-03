@@ -125,6 +125,192 @@
       },
       flagAssignedPersonalityTrait: true,
       flagPlayScenarioModIsPompey:true,
+      flagPompey:true,
+      SpouseData: [
+        {
+          time:20,
+          characterFeatures: {
+            isDead: false,
+            isMale: false,
+            praenomen: 'Antistia',
+            agnomen: '',
+            birthMonth: 3,
+            birthYear: 648,
+            job: null,
+            jobLevel: 0,
+            spouseId: null,
+            fatherId: null,
+            motherId: null,
+            childrenIds: [],
+            traits: ['oratorDeliberative', 'weak'],
+            skills: {
+              intelligence: Math.round(Math.random() * 10) + 4,
+              stewardship: Math.round(Math.random() * 10) + 6,
+              eloquence: Math.round(Math.random() * 10) + 8,
+              combat: Math.round(Math.random() * 10)
+            },
+            look: {
+              group: 'roman',
+              type: 'blonde'
+            },
+            flagAssignedPersonalityTrait: false
+          },
+          dynastyFeatures: {
+            id: 'Antistia',
+            nomen: 'Antistia',
+            cognomen: '',
+            prestige: 40000,
+            heritage: 'roman_plebian'
+          }
+        },
+        {
+          time:21,
+          characterFeatures: {
+            isDead: false,
+            isMale: false,
+            praenomen: 'Aemilia',
+            agnomen: '',
+            birthMonth: 3,
+            birthYear: 648,
+            job: null,
+            jobLevel: 0,
+            spouseId: null,
+            fatherId: null,
+            motherId: null,
+            childrenIds: [],
+            traits: ['oratorDeliberative', 'weak'],
+            skills: {
+              intelligence: Math.round(Math.random() * 10) + 4,
+              stewardship: Math.round(Math.random() * 10) + 6,
+              eloquence: Math.round(Math.random() * 10) + 8,
+              combat: Math.round(Math.random() * 10)
+            },
+            look: {
+              group: 'roman',
+              type: 'blonde'
+            },
+            flagAssignedPersonalityTrait: false
+          },
+          dynastyFeatures: {
+            id: 'Antistia',
+            nomen: 'Antistia',
+            cognomen: '',
+            prestige: 40000,
+            heritage: 'roman_plebian'
+          }
+        },
+        {
+          time:22,
+
+          characterFeatures: {
+            isDead: false,
+            isMale: false,
+            praenomen: 'Mucia',
+            agnomen: '',
+            birthMonth: 3,
+            birthYear: 648,
+            job: null,
+            jobLevel: 0,
+            spouseId: null,
+            fatherId: null,
+            motherId: null,
+            childrenIds: [],
+            traits: ['oratorDeliberative', 'weak'],
+            skills: {
+              intelligence: Math.round(Math.random() * 10) + 4,
+              stewardship: Math.round(Math.random() * 10) + 6,
+              eloquence: Math.round(Math.random() * 10) + 8,
+              combat: Math.round(Math.random() * 10)
+            },
+            look: {
+              group: 'roman',
+              type: 'blonde'
+            },
+            flagAssignedPersonalityTrait: false
+          },
+          dynastyFeatures: {
+            id: 'Antistia',
+            nomen: 'Antistia',
+            cognomen: '',
+            prestige: 40000,
+            heritage: 'roman_plebian'
+          }
+        },
+        {
+          time:23,
+
+          characterFeatures: {
+            isDead: false,
+            isMale: false,
+            praenomen: 'Julia',
+            agnomen: '',
+            birthMonth: 3,
+            birthYear: 648,
+            job: null,
+            jobLevel: 0,
+            spouseId: null,
+            fatherId: null,
+            motherId: null,
+            childrenIds: [],
+            traits: ['oratorDeliberative', 'weak'],
+            skills: {
+              intelligence: Math.round(Math.random() * 10) + 4,
+              stewardship: Math.round(Math.random() * 10) + 6,
+              eloquence: Math.round(Math.random() * 10) + 8,
+              combat: Math.round(Math.random() * 10)
+            },
+            look: {
+              group: 'roman',
+              type: 'blonde'
+            },
+            flagAssignedPersonalityTrait: false
+          },
+          dynastyFeatures: {
+            id: 'Antistia',
+            nomen: 'Antistia',
+            cognomen: '',
+            prestige: 40000,
+            heritage: 'roman_plebian'
+          }
+        },
+        {
+          time:24,
+
+          characterFeatures: {
+            isDead: false,
+            isMale: false,
+            praenomen: 'Cornelia',
+            agnomen: '',
+            birthMonth: 3,
+            birthYear: 648,
+            job: null,
+            jobLevel: 0,
+            spouseId: null,
+            fatherId: null,
+            motherId: null,
+            childrenIds: [],
+            traits: ['oratorDeliberative', 'weak'],
+            skills: {
+              intelligence: Math.round(Math.random() * 10) + 4,
+              stewardship: Math.round(Math.random() * 10) + 6,
+              eloquence: Math.round(Math.random() * 10) + 8,
+              combat: Math.round(Math.random() * 10)
+            },
+            look: {
+              group: 'roman',
+              type: 'blonde'
+            },
+            flagAssignedPersonalityTrait: false
+          },
+          dynastyFeatures: {
+            id: 'Antistia',
+            nomen: 'Antistia',
+            cognomen: '',
+            prestige: 40000,
+            heritage: 'roman_plebian'
+          }
+        },
+      ]
     }
   }
 }

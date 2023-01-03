@@ -135,7 +135,7 @@
             praenomen: 'Antistia',
             agnomen: '',
             birthMonth: 3,
-            birthYear: 648,
+            birthYear: 638,
             job: null,
             jobLevel: 0,
             spouseId: null,
@@ -201,7 +201,6 @@
         },
         {
           time:27,//675
-
           characterFeatures: {
             isDead: false,
             isMale: false,
@@ -238,7 +237,6 @@
         },
         {
           time:47,
-
           characterFeatures: {
             isDead: false,
             isMale: false,
@@ -275,7 +273,6 @@
         },
         {
           time:54,//702//age:54
-
           characterFeatures: {
             isDead: false,
             isMale: false,
@@ -309,7 +306,7 @@
             prestige: 40000,
             heritage: 'roman_patrician'
           }
-        },
+        }
       ]
     }
   }

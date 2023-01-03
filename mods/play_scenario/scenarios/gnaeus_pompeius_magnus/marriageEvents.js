@@ -9,26 +9,27 @@
 
     if (character.SpouseData !== undefined && character.flagPlayScenarioModIsPompey) {
 
-      for (var spouseIndex = 0; spouseIndex < character.SpouseData.length; spouseIndex++) {
 
+      for (var spouseIndex = 0; spouseIndex < character.SpouseData.length; spouseIndex++) {
         if (!daapi.getCharacterFlag({ characterId: characterId, flag: `pompey_engagement_${spouseIndex + 1}_over` })) {
           if (age > character.SpouseData[spouseIndex].time + .5 &&
             age < character.SpouseData[spouseIndex].time + 1.5 &&
             !character.isDead) {
-
+            // console.log(character.SpouseData[spouseIndex].characterFeatures.praenomen);
             let potentialSpouseID = daapi.generateCharacter({
 
               characterFeatures: character.SpouseData[spouseIndex].characterFeatures,
               dynastyFeatures: character.SpouseData[spouseIndex].dynastyFeatures
 
             })
+
             let potentialSpouse = daapi.getCharacter({ characterId: potentialSpouseID })
 
             let marriageMessage = ''
             switch (spouseIndex) {
               case 0:
                 marriageMessage = `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]` + ', Publius Antistius offers his daughter '
-                  + `[c|${potentialSpouse.id}|${"Antistia"}]` + '\'s  AEMILIA hand in marriage. '
+                  + `[c|${potentialSpouse.id}|${"Antistia"}]` + '\'s  hand in marriage. '
                   + 'You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
                 break;
@@ -79,11 +80,10 @@
                   method: 'wedding',
                   context: { characterId: characterId, spouseId: potentialSpouse.id, isMatrilineal: false }
                 }}
-
-              if(character.spouseId !== null ||
-                state.characters[character.spouseId] ||
-                !state.characters[character.spouseId].isDead) {
-
+              console.log(character.spouseId)
+              if(character.spouseId !==false && 
+                  (state.characters[character.spouseId] &&
+                  !state.characters[character.spouseId].isDead)){
                   let presentSpouse = daapi.getCharacter({ characterId: character.spouseId})
 
                   acceptOption = {
@@ -108,7 +108,7 @@
               }
 
               daapi.pushInteractionModalQueue({
-                title: 'Marriage with ' + `${potentialSpouse.praenomen}`,
+                title: 'Marriage with '+ `${potentialSpouse.praenomen}` ,
                 image: daapi.requireImage("/play_scenario/scenarios/marcus_vipsanius_agrippa/ruby_ring_optimized.svg"),
                 message: marriageMessage,
                 options: 

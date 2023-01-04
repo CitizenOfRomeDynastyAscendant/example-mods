@@ -59,7 +59,7 @@
       },
       inheritance: 0,
       flagPlayScenarioModIsPompey: true,
-      flagFather:true,
+      flagPlayScenarioModPompeyIsFather:true,
       flagAssignedPersonalityTrait: true
     },
 
@@ -93,7 +93,7 @@
         type: 'auburn'
       },
       flagAssignedPersonalityTrait: true,
-      flagFather:false,
+      flagPlayScenarioModPompeyIsFather:false,
       flagPlayScenarioModIsPompey:true,
     },
     'Gnaeus_Pompeius_Magnus': {
@@ -126,7 +126,7 @@
         type: 'black'
       },
       flagAssignedPersonalityTrait: true,
-      flagFather:false,
+      flagPlayScenarioModPompeyIsFather:false,
       flagPlayScenarioModIsPompey:true,
       SpouseData: [
         {

@@ -7,7 +7,7 @@
     let scalingFactor = daapi.calculateScaleByClassFactor()
     let age = daapi.calculateAge({ month: character.birthMonth, year: character.birthYear })
 
-    if (character.flagPlayScenarioModIsPompey && character.flagFather) {
+    if (character.flagPlayScenarioModIsPompey && character.flagPlayScenarioModPompeyIsFather) {
 
         if (!daapi.getCharacterFlag({ characterId: characterId, flag: `pompey_social_war` })) {
 

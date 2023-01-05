@@ -34,29 +34,29 @@
                   + '\n What will you do?'
                 break;
               case 1:
-                marriageMessage = ', Sullus offers his step-daughter '
+                marriageMessage = 'Sullus offers his step-daughter '
                   + `[c|${potentialSpouse.id}|${"Aemilia"}]` + '\'s  hand in marriage to ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
                   + ' You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
                 break;
+              // case 2:
+              //   marriageMessage = 'Quintus Mucius Scaevola offers his daughter '
+              //     + `[c|${potentialSpouse.id}|${"Mucia"}]` + '\'s  hand in marriage to  ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]`
+              //     + ' You may refuse, but it will leave a mark on you and your family\'s honour'
+              //     + '\n What will you do?'
+              //   break;
               case 2:
-                marriageMessage = 'Quintus Mucius Scaevola offers his daughter '
-                  + `[c|${potentialSpouse.id}|${"Mucia"}]` + '\'s  hand in marriage to  ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]`
-                  + ' You may refuse, but it will leave a mark on you and your family\'s honour'
-                  + '\n What will you do?'
-                break;
-              case 3:
                 marriageMessage = 'Good Friend Julisu Caesar offers his daughter, '
                   + `[c|${potentialSpouse.id}|${"Julia"}]` + '\'s  hand in marriage to ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
                   + ' You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
                 break;
-              case 4:
-                marriageMessage = ' Quintus Caecilius Metellus Pius Scipio Nasica offers his daughter '
-                  + `[c|${potentialSpouse.id}|${"Cornelia"}]` + '\'s  hand in marriage to ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
-                  + ' You may refuse, but it will leave a mark on you and your family\'s honour'
-                  + '\n What will you do?'
-                break;
+              // case 4:
+              //   marriageMessage = ' Quintus Caecilius Metellus Pius Scipio Nasica offers his daughter '
+              //     + `[c|${potentialSpouse.id}|${"Cornelia"}]` + '\'s  hand in marriage to ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
+              //     + ' You may refuse, but it will leave a mark on you and your family\'s honour'
+              //     + '\n What will you do?'
+              //   break;
             }
 
             if (potentialSpouse) {

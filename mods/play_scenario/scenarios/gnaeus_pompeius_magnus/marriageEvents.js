@@ -29,31 +29,31 @@
             switch (spouseIndex) {
               case 0:
                 marriageMessage = `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]` + ', Publius Antistius offers his daughter '
-                  + `[c|${potentialSpouse.id}|${"Antistia"}]` + '\'s  hand in marriage to '+`[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
+                  + `[c|${potentialSpouse.id}|${"Antistia"}]` + '\'s  hand in marriage to ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
                   + ' You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
                 break;
               case 1:
-                marriageMessage =  ', Sullus offers his step-daughter '
-                  + `[c|${potentialSpouse.id}|${"Aemilia"}]` + '\'s  hand in marriage to '+`[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
+                marriageMessage = ', Sullus offers his step-daughter '
+                  + `[c|${potentialSpouse.id}|${"Aemilia"}]` + '\'s  hand in marriage to ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
                   + ' You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
                 break;
               case 2:
                 marriageMessage = 'Quintus Mucius Scaevola offers his daughter '
-                  + `[c|${potentialSpouse.id}|${"Mucia"}]` + '\'s  hand in marriage to  '+`[c|${characterId}|${"Gnaeus Pompeius Magnus"}]`
+                  + `[c|${potentialSpouse.id}|${"Mucia"}]` + '\'s  hand in marriage to  ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]`
                   + ' You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
                 break;
               case 3:
                 marriageMessage = 'Good Friend Julisu Caesar offers his daughter, '
-                  + `[c|${potentialSpouse.id}|${"Julia"}]` + '\'s  hand in marriage to '+`[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
+                  + `[c|${potentialSpouse.id}|${"Julia"}]` + '\'s  hand in marriage to ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
                   + ' You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
                 break;
               case 4:
-                marriageMessage =  ' Quintus Caecilius Metellus Pius Scipio Nasica offers his daughter '
-                  + `[c|${potentialSpouse.id}|${"Cornelia"}]` + '\'s  hand in marriage to '+`[c|${characterId}|${"Gnaeus Pompeius Magnus"}].` 
+                marriageMessage = ' Quintus Caecilius Metellus Pius Scipio Nasica offers his daughter '
+                  + `[c|${potentialSpouse.id}|${"Cornelia"}]` + '\'s  hand in marriage to ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
                   + ' You may refuse, but it will leave a mark on you and your family\'s honour'
                   + '\n What will you do?'
                 break;
@@ -61,8 +61,7 @@
 
             if (potentialSpouse) {
 
-
-              let acceptOption = 
+              let acceptOption =
               {
                 text: 'I accept.',
                 tooltip: 'This will be a feast to remember.',
@@ -73,57 +72,59 @@
                   property: {
                     insulae: +1,
                     horse: +1
-                  }},
+                  }
+                },
                 disabled: false,
                 action: {
                   event: '/play_scenario/scenarios/gnaeus_pompeius_magnus/marriageEvents',
                   method: 'wedding',
                   context: { characterId: characterId, spouseId: potentialSpouse.id, isMatrilineal: false }
-                }}
+                }
+              }
               console.log(character.spouseId)
-              if(character.spouseId !==false && 
-                  (state.characters[character.spouseId] &&
-                  !state.characters[character.spouseId].isDead)){
-                  let presentSpouse = daapi.getCharacter({ characterId: character.spouseId})
+              if (character.spouseId !== false &&
+                (state.characters[character.spouseId] &&
+                  !state.characters[character.spouseId].isDead)) {
+                let presentSpouse = daapi.getCharacter({ characterId: character.spouseId })
 
-                  acceptOption = {
-                    text: 'Divorce '+`[c|${character.spouseId}|${presentSpouse.praenomen}]`+',Marry '+`[c|${potentialSpouse.id}|${potentialSpouse.praenomen}]`,
-                    tooltip: 'Tis most unfortunate.',
-                    statChanges: {
-                      cash: -6000 / scalingFactor,
-                      prestige: +2000 / scalingFactor,
-                      influence: +4000 / scalingFactor,
-                      property: {
-                        insulae: +1,
-                        horse: +1
-                      }
-                    },
-                    disabled: false,
-                    action: {
-                      event: '/play_scenario/scenarios/gnaeus_pompeius_magnus/marriageEvents',
-                      method: 'wedding',
-                      context: { characterId: characterId, spouseId: potentialSpouse.id, isMatrilineal: false }
+                acceptOption = {
+                  text: 'Divorce ' + `[c|${character.spouseId}|${presentSpouse.praenomen}]` + ',Marry ' + `[c|${potentialSpouse.id}|${potentialSpouse.praenomen}]`,
+                  tooltip: 'Tis most unfortunate.',
+                  statChanges: {
+                    cash: -6000 / scalingFactor,
+                    prestige: +2000 / scalingFactor,
+                    influence: +4000 / scalingFactor,
+                    property: {
+                      insulae: +1,
+                      horse: +1
                     }
+                  },
+                  disabled: false,
+                  action: {
+                    event: '/play_scenario/scenarios/gnaeus_pompeius_magnus/marriageEvents',
+                    method: 'wedding',
+                    context: { characterId: characterId, spouseId: potentialSpouse.id, isMatrilineal: false }
                   }
+                }
               }
 
               daapi.pushInteractionModalQueue({
-                title: 'Marriage with '+ `${potentialSpouse.praenomen}` ,
+                title: 'Marriage with ' + `${potentialSpouse.praenomen}`,
                 image: daapi.requireImage("/play_scenario/scenarios/gnaeus_pompeius_magnus/ruby_ring_optimized.svg"),
                 message: marriageMessage,
-                options: 
-                [
-                  acceptOption,
-                  {
-                    text: 'I won\'t marry her.',
-                    tooltip: 'Why should I?',
-                    statChanges: 
+                options:
+                  [
+                    acceptOption,
                     {
-                      prestige: -500 / scalingFactor,
-                      influence: -2000 / scalingFactor
+                      text: 'I won\'t marry her.',
+                      tooltip: 'Why should I?',
+                      statChanges:
+                      {
+                        prestige: -500 / scalingFactor,
+                        influence: -2000 / scalingFactor
+                      }
                     }
-                  }
-                ]
+                  ]
               })
               daapi.setCharacterFlag({ characterId: characterId, flag: `pompey_engagement_${spouseIndex + 1}_over`, data: true })
             }

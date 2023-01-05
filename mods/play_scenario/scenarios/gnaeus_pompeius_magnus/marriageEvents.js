@@ -127,15 +127,20 @@
                   disabled: false,
                   action: {
                     event: '/play_scenario/scenarios/gnaeus_pompeius_magnus/marriageEvents',
-                    method: 'wedding',
-                    context: { characterId: characterId, spouseId: potentialSpouse.id, isMatrilineal: false }
+                    method: 'divorceAccept',
+                    context: { characterId: characterId, presentSpouseId:presentSpouse.id,newSpouseId: potentialSpouse.id,spouseIndex:spouseIndex, isMatrilineal: false }
                   }
                 }
                 let rejectDivorceOption =
                 {
                   text: 'I won\'t abandon my Love.',
                   tooltip: 'I would never do such a thing',
-                  statChanges: divorceRejectStatChanges
+                  statChanges: divorceRejectStatChanges,
+                  action: {
+                    event: '/play_scenario/scenarios/gnaeus_pompeius_magnus/marriageEvents',
+                    method: 'marriageAccept',
+                    context: { characterId: characterId, newSpouseId: potentialSpouse.id,spouseIndex:spouseIndex }
+                  }
                 }
                 marriageOptions = [acceptDivorceOption, rejectDivorceOption]
               }
@@ -147,15 +152,20 @@
                   disabled: false,
                   action: {
                     event: '/play_scenario/scenarios/gnaeus_pompeius_magnus/marriageEvents',
-                    method: 'wedding',
-                    context: { characterId: characterId, spouseId: potentialSpouse.id, isMatrilineal: false }
+                    method: 'marriageAccept',
+                    context: { characterId: characterId, spouseId: potentialSpouse.id,spouseIndex:spouseIndex, isMatrilineal: false }
                   }
                 }
                 let rejectMarriageOption =
                 {
                   text: 'I won\'t marry her.',
                   tooltip: 'Why should I?',
-                  statChanges: marriageRejectStatChanges
+                  statChanges: marriageRejectStatChanges,
+                  action: {
+                    event: '/play_scenario/scenarios/gnaeus_pompeius_magnus/marriageEvents',
+                    method: 'marriageReject',
+                    context: { characterId: characterId, spouseId: potentialSpouse.id,spouseIndex:spouseIndex }
+                  }
                 }
                 marriageOptions = [acceptMarriageOption, rejectMarriageOption]
               }
@@ -176,9 +186,131 @@
     wedding({ characterId, spouseId, isMatrilineal }) {
       daapi.performMarriage({ characterId, spouseId, isMatrilineal })
     },
-    // divorceAndMarry({ characterId, presentSpouseId, newSpouseId }) {
+    marriageAccept({ characterId, spouseId, spouseIndex, isMatrilineal }) {
+      let spouse = daapi.getCharacter({ characterId: spouseId })
+      let acceptMessage = ''
+      let acceptText = ''
 
-    //   daapi.performMarriage({ characterId, newSpouseId, isMatrilineal })
-    // }
+      switch (spouseIndex) {
+        case 0:
+          acceptMessage = 'Publius Antistius is pleased to hear your response. He expects great things from you.'
+          acceptText = 'You are too kind'
+          break;
+        case 1:
+          acceptMessage = 'Sulla is pleased to hear your response. He looks forward to this partnership'
+          acceptText = 'A Toast to General Sulla!'
+          break;
+        case 2:
+          acceptMessage = 'Julius Caesar is pleased to hear your response. He looks forward to this partnership'
+          acceptText = 'A Toast for my friend Caesar!'
+          break;
+
+      }
+      daapi.pushInteractionModalQueue({
+        title: 'Marriage with ' + `${spouse.praenomen}`,
+        image: daapi.requireImage("/play_scenario/scenarios/gnaeus_pompeius_magnus/ruby_ring_optimized.svg"),
+        message: acceptMessage,
+        options: [
+          {
+            text: acceptText
+          }
+        ]
+      })
+      daapi.performMarriage({ characterId, spouseId, isMatrilineal })
+    },
+    marriageReject({ characterId,spouseId,spouseIndex }) {
+      let spouse = daapi.getCharacter({ characterId: spouseId })
+      let rejectMessage = ''
+      let rejectText = ''
+
+      switch (spouseIndex) {
+        case 0:
+          rejectMessage = 'Publius Antistius is disappointed. He feels humiliated.'
+          rejectText = 'It can\'t be helped.'
+          break;
+        case 1:
+          rejectMessage = 'Sulla is mortified. He will make sure you regret your choice.'
+          rejectText = 'You do not scare me!'
+          break;
+        case 2:
+          rejectMessage = 'Julius Caesar is disappointed that you choose otherwise.'
+          rejectText = 'It can\'t be helped.'
+          break;
+
+      }
+      daapi.pushInteractionModalQueue({
+        title: 'Marriage with ' + `${spouse.praenomen}`,
+        image: daapi.requireImage("/play_scenario/scenarios/gnaeus_pompeius_magnus/ruby_ring_optimized.svg"),
+        message: rejectMessage,
+        options: [
+          {
+            text: rejectText
+          }
+        ]
+      })
+    },
+    divorceAccept({ characterId, presentSpouseId, newSpouseId,spouseIndex,isMatrilineal }) {
+      let spouse = daapi.getCharacter({ characterId: newSpouseId })
+      let acceptMessage = ''
+      let acceptText = ''
+
+      switch (spouseIndex) {
+        case 0:
+          acceptMessage = 'Publius Antistius is pleased to hear your response. He expects great things from you.'
+          acceptText = 'You are too kind'
+          break;
+        case 1:
+          acceptMessage = 'Sulla is pleased to hear your response. He looks forward to this partnership'
+          acceptText = 'A Toast to General Sulla!'
+          break;
+        case 2:
+          acceptMessage = 'Julius Caesar is pleased to hear your response. He looks forward to this partnership'
+          acceptText = 'A Toast for my friend Caesar!'
+          break;
+
+      }
+      daapi.pushInteractionModalQueue({
+        title: 'Marriage with ' + `${spouse.praenomen}`,
+        image: daapi.requireImage("/play_scenario/scenarios/gnaeus_pompeius_magnus/ruby_ring_optimized.svg"),
+        message: acceptMessage,
+        options: [
+          {
+            text: acceptText
+          }
+        ]
+      })
+      daapi.performMarriage({ characterId, newSpouseId, isMatrilineal })
+    },
+    divorceReject({characterId, newSpouseId,spouseIndex }) {
+      let spouse = daapi.getCharacter({ characterId: newSpouseId })
+      let rejectMessage = ''
+      let rejectText = ''
+
+      switch (spouseIndex) {
+        case 0:
+          rejectMessage = 'Publius Antistius is disappointed. He feels humiliated.'
+          rejectText = 'It can\'t be helped.'
+          break;
+        case 1:
+          rejectMessage = 'Sulla is mortified. He will make sure you regret your choice.'
+          rejectText = 'You do not scare me!'
+          break;
+        case 2:
+          rejectMessage = 'Julius Caesar is disappointed that you choose otherwise.'
+          rejectText = 'It can\'t be helped.'
+          break;
+
+      }
+      daapi.pushInteractionModalQueue({
+        title: 'Marriage with ' + `${spouse.praenomen}`,
+        image: daapi.requireImage("/play_scenario/scenarios/gnaeus_pompeius_magnus/ruby_ring_optimized.svg"),
+        message: rejectMessage,
+        options: [
+          {
+            text: rejectText
+          }
+        ]
+      })
+    }
   }
 }

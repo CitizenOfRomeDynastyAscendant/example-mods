@@ -28,35 +28,24 @@
             let marriageMessage = ''
             switch (spouseIndex) {
               case 0:
-                marriageMessage = `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]` + ', Publius Antistius offers his daughter '
-                  + `[c|${potentialSpouse.id}|${"Antistia"}]` + '\'s  hand in marriage to ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
-                  + ' You may refuse, but it will leave a mark on you and your family\'s honour'
+                marriageMessage = 'Your Father has been accused of stealing public prperty.As your father\'s heir, you are being put on trial. Through thorough invesitgation you discovered that the theft was committed by one of your father\'s freedmen. You present your defense to the judge and directly confront the accuser. As a result, You have succesfully defended your father\'s honour and won the trail.'
+                  +' The judge,Publius Antistius, took a liking to you and offered his daughter ,'
+                  + `[c|${potentialSpouse.id}|${"Antistia"}]` + '\'s  hand in marriage'
                   + '\n What will you do?'
                 break;
               case 1:
-                marriageMessage = 'Sullus offers his step-daughter '
-                  + `[c|${potentialSpouse.id}|${"Aemilia"}]` + '\'s  hand in marriage to ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
-                  + ' You may refuse, but it will leave a mark on you and your family\'s honour'
+                marriageMessage = 'Dictator Sulla admires your administration skill and wishes to strengthen ties with you. He and his wife, Metella, wish that '+ `[c|${characterId}|${"you"}].`+' to marry their step-daughter,  '
+                  + `[c|${potentialSpouse.id}|${"Aemilia"}].`
+                  +'This could be a great oppurtunity to gain Sulla\'s favor.'
                   + '\n What will you do?'
                 break;
-              // case 2:
-              //   marriageMessage = 'Quintus Mucius Scaevola offers his daughter '
-              //     + `[c|${potentialSpouse.id}|${"Mucia"}]` + '\'s  hand in marriage to  ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}]`
-              //     + ' You may refuse, but it will leave a mark on you and your family\'s honour'
-              //     + '\n What will you do?'
-              //   break;
               case 2:
-                marriageMessage = 'Good Friend Julisu Caesar offers his daughter, '
-                  + `[c|${potentialSpouse.id}|${"Julia"}]` + '\'s  hand in marriage to ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
-                  + ' You may refuse, but it will leave a mark on you and your family\'s honour'
+                marriageMessage = 'Julius Caesar come to you with a proposal. As fellow members of the First Triumvirate he wishes to deepen your partnership. He offers his daughter '
+                  + `[c|${potentialSpouse.id}|${"Julia"}]` + '\'s  hand in marriage to you,' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
+                  +'This could be a great oppurtunity to gain Caesar\'s favor.'
                   + '\n What will you do?'
                 break;
-              // case 4:
-              //   marriageMessage = ' Quintus Caecilius Metellus Pius Scipio Nasica offers his daughter '
-              //     + `[c|${potentialSpouse.id}|${"Cornelia"}]` + '\'s  hand in marriage to ' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
-              //     + ' You may refuse, but it will leave a mark on you and your family\'s honour'
-              //     + '\n What will you do?'
-              //   break;
+
             }
 
             if (potentialSpouse) {

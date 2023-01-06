@@ -26,86 +26,32 @@
             let potentialSpouse = daapi.getCharacter({ characterId: potentialSpouseID })
 
             let marriageMessage = ''
-            let marriageAcceptStatChanges = {}
-            let marriageRejectStatChanges = {}
-            let divorceAcceptStatChanges = {}
-            let divorceRejectStatChanges = {}
+
             switch (spouseIndex) {
               case 0:
                 marriageMessage = 'Your Father has been accused of stealing public prperty.As your father\'s heir, you are being put on trial. Through thorough invesitgation you discovered that the theft was committed by one of your father\'s freedmen. You present your defense to the judge and directly confront the accuser. As a result, You have succesfully defended your father\'s honour and won the trail.'
                   + ' The judge,Publius Antistius, took a liking to you and offered his daughter ,'
                   + `[c|${potentialSpouse.id}|${"Antistia"}]` + '\'s  hand in marriage'
                   + '\n What will you do?'
-                marriageAcceptStatChanges = {
-                  prestige: +1000 / scalingFactor,
-                  influence: +2000 / scalingFactor,
-                  property: {
-                    insulae: +1,
-                    horse: +1
-                  }
-                }
-                marriageRejectStatChanges = {
-                  prestige: -3000 / scalingFactor,
-                  influence: -1000 / scalingFactor,
-                }
-                divorceAcceptStatChanges = {
-                  prestige: +1000 / scalingFactor,
-                  influence: -500 / scalingFactor,
-                }
-                divorceRejectStatChanges = {
-                  prestige: -500 / scalingFactor,
-                  influence: +2000 / scalingFactor,
-                }
+  
+     
                 break;
               case 1:
                 marriageMessage = 'Dictator Sulla admires your administration skill and wishes to strengthen ties with you. He and his wife, Metella, wish that ' + `[c|${characterId}|${"you"}]` + ' marry their step-daughter,  '
                   + `[c|${potentialSpouse.id}|${"Aemilia"}].`
                   + 'This could be a great oppurtunity to gain Sulla\'s favor.'
                   + '\n What will you do?'
-                marriageAcceptStatChanges = {
-                  prestige: +5000 / scalingFactor,
-                  influence: +3000 / scalingFactor,
-                  property: {
-                    seafaringTradeships: +3,
-                  }
-                }
-                marriageRejectStatChanges = {
-                  prestige: -7000 / scalingFactor,
-                  influence: -1000 / scalingFactor,
-                }
-                divorceAcceptStatChanges = {
-                  prestige: +4000 / scalingFactor,
-                  influence: -1500 / scalingFactor,
-                }
-                divorceRejectStatChanges = {
-                  prestige: -5000 / scalingFactor,
-                  influence: +1000 / scalingFactor,
-                }
+        
+           
                 break;
               case 2:
                 marriageMessage = 'Julius Caesar come to you with a proposal. As fellow members of the First Triumvirate he wishes to deepen your partnership. He offers his daughter '
                   + `[c|${potentialSpouse.id}|${"Julia"}]` + '\'s  hand in marriage to you,' + `[c|${characterId}|${"Gnaeus Pompeius Magnus"}].`
                   + 'This could be a great oppurtunity to gain Caesar\'s favor and strengthen your position in the Triumvirate.'
                   + '\n What will you do?'
-                marriageAcceptStatChanges = {
-                  prestige: +1000 / scalingFactor,
-                  influence: +2000 / scalingFactor,
-                  property: {
-                    latifundiumFood: +3
-                  }
-                }
-                marriageRejectStatChanges = {
-                  prestige: -3000 / scalingFactor,
-                  influence: -1000 / scalingFactor,
-                }
-                divorceAcceptStatChanges = {
-                  prestige: +10000 / scalingFactor,
-                  influence: -5000 / scalingFactor,
-                }
-                divorceRejectStatChanges = {
-                  prestige: -20000 / scalingFactor,
-                  influence: +10000 / scalingFactor,
-                }
+        
+           
+           
                 break;
 
             }
@@ -123,7 +69,7 @@
                 let acceptDivorceOption = {
                   text: 'Divorce ' + `[c|${character.spouseId}|${presentSpouse.praenomen}]` + ', Marry ' + `[c|${potentialSpouse.id}|${potentialSpouse.praenomen}]`,
                   tooltip: 'Tis most unfortunate.',
-                  statChanges: divorceAcceptStatChanges,
+                  // statChanges: divorceAcceptStatChanges,
                   disabled: false,
                   action: {
                     event: '/play_scenario/scenarios/gnaeus_pompeius_magnus/marriageEvents',
@@ -135,10 +81,10 @@
                 {
                   text: 'I won\'t abandon my Love.',
                   tooltip: 'I would never do such a thing',
-                  statChanges: divorceRejectStatChanges,
+                  // statChanges: divorceRejectStatChanges,
                   action: {
                     event: '/play_scenario/scenarios/gnaeus_pompeius_magnus/marriageEvents',
-                    method: 'marriageAccept',
+                    method: 'divorceReject',
                     context: { characterId: characterId, newSpouseId: potentialSpouse.id,spouseIndex:spouseIndex }
                   }
                 }
@@ -148,7 +94,7 @@
                 let acceptMarriageOption =
                 {
                   text: 'I accept.',
-                  statChanges: marriageAcceptStatChanges,
+                  // statChanges: marriageAcceptStatChanges,
                   disabled: false,
                   action: {
                     event: '/play_scenario/scenarios/gnaeus_pompeius_magnus/marriageEvents',
@@ -160,7 +106,7 @@
                 {
                   text: 'I won\'t marry her.',
                   tooltip: 'Why should I?',
-                  statChanges: marriageRejectStatChanges,
+                  // statChanges: marriageRejectStatChanges,
                   action: {
                     event: '/play_scenario/scenarios/gnaeus_pompeius_magnus/marriageEvents',
                     method: 'marriageReject',
@@ -190,19 +136,43 @@
       let spouse = daapi.getCharacter({ characterId: spouseId })
       let acceptMessage = ''
       let acceptText = ''
+      let acceptStatChanges = {}
+      let scalingFactor = daapi.calculateScaleByClassFactor()
 
       switch (spouseIndex) {
         case 0:
           acceptMessage = 'Publius Antistius is pleased to hear your response. He expects great things from you.'
           acceptText = 'You are too kind'
+          acceptStatChanges = {
+            prestige: +1000 / scalingFactor,
+            influence: +2000 / scalingFactor,
+            property: {
+              insulae: +1,
+              horse: +1
+            }
+          }
           break;
         case 1:
           acceptMessage = 'Sulla is pleased to hear your response. He looks forward to this partnership'
           acceptText = 'A Toast to General Sulla!'
+          acceptStatChanges = {
+            prestige: +5000 / scalingFactor,
+            influence: +3000 / scalingFactor,
+            property: {
+              seafaringTradeships: +3,
+            }
+          }
           break;
         case 2:
           acceptMessage = 'Julius Caesar is pleased to hear your response. He looks forward to this partnership'
           acceptText = 'A Toast for my friend Caesar!'
+          acceptStatChanges = {
+            prestige: +1000 / scalingFactor,
+            influence: +2000 / scalingFactor,
+            property: {
+              latifundiumFood: +3
+            }
+          }
           break;
 
       }
@@ -212,7 +182,8 @@
         message: acceptMessage,
         options: [
           {
-            text: acceptText
+            text: acceptText,
+            statChanges:acceptStatChanges
           }
         ]
       })
@@ -222,19 +193,33 @@
       let spouse = daapi.getCharacter({ characterId: spouseId })
       let rejectMessage = ''
       let rejectText = ''
+    let scalingFactor = daapi.calculateScaleByClassFactor()
+    let rejectStatChanges = {}
 
       switch (spouseIndex) {
         case 0:
           rejectMessage = 'Publius Antistius is disappointed. He feels humiliated.'
           rejectText = 'It can\'t be helped.'
+          rejectStatChanges = {
+            prestige: -3000 / scalingFactor,
+            influence: -1000 / scalingFactor,
+          }
           break;
         case 1:
           rejectMessage = 'Sulla is mortified. He will make sure you regret your choice.'
           rejectText = 'You do not scare me!'
+          rejectStatChanges = {
+            prestige: -7000 / scalingFactor,
+            influence: -1000 / scalingFactor,
+          }
           break;
         case 2:
           rejectMessage = 'Julius Caesar is disappointed that you choose otherwise.'
           rejectText = 'It can\'t be helped.'
+          rejectStatChanges = {
+            prestige: -3000 / scalingFactor,
+            influence: -1000 / scalingFactor,
+          }
           break;
 
       }
@@ -244,7 +229,8 @@
         message: rejectMessage,
         options: [
           {
-            text: rejectText
+            text: rejectText,
+            statChanges:rejectStatChanges
           }
         ]
       })
@@ -253,19 +239,38 @@
       let spouse = daapi.getCharacter({ characterId: newSpouseId })
       let acceptMessage = ''
       let acceptText = ''
+      let acceptStatChanges = {}
+    let scalingFactor = daapi.calculateScaleByClassFactor()
 
       switch (spouseIndex) {
         case 0:
           acceptMessage = 'Publius Antistius is pleased to hear your response. He expects great things from you.'
           acceptText = 'You are too kind'
+                    
+          acceptStatChanges = {
+            prestige: +1000 / scalingFactor,
+            influence: -500 / scalingFactor,
+          }
+  
           break;
         case 1:
           acceptMessage = 'Sulla is pleased to hear your response. He looks forward to this partnership'
           acceptText = 'A Toast to General Sulla!'
+              
+          acceptStatChanges = {
+            prestige: +4000 / scalingFactor,
+            influence: -1500 / scalingFactor,
+          }
+        
           break;
         case 2:
           acceptMessage = 'Julius Caesar is pleased to hear your response. He looks forward to this partnership'
           acceptText = 'A Toast for my friend Caesar!'
+          acceptStatChanges = {
+            prestige: +10000 / scalingFactor,
+            influence: -5000 / scalingFactor,
+          }
+       
           break;
 
       }
@@ -275,7 +280,8 @@
         message: acceptMessage,
         options: [
           {
-            text: acceptText
+            text: acceptText,
+            statChanges:acceptStatChanges
           }
         ]
       })
@@ -285,19 +291,33 @@
       let spouse = daapi.getCharacter({ characterId: newSpouseId })
       let rejectMessage = ''
       let rejectText = ''
+      let rejectStatChanges = {}
+      let scalingFactor = daapi.calculateScaleByClassFactor()
 
       switch (spouseIndex) {
         case 0:
           rejectMessage = 'Publius Antistius is disappointed. He feels humiliated.'
           rejectText = 'It can\'t be helped.'
+          rejectStatChanges = {
+            prestige: -500 / scalingFactor,
+            influence: +2000 / scalingFactor,
+          }
           break;
         case 1:
           rejectMessage = 'Sulla is mortified. He will make sure you regret your choice.'
           rejectText = 'You do not scare me!'
+          rejectStatChanges = {
+            prestige: -5000 / scalingFactor,
+            influence: +1000 / scalingFactor,
+          }
           break;
         case 2:
           rejectMessage = 'Julius Caesar is disappointed that you choose otherwise.'
           rejectText = 'It can\'t be helped.'
+          rejectStatChanges = {
+            prestige: -20000 / scalingFactor,
+            influence: +10000 / scalingFactor,
+          }
           break;
 
       }
@@ -307,7 +327,9 @@
         message: rejectMessage,
         options: [
           {
-            text: rejectText
+            text: rejectText,
+            statChanges:rejectStatChanges
+
           }
         ]
       })

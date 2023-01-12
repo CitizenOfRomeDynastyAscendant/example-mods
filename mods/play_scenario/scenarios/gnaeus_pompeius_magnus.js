@@ -42,8 +42,6 @@
       agnomen: '',
       birthMonth: 11,
       birthYear: 619,
-      // deathMonth: 3,
-      // deathYear: 667,
       job: null,
       jobLevel: 0,
       spouseId: null,
@@ -63,8 +61,7 @@
       flagAssignedPersonalityTrait: true
     },
 
-    "Pompeia":
-    {
+    "Pompeia":{
       id: 'Gnaeus_Pompeius_Magnus',
       dynastyId: 'Pompeius_Strabo',
       isDead: false,
@@ -96,6 +93,7 @@
       flagPlayScenarioModPompeyIsFather:false,
       flagPlayScenarioModIsPompey:true,
     },
+
     'Gnaeus_Pompeius_Magnus': {
       id: 'Gnaeus_Pompeius_Magnus',
       dynastyId: 'Pompeius_Strabo',
@@ -201,42 +199,6 @@
             heritage: 'roman_patrician'
           }
         },
-        // {
-        //   time:27,//675
-        //   characterFeatures: {
-        //     isDead: false,
-        //     isMale: false,
-        //     praenomen: 'Mucia',
-        //     agnomen: '',
-        //     birthMonth: 3,
-        //     birthYear: 659,
-        //     job: null,
-        //     jobLevel: 0,
-        //     spouseId: null,
-        //     fatherId: null,
-        //     motherId: null,
-        //     childrenIds: [],
-        //     traits: ['oratorDeliberative', 'weak'],
-        //     skills: {
-        //       intelligence: Math.round(Math.random() * 10) + 4,
-        //       stewardship: Math.round(Math.random() * 10) + 6,
-        //       eloquence: Math.round(Math.random() * 10) + 8,
-        //       combat: Math.round(Math.random() * 10)
-        //     },
-        //     look: {
-        //       group: 'roman',
-        //       type: 'blonde'
-        //     },
-        //     flagAssignedPersonalityTrait: false
-        //   },
-        //   dynastyFeatures: {
-        //     id: 'Mucia',
-        //     nomen: '',
-        //     cognomen: 'Tertia',
-        //     prestige: 40000,
-        //     heritage: 'roman_patrician'
-        //   }
-        // },
         {
           time:47,
           characterFeatures: {
@@ -273,42 +235,6 @@
             heritage: 'roman_patrician'
           }
         },
-        // {
-        //   time:54,//702//age:54
-        //   characterFeatures: {
-        //     isDead: false,
-        //     isMale: false,
-        //     praenomen: 'Cornelia',
-        //     agnomen: '',
-        //     birthMonth: 3,
-        //     birthYear: 681,
-        //     job: null,
-        //     jobLevel: 0,
-        //     spouseId: null,
-        //     fatherId: null,
-        //     motherId: null,
-        //     childrenIds: [],
-        //     traits: ['oratorDeliberative', 'weak'],
-        //     skills: {
-        //       intelligence: Math.round(Math.random() * 10) + 4,
-        //       stewardship: Math.round(Math.random() * 10) + 6,
-        //       eloquence: Math.round(Math.random() * 10) + 8,
-        //       combat: Math.round(Math.random() * 10)
-        //     },
-        //     look: {
-        //       group: 'roman',
-        //       type: 'blonde'
-        //     },
-        //     flagAssignedPersonalityTrait: false
-        //   },
-        //   dynastyFeatures: {
-        //     id: 'Cornelia',
-        //     nomen: 'Cornelia',
-        //     cognomen: 'Metella',
-        //     prestige: 40000,
-        //     heritage: 'roman_patrician'
-        //   }
-        // }
       ]
     }
   }

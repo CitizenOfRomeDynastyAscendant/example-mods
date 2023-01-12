@@ -1,7 +1,7 @@
 {
   checkType: 'householdCharacters',
 
-    checkAndAct(characterId) {
+  checkAndAct(characterId) {
     let character = daapi.getCharacter({ characterId: characterId })
     let state = daapi.getState()
     let scalingFactor = daapi.calculateScaleByClassFactor()
@@ -69,10 +69,12 @@
       }
     }
   },
+
   methods: {
     SocialWar({ characterId,flagJoinWar }) {
       daapi.setCharacterFlag({ characterId: characterId, flag: `pompey_social_war`, data: true });
       daapi.startWar();
+      
       if(flagJoinWar)
       {
         daapi.joinWar({ characterId: characterId });

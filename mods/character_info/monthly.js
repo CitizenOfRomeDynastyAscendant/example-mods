@@ -1,0 +1,1 @@
+['/character_info/main']

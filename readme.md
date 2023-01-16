@@ -411,7 +411,7 @@ The following are the methods available:
       look: {
         isDAAPI: true/false,
         group: 'roman',
-        type: 'auburn' | 'black' | 'blonde' | 'brown' | 'brown_curly',
+        type: 'black' | 'brown' | 'brown_curly' | 'dusky' | 'olive' | 'tan' | 'hazel' | 'auburn' | 'blonde' | 'auburn',
         ageStage: 'baby' | 'teen' | 'adult' | 'old',
         gender: 'male' | 'female' | '<any other gender icons defined via addCharacterLook>'
       },      

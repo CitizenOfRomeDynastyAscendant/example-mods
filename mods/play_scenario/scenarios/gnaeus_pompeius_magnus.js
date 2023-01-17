@@ -142,7 +142,7 @@
             fatherId: null,
             motherId: null,
             childrenIds: [],
-            traits: ['oratorDeliberative', 'weak'],
+            traits: ['erudite'],
             skills: {
               intelligence: Math.round(Math.random() * 10) + 4,
               stewardship: Math.round(Math.random() * 10) + 6,
@@ -151,7 +151,7 @@
             },
             look: {
               group: 'roman',
-              type: 'blonde'
+              type: 'auburn'
             },
             flagAssignedPersonalityTrait: false
           },
@@ -178,7 +178,7 @@
             fatherId: null,
             motherId: null,
             childrenIds: [],
-            traits: ['oratorDeliberative', 'weak'],
+            traits: ['fashionable'],
             skills: {
               intelligence: Math.round(Math.random() * 10) + 4,
               stewardship: Math.round(Math.random() * 10) + 6,
@@ -187,7 +187,7 @@
             },
             look: {
               group: 'roman',
-              type: 'blonde'
+              type: 'brown'
             },
             flagAssignedPersonalityTrait: false
           },
@@ -214,7 +214,7 @@
             fatherId: null,
             motherId: null,
             childrenIds: [],
-            traits: ['oratorDeliberative', 'weak'],
+            traits: ['genius'],
             skills: {
               intelligence: Math.round(Math.random() * 10) + 4,
               stewardship: Math.round(Math.random() * 10) + 6,

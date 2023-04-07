@@ -20,7 +20,7 @@
       let babyId = daapi.generateCharacter({ 
         characterFeatures: {
           birthYear: daapi.getState().year - Math.round(Math.random() * 3),
-          isMale: Math.random() < 0.5
+          gender: Math.random() < 0.01 ? 'genderqueer' : (Math.random() < 0.5 ? 'male' : 'female')
         },
         dynastyFeatures : {} 
       })

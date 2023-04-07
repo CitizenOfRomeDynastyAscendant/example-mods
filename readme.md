@@ -419,7 +419,8 @@ The following are the methods available:
       flagCanGetPregnant: Boolean, // >= v1.5.3
       flagCanImpregnate: Boolean, // >= v1.5.3
       flagCannotMarry: Boolean, // >= v1.5.3
-      flagCanHoldImperium: Boolean // >= v1.5.3 (allows full ludi, war & election participation)
+      flagCanHoldImperium: Boolean, // >= v1.5.3 (allows full ludi, war & election participation)
+      flagWasGivenInheritance: Boolean // >= v1.6.0 (removes them from inheritance split if true)
     }
   })
   ```

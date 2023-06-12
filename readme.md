@@ -300,6 +300,22 @@ The following are the methods available:
 
 ## `processInteractionModalQueue()`
 
+## `applyStatChanges`
+```({
+      cash,
+      prestige,
+      influence,
+      property: {
+        propertyName: +/- Integer
+      },
+      modifiers: [],
+      removeModifiers: [],
+      additiveModifiers: [],
+      removeAdditiveModifiers: []
+    })
+  ```
+  Directly apply statChanges
+
 ## `playSound(sound)`
   Plays the sound located in your mod at `sound`
   Use the full path with extension like '/modName/assets/sound1.flac'

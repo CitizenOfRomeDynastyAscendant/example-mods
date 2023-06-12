@@ -1,4 +1,4 @@
-// Opens a command console on the Interaction Modal
+// Adds a character action on all characters to character ID and other character info
 {
   canTriggerIfUnavailable: true,
   checkType: 'allCharacters',

@@ -1,0 +1,1 @@
+['/voyage/main', '/voyage/bandits']

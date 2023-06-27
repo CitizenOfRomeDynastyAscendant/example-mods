@@ -10,6 +10,7 @@
       characterId !== currentId &&
       character &&
       !character.isDead &&
+      daapi.calculateAge({ month: character.birthMonth, year: character.birthYear }) > 15 &&
       !daapi.getCharacterFlag({ characterId, flag: 'mod_murder_plotTarget' }) &&
       !daapi.getCharacterFlag({ characterId: currentId, flag: 'mod_murder_startedPlotOnTarget' })
     ) {

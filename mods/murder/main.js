@@ -45,6 +45,7 @@
           message: 'You already have a plot in progress against ' + `[c|${existingTargetId}|${daapi.getCharacter({ characterId: existingTargetId }).praenomen}]` + '',
           image: daapi.requireImage('/murder/plot.svg')
         })
+        return
       }
       const character = daapi.getCharacter({ characterId })
       const startPlotResponses = ['Let us prey', 'Kill. Die. Kill.', ' Die, Die, Die!', `Hades awaits ${character.praenomen}`, `DIE ${character.praenomen.toUpperCase()}, DIE`, 'Will no one rid me of this turbulent pest?', `${character.praenomen} is not long for this world!`, `Then fall ${character.praenomen}`]

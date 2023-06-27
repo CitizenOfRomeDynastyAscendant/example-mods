@@ -36,6 +36,7 @@
   },
   methods: {
     process({ characterId }) {
+      const currentId = daapi.getState().current.id
       const existingTargetId = daapi.getCharacterFlag({ characterId: currentId, flag: 'mod_murder_startedPlotOnTarget' })
       if(existingTargetId) {
         daapi.deleteCharacterAction({ characterId, key: 'mod_murder_startPlot' })

@@ -11,7 +11,7 @@
     const character = state.characters[characterId]
     daapi.displayInteractionModal({
       title: 'Bandit gambit?',
-      message: 'You hear news of ' + `[c|${characterId}|${character.praenomen}]` + ' plans to visit their estates in the countryside from one of your confidants, who is in on your scheme, presented along with an plan to disguise yourselves and a group of servants as bandits & ambush ' + `[c|${characterId}|${character.praenomen}]` + ' en-route',
+      message: `You hear news of [c|${characterId}|${character.praenomen}]' plans to visit their estates in the countryside from one of your confidants, who is in on your scheme, presented along with an plan to disguise yourselves and a group of servants as bandits & ambush [c|${characterId}|${character.praenomen}] en-route`,
       image: daapi.requireImage('/murder/plot.svg'),
       options: [
         {

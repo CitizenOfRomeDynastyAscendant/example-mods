@@ -5,7 +5,7 @@
     const state = daapi.getState()
     const currentId = state.current.id
     const characterId = daapi.getCharacterFlag({ characterId: currentId, flag: 'mod_murder_startedPlotOnTarget' })
-    if( !characterId || !state.characters[characterId] || state.characters[characterId].isDead || Math.random() > 1 / 13 / 6 ) {
+    if( !characterId || !state.characters[characterId] || state.characters[characterId].isDead || Math.random() > 1 / 13 / 8 ) {
       return
     }
     const character = state.characters[characterId]

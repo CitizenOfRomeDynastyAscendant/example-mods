@@ -52,6 +52,9 @@ Note: Children Ids start at `0` for 1st child, `1` for the 2nd and so on, like:
 ### Change look
 `daapi.updateCharacter({ characterId:daapi.getState().current.id, character: { look: { group: 'roman', type: 'black' } } })`
 
+### Add parrifamilias' mother as a dependent
+`daapi.updateCharacter({ characterId: daapi.getState().current.id, character: { dependantIds: [daapi.getCharacter({ characterId: daapi.getState().current.id }).motherId] } })`
+
 ### Change Gender
 #### <=v1.5.2
 `daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ isMale: false }})`
@@ -77,6 +80,9 @@ Note: These will enroll them in the appropriate education but won't charge you f
 Or similarly `flagAttendingRhetor: 'deliberative'`
 #### Philosophy
 `daapi.updateCharacter({characterId:daapi.getState().current.id, character:{ flagAttendingPhilosophy: 'renowned', flagIsBusy: true, flagIsAway: true, actions: {beginPhilosophyEducation:{}, endPhilosophyEducation:{}} }})`
+
+### Elect as consul
+`daapi.updateCharacter({characterId: daapi.getState().current.id, character: { job: 'consul', jobLevel: 0, flagElectionWon: {post: 'consul', termEndMonth: 0, termEndYear: daapi.getState().year + 1}}})`
 
 ### Change spouse family nomen & cognomen
 `(function() {  let nomen = 'New_Nomen'; let cognomen = 'New_Cognomen'; let state = daapi.getState(); let spouse = state.characters[state.characters[state.current.id].spouseId]; let genCharId = daapi.generateCharacter({ characterFeatures: {}, dynastyFeatures: { ...state.dynasties[spouse.dynastyId], nomen, cognomen } }); let newDynId = daapi.getCharacter({ characterId: genCharId }).dynastyId; daapi.updateCharacter({ characterId: spouse.id, character: {dynastyId: newDynId} }); daapi.kill({ characterId: genCharId }); })()`

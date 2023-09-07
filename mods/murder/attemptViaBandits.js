@@ -66,7 +66,7 @@
         text = `Rest in pieces ${character.praenomen}`
         daapi.kill({
           characterId,
-          deathCause: ', viciously attacked by bandits'
+          deathCause: ', viciously attacked by "bandits"'
         })
         daapi.setCharacterFlag({ characterId, flag: 'mod_murder_plotTarget', data: false })
         daapi.setCharacterFlag({ characterId: currentId, flag: 'mod_murder_startedPlotOnTarget', data: false })

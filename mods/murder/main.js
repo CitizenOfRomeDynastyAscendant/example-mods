@@ -49,7 +49,7 @@
         return
       }
       const character = daapi.getCharacter({ characterId })
-      const startPlotResponses = ['Let us prey', 'Kill. Die. Kill.', ' Die, Die, Die!', `Hades awaits ${character.praenomen}`, `DIE ${character.praenomen.toUpperCase()}, DIE`, 'Will no one rid me of this turbulent pest?', `${character.praenomen} is not long for this world!`, `Then fall ${character.praenomen}`]
+      const startPlotResponses = ['Let us prey', 'Kill. Die. Kill.', ' Die, Die, Die!', `Hades awaits you ${character.praenomen}`, `DIE ${character.praenomen.toUpperCase()}, DIE`, 'Will no one rid me of this turbulent pest?', `${character.praenomen} is not long for this world!`, `Then fall ${character.praenomen}`, 'Knife day we\'re having']
       daapi.displayInteractionModal({
         title: 'Attempt to murder ' + character.praenomen + '?',
         message: 'Start a plot to have ' + `[c|${characterId}|${character.praenomen}]` + ' killed?',

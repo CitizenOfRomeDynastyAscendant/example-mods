@@ -125,4 +125,4 @@ Note: You can skip the `id` parameter if you don't intend to `removeModifier` ma
 `daapi.setDate({ month: 5, year: 750 })`
 
 ## Add Google Translate
-`(() => { window.googleTranslateElementInit = () => { new google.translate.TranslateElement({ pageLanguage: "en" }, "app"); }; let script = document.createElement("script"); script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"; document.head.appendChild(script); })();`
+`(() => { window.googleTranslateElementInit = () => { new google.translate.TranslateElement({ pageLanguage: "en" }, "app"); }; let script = document.createElement("script"); script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"; document.head.appendChild(script); })()`

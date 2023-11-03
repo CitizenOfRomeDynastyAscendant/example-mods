@@ -503,10 +503,13 @@ property_<property_name>
 revenue
 household_fertility
 character_fertility_<characterId>
+pet_fertility_<petId>
 household_health
 character_health_<characterId>
+pet_health_<petId>
 household_expenses
 character_expenses_<characterId>
+pet_expenses_<petId>
 household_stewardship
 character_stewardship_<characterId>
 ```

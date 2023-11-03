@@ -103,7 +103,7 @@ or from v1.5.0+
 ##### Remove the same
 `daapi.removeModifier({ key: 'household_health', id: 'cancel_easy_mode' })`
 
-Note: You can skip the `id` parameter if you don't intend to `removeModifier` manuall in the future
+Note: You can skip the `id` parameter if you don't intend to `removeModifier` manually in the future
 #### Increase Health for 13 months
 `daapi.addModifier({ key: 'household_health', id: 'increase_for_13', factor: 1000, durationInMonths: 13 })`
 
@@ -123,3 +123,6 @@ Note: You can skip the `id` parameter if you don't intend to `removeModifier` ma
 
 ## Change the date
 `daapi.setDate({ month: 5, year: 750 })`
+
+## Add Google Translate
+`(() => { window.googleTranslateElementInit = () => { new google.translate.TranslateElement({ pageLanguage: "en" }, "app"); }; let script = document.createElement("script"); script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"; document.head.appendChild(script); })();`

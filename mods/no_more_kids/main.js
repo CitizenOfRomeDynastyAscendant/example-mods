@@ -42,7 +42,7 @@
     },
     noMoreKids() {
       daapi.setGlobalFlag({ flag: 'noMoreKids', data: true })
-      daapi.addModifier({ key:'household_fertility', id: 'noMoreKidsMod', factor: 0 })
+      daapi.addModifier({ key:'household_fertility', id: 'noMoreKidsMod', factor: 0, reason: 'No More Kids!' })
       daapi.invokeMethod({
         event: '/no_more_kids/main',
         method: 'toggleFlag'

@@ -44,10 +44,11 @@
           }
         })
       }
+      daapi.forceUpdateCharacterDisplay({ characterId })
     },
     noMoreKids({ characterId }) {
       daapi.setCharacterFlag({ characterId, flag: 'noMoreKids', data: true })
-      daapi.addModifier({ key: 'character_fertility_' + characterId, id: 'noMoreKidsMod', factor: 0 })
+      daapi.addModifier({ key: 'character_fertility_' + characterId, id: 'noMoreKidsMod', factor: 0, reason: 'No More Kids!' })
       daapi.invokeMethod({
         event: '/no_more_kids/individual',
         method: 'toggleFlag',

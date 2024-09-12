@@ -21,6 +21,7 @@
         '/play_scenario/scenarios/gaius_julius_caesar',
         '/play_scenario/scenarios/marcus_vipsanius_agrippa',
         '/play_scenario/scenarios/mark_antony',
+        '/play_scenario/scenarios/gnaeus_pompeius_magnus',
       ]
       let state = daapi.getState()
       let scaleByClassFactor = daapi.calculateScaleByClassFactor()

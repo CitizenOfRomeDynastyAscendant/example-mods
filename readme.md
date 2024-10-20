@@ -53,7 +53,7 @@ Download the zip file from the [Releases section](https://github.com/CitizenOfRo
 - Command Console - Run command snippets (see: https://github.com/CitizenOfRomeDynastyAscendant/example-mods/blob/master/snippets.md)
 
 ### Mods by others:
-+ [Bank of Rome and other mods by peritiSumus](https://github.com/peritiSumus/CoR-Mods)
++ [Bank of Rome and other mods by @peritiSumus](https://github.com/peritiSumus/CoR-Mods)
 + [Sandbox Hard mode by @narvin](https://github.com/narvin42/CORmods)
 + [Only Living Descendants & other mods by @maydayp](https://github.com/kstruggles/CORmods)
 + [Change Theme and other mods by @Prahlad](https://github.com/prahlad-swarnkar/CORmods/releases)

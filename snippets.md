@@ -84,6 +84,12 @@ Or similarly `flagAttendingRhetor: 'deliberative'`
 ### Elect as consul
 `daapi.updateCharacter({characterId: daapi.getState().current.id, character: { job: 'consul', jobLevel: 0, flagElectionWon: {post: 'consul', termEndMonth: 0, termEndYear: daapi.getState().year + 1}}})`
 
+### Skip giving inheritance
+`daapi.updateCharacter({ characterId: '74d8fe17_3a2f_4a0c_9f9a_e3e1c6989e2d', character: { flagWasGivenInheritance: true } })`
+
+### Move out
+`daapi.updateCharacter({ characterId: '74d8fe17_3a2f_4a0c_9f9a_e3e1c6989e2d', character: { hasMovedOut: true, flagWasGivenInheritance: true } })`
+
 ### Change spouse family nomen & cognomen
 `(function() {  let nomen = 'New_Nomen'; let cognomen = 'New_Cognomen'; let state = daapi.getState(); let spouse = state.characters[state.characters[state.current.id].spouseId]; let genCharId = daapi.generateCharacter({ characterFeatures: {}, dynastyFeatures: { ...state.dynasties[spouse.dynastyId], nomen, cognomen } }); let newDynId = daapi.getCharacter({ characterId: genCharId }).dynastyId; daapi.updateCharacter({ characterId: spouse.id, character: {dynastyId: newDynId} }); daapi.kill({ characterId: genCharId }); })()`
 

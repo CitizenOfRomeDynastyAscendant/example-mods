@@ -488,7 +488,7 @@ The following are the methods available:
       }
   })
   ```
-  Generates a new character and returns the character ID.
+  Generates a new pet and returns the pet ID.
   All fields are optional and can be skipped for the game to use default/random values
 
 ## `startWar()`

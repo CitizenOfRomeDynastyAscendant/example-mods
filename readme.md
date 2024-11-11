@@ -470,6 +470,27 @@ The following are the methods available:
 
 ## `getCharacterIcon({ group, gender, type, ageStage })`
 
+## `generatePet` 
+  ```
+  ({
+      ownerId: Character ID String,
+      type: 'dog_molossian' | 'dog_shaggy' | 'dog_cavevanem' | 'dog_maltese' | 'dog_lab' | 'dog_greyhound' | 'cat_mau' | 'cat_orange' | 'polecat' | 'elephant' | 'aesculapiansnake' | 'barbaryape' | 'horse_maremma_bay' | 'horse_maremma_chestnut' | 'peafowl' | 'pigeon' | 'parakeet' | 'goldfinch' | 'blackbird',
+      sex: String, // Supports any given string; defaults: 'male' & 'female'
+      name: String,
+      birthMonth: Number (0-12),
+      birthYear,
+      childrenIds: Array,
+      traits: Array,
+      skills: {
+        aptitude,
+        vigor,
+        tameness
+      }
+  })
+  ```
+  Generates a new character and returns the character ID.
+  All fields are optional and can be skipped for the game to use default/random values
+
 ## `startWar()`
 ## `endWar()`
 ## `joinWar({ characterId })`

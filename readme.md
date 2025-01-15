@@ -408,7 +408,7 @@ The following are the methods available:
     characterId,
     character: {
       gender: String, // >= v1.5.3 defaults: 'male' | 'female'
-      isMale: Boolean,
+      isMale: Boolean, // Usually ignored when `gender` is set
       praenomen,
       agnomen,
       birthMonth: Number (0-12),
@@ -436,7 +436,8 @@ The following are the methods available:
       flagCanImpregnate: Boolean, // >= v1.5.3
       flagCannotMarry: Boolean, // >= v1.5.3
       flagCanHoldImperium: Boolean, // >= v1.5.3 (allows full ludi, war & election participation)
-      flagWasGivenInheritance: Boolean // >= v1.6.0 (removes them from inheritance split if true)
+      flagWasGivenInheritance: Boolean, // >= v1.6.0 (removes them from inheritance split if true)
+      flagCannotBeDesignatedHeir: Boolean, // >= v1.6.18
     }
   })
   ```

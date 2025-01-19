@@ -438,6 +438,7 @@ The following are the methods available:
       flagCanHoldImperium: Boolean, // >= v1.5.3 (allows full ludi, war & election participation)
       flagWasGivenInheritance: Boolean, // >= v1.6.0 (removes them from inheritance split if true)
       flagCannotBeDesignatedHeir: Boolean, // >= v1.6.18
+      flagDoNotCull: Boolean, // >= v1.6.18 - prevents culling for performance from the character list after death
     }
   })
   ```
@@ -491,6 +492,29 @@ The following are the methods available:
   ```
   Generates a new pet and returns the pet ID.
   All fields are optional and can be skipped for the game to use default/random values
+## `updatePet` 
+  ```
+  ({
+    petId,
+    pet: {
+      ownerId: Character ID String,
+      type: 'dog_molossian' | 'dog_shaggy' | 'dog_cavevanem' | 'dog_maltese' | 'dog_lab' | 'dog_greyhound' | 'cat_mau' | 'cat_orange' | 'polecat' | 'elephant' | 'aesculapiansnake' | 'barbaryape' | 'horse_maremma_bay' | 'horse_maremma_chestnut' | 'peafowl' | 'pigeon' | 'parakeet' | 'goldfinch' | 'blackbird',
+      sex: String, // Supports any given string; defaults: 'male' & 'female'
+      name: String,
+      birthMonth: Number (0-12),
+      birthYear,
+      childrenIds: Array,
+      traits: Array,
+      skills: {
+        aptitude,
+        vigor,
+        tameness
+      },
+      flagDoNotCull: Boolean, // >= v1.6.18 - prevents culling for performance from the pets list after death
+    }
+  })
+  ```
+  Updates a pet. Skip parts to retain previous values in pet
 
 ## `startWar()`
 ## `endWar()`

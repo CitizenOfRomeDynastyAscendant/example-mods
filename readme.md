@@ -498,7 +498,7 @@ The following are the methods available:
     petId,
     pet: {
       ownerId: Character ID String,
-      type: 'dog_molossian' | 'dog_shaggy' | 'dog_cavevanem' | 'dog_maltese' | 'dog_lab' | 'dog_greyhound' | 'cat_mau' | 'cat_orange' | 'polecat' | 'elephant' | 'aesculapiansnake' | 'barbaryape' | 'horse_maremma_bay' | 'horse_maremma_chestnut' | 'peafowl' | 'pigeon' | 'parakeet' | 'goldfinch' | 'blackbird',
+      type: Pet Type String,
       sex: String, // Supports any given string; defaults: 'male' & 'female'
       name: String,
       birthMonth: Number (0-12),
@@ -515,6 +515,8 @@ The following are the methods available:
   })
   ```
   Updates a pet. Skip parts to retain previous values in pet
+## `addPetLook({ type, suffixes })`
+## `getPetIcon({ type, suffix })`
 
 ## `startWar()`
 ## `endWar()`

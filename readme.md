@@ -510,6 +510,9 @@ The following are the methods available:
         vigor,
         tameness
       },
+      flagIsImmortal: Boolean, // (can still die via events, etc)
+      flagCanGetPregnant: Boolean,
+      flagCanImpregnate: Boolean,
       flagDoNotCull: Boolean, // >= v1.6.18 - prevents culling for performance from the pets list after death
     }
   })

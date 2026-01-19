@@ -536,6 +536,9 @@ The following are the methods available:
 
 ## `addPrestige({ prestige })`
   Adds `prestige` to the current character's dynasty prestige
+  
+## `addOrEditTraitDefinition({ trait, traitInfo, icon, specialGroups, text })`
+## `removeBaseTraitDefinition({ trait })`
 
 ## `openDevTools()`
   Opens Dev Tools Console (Desktop editions only)

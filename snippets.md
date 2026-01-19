@@ -87,6 +87,11 @@ Or similarly `flagAttendingRhetor: 'deliberative'`
 ### Skip giving inheritance
 `daapi.updateCharacter({ characterId: '74d8fe17_3a2f_4a0c_9f9a_e3e1c6989e2d', character: { flagWasGivenInheritance: true } })`
 
+#### Have the heir inherit everything
+```js 
+(()=> { setInterval(() => { let state = daapi.getState(); state.current.householdCharacterIds.forEach((characterId)=>{ if(characterId!==state.current.flagDesignatedHeirId && characterId!==state.current.id) { daapi.updateCharacter({ characterId, character: { flagWasGivenInheritance: true } }) } }) }, 1000) })() 
+```
+
 ### Move out
 `daapi.updateCharacter({ characterId: '74d8fe17_3a2f_4a0c_9f9a_e3e1c6989e2d', character: { hasMovedOut: true, flagWasGivenInheritance: true } })`
 

@@ -87,7 +87,7 @@ Note that while this is a recommended structure, the game's modding API is permi
 
 In each events js file you should use the following structure
 
-```
+```js
 {
 
   checkType, // String - one of 'general' (passes no args & runs `checkAndAct` once per month/year based on if the event is in monthly/yearly.js) | 'householdCharacters' | 'currentAndFormerHouseholdCharacters' | 'allCharacters' | 'nonHouseholdCharacters' (all 4 run `checkAndAct` once per each applicable character and pass `characterId` as the first argument, and `chunkFactor`),
@@ -160,7 +160,7 @@ The following are the methods available:
   Returns the automatic cost scaling factor. Divide your cash, influence and prestige `statChanges` to not apply this scaling factor
 
 ## `calculateCharacterJobRevenue`
-   ```
+   ```js
   ({
     characterId,
     job,
@@ -170,7 +170,7 @@ The following are the methods available:
   ```
 
 ## `calculateCharacterJobModifierFactor` 
-  ```
+  ```js
   ({
     characterId,
     job,
@@ -189,7 +189,7 @@ The following are the methods available:
   Returns an array containing all valid/available jobs for a given character
 
 ## `generateCharacter` 
-  ```
+  ```js
   ({
     characterFeatures: {
       gender: String, // >= v1.5.3 - supports any given string; defaults: 'male' & 'female'
@@ -240,7 +240,7 @@ The following are the methods available:
   `context` is passed down as the sole argument for your method, usually you would like to pass down things like the characterId and any other relevant context like so `context: {characterId: characterId}`
 
 ## `pushInteractionModalQueue` | `pushInteractionModalButtonQueue` | `displayInteractionModal` | `updateInteractionModal` 
-  ```
+  ```js
   ({
     title,
     message,
@@ -277,7 +277,7 @@ The following are the methods available:
           prestige,
           influence,
           property: {
-            propertyName: +/- Integer
+            propertyName //: +/- Integer
           },
           modifiers: [],
           removeModifiers: [],
@@ -301,12 +301,13 @@ The following are the methods available:
 ## `processInteractionModalQueue()`
 
 ## `applyStatChanges`
-```({
+```js
+  ({
       cash,
       prestige,
       influence,
       property: {
-        propertyName: +/- Integer
+        propertyName //: +/- Integer
       },
       modifiers: [],
       removeModifiers: [],
@@ -336,7 +337,7 @@ The following are the methods available:
 ## `getCharacterFlag({ characterId, flag })`
 
 ## `addCharacterAction` 
-  ```
+  ```js
   ({
     characterId,
     key,
@@ -359,7 +360,7 @@ The following are the methods available:
   Removes the character action
 
 ## `addGlobalAction` 
-  ```
+  ```js
   ({
     key,
     action: {
@@ -380,7 +381,7 @@ The following are the methods available:
   Removes the action
 
 ## `addCharacterStatus` 
-  ```
+  ```js
   ({
     characterId,
     key,
@@ -403,7 +404,7 @@ The following are the methods available:
   Kills a character
 
 ## `updateCharacter` 
-  ```
+  ```js
   ({
     characterId,
     character: {
@@ -451,7 +452,7 @@ The following are the methods available:
   Switch player character
 
 ## `addCharacterLook` 
-  ```
+  ```js
   ({
      group: String,
      types: {
@@ -473,7 +474,7 @@ The following are the methods available:
 ## `getCharacterIcon({ group, gender, type, ageStage })`
 
 ## `generatePet` 
-  ```
+  ```js
   ({
       ownerId: Character ID String,
       type: 'dog_molossian' | 'dog_shaggy' | 'dog_cavevanem' | 'dog_maltese' | 'dog_lab' | 'dog_greyhound' | 'cat_mau' | 'cat_orange' | 'polecat' | 'elephant' | 'aesculapiansnake' | 'barbaryape' | 'horse_maremma_bay' | 'horse_maremma_chestnut' | 'peafowl' | 'pigeon' | 'parakeet' | 'goldfinch' | 'blackbird',
@@ -493,7 +494,7 @@ The following are the methods available:
   Generates a new pet and returns the pet ID.
   All fields are optional and can be skipped for the game to use default/random values
 ## `updatePet` 
-  ```
+  ```js
   ({
     petId,
     pet: {
@@ -578,7 +579,7 @@ prestige
 
 ## Traits
 
-```
+```js
 [
   "literate",
   "educated",
@@ -687,7 +688,7 @@ prestige
 
 ## Properties
 
-```
+```js
 [
   "farmland",
   "vinyard",
@@ -716,7 +717,7 @@ prestige
 
 ## Jobs
 
-```
+```js
 [
   "farmer",
   "performer",

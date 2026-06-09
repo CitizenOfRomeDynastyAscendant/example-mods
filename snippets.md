@@ -226,3 +226,12 @@ daapi.setDate({ month: 5, year: 750 })
 (() => { let translateEl = document.createElement("div"); translateEl.id = 'googleTranslateElement'; translateEl.style.textAlign = 'center'; translateEl.style.marginBottom = '-50px'; document.getElementById('app').prepend(translateEl); window.googleTranslateElementInit = () => { new google.translate.TranslateElement({ pageLanguage: "en", layout: google.translate.TranslateElement.InlineLayout.VERTICAL }, "googleTranslateElement"); }; let script = document.createElement("script"); script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"; document.head.appendChild(script); let style = document.createElement("style"); style.innerHTML = ".modal, .container-main { padding-top: 50px !important; } #goog-gt-tt + div, body > .skiptranslate:first-child { display: none !important; } body { top: 0 !important; }"; document.head.appendChild(style); })()
 ```
 
+## Esc key to go to Settings
+```js
+(() => { document.onkeydown = ((e) => {
+  e = e || window.event
+  if (e.keyCode === 27) {
+    document.querySelector('.js-settings').click()
+  }
+}) })()
+```

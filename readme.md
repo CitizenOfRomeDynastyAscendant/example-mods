@@ -538,7 +538,39 @@ The following are the methods available:
 ## `addPrestige({ prestige })`
   Adds `prestige` to the current character's dynasty prestige
   
-## `addOrEditTraitDefinition({ trait, traitInfo, icon, specialGroups, text })`
+## `addOrEditTraitDefinition`
+```js
+  ({ 
+    trait, 
+    traitInfo: {
+      group: 'personality' | 'education' | 'goodGenetic' | 'badGenetic' | 'neutralGenetic' | 'skill' | 'good' | 'bad' | 'neutral' | 'militaryHonor',
+      modifiers: {
+        skills: {
+          intelligence,
+          stewardship,
+          eloquence,
+          combat
+        },
+        opposites: Array, // Array of traits
+         // Multipliers
+        jobJobName: Number, // example: jobFigurePainter: 5.5 - gives 5.5x multiplier for figure painter
+        personalExpenses: Number,
+        revenue: Number,
+        health: Number,
+        fertility: Number
+      },
+      isStackable: Boolean,
+      points: Number
+    },
+    icon, 
+    specialGroups: Array, //  [ 'genetic', 'otherCharacterTraits', 'hideUntilOfAge', 'discoverable' ]
+    removeFromSpecialGroups: Array, 
+    text: {
+      title: String,
+      description: String
+    } 
+  })
+```
 ## `removeBaseTraitDefinition({ trait })`
 
 ## `openDevTools()`

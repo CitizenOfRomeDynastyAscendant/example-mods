@@ -246,6 +246,7 @@ The following are the methods available:
     message,
     image: Base64 Image String,
     onHidden: { event, method, context },
+    isManualOnly: Boolean, // Automaton ignores this modal when this is set to true 
     inputs: [
       {
         type: HTML Input type,
@@ -539,7 +540,7 @@ The following are the methods available:
   Adds `prestige` to the current character's dynasty prestige
   
 ## `addOrEditTraitDefinition`
-```js
+  ```js
   ({ 
     trait, 
     traitInfo: {
@@ -570,8 +571,10 @@ The following are the methods available:
       description: String
     } 
   })
-```
+  ```
+  Adds or edits a trait definition
 ## `removeBaseTraitDefinition({ trait })`
+  Removes trait definition from game
 
 ## `openDevTools()`
   Opens Dev Tools Console (Desktop editions only)

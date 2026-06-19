@@ -573,8 +573,10 @@ The following are the methods available:
   })
   ```
   Adds or edits a trait definition
+## `removeTraitDefinition({ trait })`
+  Removes a trait defined via `daapi.addOrEditTraitDefinition` from the game
 ## `removeBaseTraitDefinition({ trait })`
-  Removes trait definition from game
+  Removes a base trait from the game
 
 ## `openDevTools()`
   Opens Dev Tools Console (Desktop editions only)
